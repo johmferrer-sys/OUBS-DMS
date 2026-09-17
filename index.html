@@ -1,0 +1,1995 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>PUP Board of Regents Digital Portal — Prototype</title>
+
+<style>
+
+:root{
+    --pup:#7b1113;
+    --pup-dark:#5e0c0f;
+    --pup-light:#921a1d;
+    --gold:#d7b46a;
+    --ink:#222;
+    --muted:#6b7280;
+    --bg:#f5f3ec;
+    --card:#fff;
+    --line:#e5e7eb;
+}
+
+*{
+    box-sizing:border-box;
+}
+
+html{
+    scroll-behavior:smooth;
+}
+
+body{
+    margin:0;
+    font-family:"Segoe UI",Arial,sans-serif;
+    color:var(--ink);
+
+    background:
+        linear-gradient(
+            rgba(248,246,240,.94),
+            rgba(248,246,240,.94)
+        ),
+        url("logo/pup-logo.png");
+
+    background-size:cover;
+    background-position:center;
+    background-attachment:fixed;
+    background-repeat:no-repeat;
+}
+
+button,
+input{
+    font:inherit;
+}
+
+/* =========================
+   TOP BAR
+========================= */
+
+.top{
+    height:7px;
+
+    background:
+        linear-gradient(
+            90deg,
+            var(--pup) 0%,
+            var(--pup) 72%,
+            var(--gold) 72%,
+            var(--gold) 100%
+        );
+}
+
+/* =========================
+   HEADER
+========================= */
+
+header{
+    background:rgba(255,255,255,.97);
+    border-bottom:4px solid var(--gold);
+
+    position:sticky;
+    top:0;
+    z-index:100;
+
+    box-shadow:0 3px 15px rgba(0,0,0,.08);
+}
+
+.nav{
+    max-width:1500px;
+    margin:auto;
+
+    padding:13px 24px;
+
+    display:flex;
+    align-items:center;
+    gap:25px;
+}
+
+.brand{
+    display:flex;
+    align-items:center;
+    gap:12px;
+    margin-right:auto;
+    min-width:300px;
+}
+
+/* =========================
+   LOGO
+========================= */
+
+.seal{
+    width:58px;
+    height:58px;
+
+    border-radius:50%;
+
+    background:#fff;
+
+    display:grid;
+    place-items:center;
+
+    border:3px solid var(--pup);
+
+    overflow:hidden;
+    flex-shrink:0;
+
+    box-shadow:0 2px 7px rgba(0,0,0,.08);
+}
+
+.seal img{
+    width:100%;
+    height:100%;
+    object-fit:contain;
+}
+
+.brand b{
+    display:block;
+
+    font-size:15px;
+    letter-spacing:.35px;
+
+    color:var(--pup);
+}
+
+.brand span{
+    display:block;
+
+    margin-top:3px;
+
+    font-size:12.5px;
+
+    color:#666;
+
+    font-weight:500;
+}
+
+/* =========================
+   NAVIGATION
+========================= */
+
+nav{
+    display:flex;
+    align-items:center;
+    gap:3px;
+}
+
+nav button{
+    border:0;
+    background:none;
+
+    color:#374151;
+
+    padding:10px 9px;
+
+    cursor:pointer;
+
+    border-radius:6px;
+
+    transition:.2s ease;
+}
+
+nav button:hover{
+    background:#f5eeee;
+    color:var(--pup);
+}
+
+.login{
+    background:var(--pup)!important;
+    color:#fff!important;
+
+    border-radius:7px!important;
+
+    padding:10px 16px!important;
+
+    margin-left:5px;
+
+    box-shadow:0 3px 10px rgba(123,17,19,.18);
+}
+
+.login:hover{
+    background:var(--pup-dark)!important;
+}
+
+/* =========================
+   MAIN
+========================= */
+
+main{
+    max-width:1350px;
+    margin:auto;
+    padding:36px 24px 70px;
+}
+
+.page{
+    display:none;
+}
+
+.page.active{
+    display:block;
+}
+
+/* =========================
+   HERO
+========================= */
+
+.hero{
+    position:relative;
+
+    background:
+        linear-gradient(
+            120deg,
+            rgba(91,12,15,.98),
+            rgba(123,17,19,.94)
+        ),
+        url("logo/pup-campus.png");
+
+    background-size:cover;
+    background-position:center;
+
+    color:#fff;
+
+    border-radius:18px;
+
+    padding:48px;
+
+    display:grid;
+
+    grid-template-columns:1.7fr 1fr;
+
+    gap:30px;
+
+    overflow:hidden;
+
+    box-shadow:
+        0 15px 40px rgba(80,10,15,.20);
+}
+
+.hero::after{
+    content:"";
+
+    position:absolute;
+
+    width:430px;
+    height:430px;
+
+    right:-190px;
+    top:-190px;
+
+    border:1px solid rgba(215,180,106,.35);
+
+    border-radius:50%;
+
+    pointer-events:none;
+}
+
+.hero h1{
+    font-size:40px;
+    line-height:1.15;
+
+    margin:0 0 18px;
+
+    position:relative;
+    z-index:1;
+}
+
+.hero p{
+    color:#f3dddd;
+
+    line-height:1.75;
+
+    max-width:720px;
+
+    position:relative;
+    z-index:1;
+}
+
+/* =========================
+   HERO LOGO
+========================= */
+
+.hero-logo{
+    width:82px;
+    height:82px;
+
+    background:#fff;
+
+    border-radius:50%;
+
+    padding:5px;
+
+    border:3px solid var(--gold);
+
+    margin-bottom:22px;
+
+    box-shadow:0 4px 15px rgba(0,0,0,.20);
+
+    position:relative;
+    z-index:2;
+}
+
+.hero-logo img{
+    width:100%;
+    height:100%;
+    object-fit:contain;
+}
+
+/* =========================
+   BUTTONS
+========================= */
+
+.btn{
+    border:0;
+
+    border-radius:7px;
+
+    padding:11px 17px;
+
+    cursor:pointer;
+
+    font-weight:600;
+}
+
+.primary{
+    background:#fff;
+    color:var(--pup);
+}
+
+.secondary{
+    background:#ffffff18;
+
+    color:#fff;
+
+    border:1px solid #ffffff55;
+
+    margin-left:8px;
+}
+
+/* =========================
+   HERO CARD
+========================= */
+
+.hero-card{
+    background:#ffffff12;
+
+    border:1px solid #ffffff2b;
+
+    border-radius:14px;
+
+    padding:24px;
+
+    backdrop-filter:blur(3px);
+
+    position:relative;
+    z-index:2;
+
+    transition:.2s ease;
+}
+
+.hero-card:hover{
+    transform:translateY(-3px);
+    box-shadow:0 10px 25px rgba(0,0,0,.18);
+}
+
+.hero-card small{
+    color:#f0dada;
+    letter-spacing:.7px;
+}
+
+.hero-card h2{
+    margin:7px 0 10px;
+    font-size:22px;
+}
+
+.hero-card p{
+    color:#f6e7e7;
+}
+
+/* =========================
+   SECTION TITLE
+========================= */
+
+.section-title{
+    display:flex;
+
+    justify-content:space-between;
+
+    align-items:center;
+
+    margin:34px 0 16px;
+}
+
+.section-title h1,
+.section-title h2{
+    margin:0;
+
+    color:var(--pup);
+}
+
+.section-title h1{
+    font-size:30px;
+}
+
+.section-title h2{
+    font-size:22px;
+}
+
+.section-title h2::after{
+    content:"";
+
+    display:block;
+
+    width:48px;
+    height:3px;
+
+    background:var(--gold);
+
+    margin-top:7px;
+
+    border-radius:3px;
+}
+
+/* =========================
+   CARDS
+========================= */
+
+.card{
+    background:rgba(255,255,255,.97);
+
+    border:1px solid rgba(123,17,19,.08);
+
+    border-radius:14px;
+
+    padding:22px;
+
+    box-shadow:
+        0 4px 16px rgba(0,0,0,.05);
+
+    transition:.2s ease;
+}
+
+.card:hover{
+    transform:translateY(-3px);
+
+    box-shadow:
+        0 10px 25px rgba(0,0,0,.10);
+
+    border-color:
+        rgba(123,17,19,.20);
+}
+
+.grid{
+    display:grid;
+
+    grid-template-columns:
+        repeat(5,1fr);
+
+    gap:16px;
+}
+
+.cards3{
+    display:grid;
+
+    grid-template-columns:
+        repeat(3,1fr);
+
+    gap:16px;
+}
+
+/* =========================
+   MEMBER
+========================= */
+
+.member{
+    display:flex;
+
+    gap:14px;
+
+    align-items:center;
+}
+
+.avatar{
+    width:50px;
+    height:50px;
+
+    border-radius:50%;
+
+    background:
+        linear-gradient(
+            135deg,
+            #f3e5e5,
+            #ead3d3
+        );
+
+    display:grid;
+
+    place-items:center;
+
+    color:var(--pup);
+
+    font-weight:800;
+
+    flex-shrink:0;
+
+    border:1px solid #ead0d0;
+}
+
+.member small,
+.doc small{
+    color:var(--muted);
+    line-height:1.4;
+}
+
+/* =========================
+   GENERAL
+========================= */
+
+.list{
+    display:grid;
+    gap:10px;
+}
+
+.row{
+    background:#fff;
+
+    border:1px solid var(--line);
+
+    border-radius:10px;
+
+    padding:15px;
+
+    display:flex;
+
+    justify-content:space-between;
+
+    align-items:center;
+}
+
+.tag{
+    font-size:11px;
+
+    border-radius:999px;
+
+    padding:5px 9px;
+
+    background:#f3e5e5;
+
+    color:var(--pup);
+
+    font-weight:700;
+}
+
+.toolbar{
+    display:flex;
+
+    gap:10px;
+
+    margin:24px 0 18px;
+}
+
+.search{
+    flex:1;
+
+    padding:12px 14px;
+
+    border:1px solid var(--line);
+
+    border-radius:8px;
+
+    background:#fff;
+
+    outline:none;
+}
+
+.search:focus{
+    border-color:var(--pup);
+
+    box-shadow:
+        0 0 0 3px rgba(123,17,19,.08);
+}
+
+.table{
+    width:100%;
+
+    border-collapse:collapse;
+
+    background:#fff;
+
+    border:1px solid var(--line);
+
+    border-radius:12px;
+
+    overflow:hidden;
+
+    box-shadow:0 8px 25px rgba(0,0,0,.06);
+}
+
+.table th,
+.table td{
+    text-align:left;
+
+    padding:15px;
+
+    border-bottom:1px solid var(--line);
+
+    font-size:13px;
+}
+
+.table th{
+    background:#f8f6f0;
+
+    color:var(--pup);
+
+    font-size:12px;
+
+    text-transform:uppercase;
+
+    letter-spacing:.4px;
+}
+
+.table tr:hover td{
+    background:#fffaf3;
+}
+
+.link{
+    color:var(--pup);
+
+    font-weight:700;
+
+    cursor:pointer;
+}
+
+/* =========================
+   BOARD
+========================= */
+
+#board > p{
+    background:rgba(255,255,255,.70);
+
+    border-left:4px solid var(--gold);
+
+    padding:18px 20px;
+
+    border-radius:0 10px 10px 0;
+
+    line-height:1.7;
+}
+
+/* =========================
+   ABOUT
+========================= */
+
+#about > p{
+    background:rgba(255,255,255,.72);
+
+    padding:20px;
+
+    border-radius:12px;
+
+    line-height:1.75;
+}
+
+.about-contact{
+    margin-top:28px;
+
+    background:#fff;
+
+    border-radius:14px;
+
+    padding:24px;
+
+    box-shadow:0 8px 25px rgba(0,0,0,.07);
+
+    border-top:4px solid var(--pup);
+}
+
+.about-contact p{
+    line-height:1.55;
+}
+
+/* =========================
+   CALENDAR
+========================= */
+
+.admission-page{
+    min-height:620px;
+
+    border-radius:16px;
+
+    padding:10px 0 60px;
+
+    background:
+        radial-gradient(
+            circle at 15% 20%,
+            rgba(180,170,145,.18),
+            transparent 30%
+        ),
+        radial-gradient(
+            circle at 85% 75%,
+            rgba(170,160,140,.15),
+            transparent 30%
+        ),
+        linear-gradient(
+            135deg,
+            #f3f0e6,
+            #faf8f0
+        );
+}
+
+.admission-table-wrap{
+    width:94%;
+
+    max-width:1100px;
+
+    margin:25px auto 0;
+
+    box-shadow:
+        0 8px 25px rgba(0,0,0,.07);
+
+    border-radius:12px;
+
+    overflow:hidden;
+}
+
+.admission-table{
+    width:100%;
+
+    border-collapse:collapse;
+
+    table-layout:fixed;
+}
+
+.admission-table thead th{
+    background:var(--pup);
+
+    color:#fff;
+
+    padding:13px 18px;
+
+    font-size:15px;
+
+    font-weight:700;
+
+    text-align:center;
+
+    border:none;
+
+    letter-spacing:.4px;
+}
+
+.admission-table th:nth-child(1),
+.admission-table td:nth-child(1){
+    width:34%;
+}
+
+.admission-table th:nth-child(2),
+.admission-table td:nth-child(2){
+    width:28%;
+}
+
+.admission-table th:nth-child(3),
+.admission-table td:nth-child(3){
+    width:38%;
+}
+
+.admission-table tbody{
+    background:rgba(255,255,255,.82);
+}
+
+.admission-table tbody td{
+    color:#333;
+
+    padding:17px 20px;
+
+    font-size:14px;
+
+    line-height:1.4;
+
+    border-bottom:1px solid #d8c3a5;
+
+    vertical-align:middle;
+}
+
+.admission-table tbody td:first-child{
+    text-align:left;
+
+    font-weight:700;
+
+    color:var(--pup);
+}
+
+.admission-table tbody td:nth-child(2),
+.admission-table tbody td:nth-child(3){
+    text-align:center;
+}
+
+.admission-table tbody tr:hover td{
+    background:rgba(255,255,255,.95);
+}
+
+.admission-table tbody tr:last-child td{
+    border-bottom:none;
+}
+
+/* =========================
+   GAZETTE
+========================= */
+
+#gazette{
+    background:
+        linear-gradient(
+            rgba(250,248,241,.94),
+            rgba(250,248,241,.94)
+        ),
+        url("images/pup-campus.png");
+
+    background-size:cover;
+
+    background-position:center;
+
+    border-radius:16px;
+
+    padding:34px;
+
+    box-shadow:
+        0 8px 25px rgba(0,0,0,.06);
+}
+
+#gazette .section-title{
+    display:block;
+
+    margin-top:0;
+}
+
+#gazette h1{
+    font-family:
+        Georgia,
+        "Times New Roman",
+        serif;
+
+    color:var(--pup);
+
+    font-size:40px;
+
+    letter-spacing:.5px;
+
+    margin:0 0 8px;
+}
+
+#gazette h1::after{
+    content:"";
+
+    display:block;
+
+    width:90px;
+
+    height:4px;
+
+    background:var(--gold);
+
+    margin-top:12px;
+
+    border-radius:3px;
+}
+
+#gazette .section-title p{
+    max-width:900px;
+
+    color:#555;
+
+    line-height:1.75;
+
+    font-size:15px;
+}
+
+/* =========================
+   MANUAL
+========================= */
+
+#documents{
+    background:
+        linear-gradient(
+            rgba(250,248,241,.95),
+            rgba(250,248,241,.95)
+        );
+
+    border-radius:16px;
+
+    padding:35px;
+
+    min-height:500px;
+
+    box-shadow:0 8px 25px rgba(0,0,0,.07);
+}
+
+.manual-card{
+    max-width:850px;
+
+    margin:30px auto;
+
+    background:#fff;
+
+    border-radius:12px;
+
+    padding:35px;
+
+    text-align:center;
+
+    box-shadow:
+        0 8px 25px rgba(0,0,0,.08);
+
+    border-top:5px solid var(--pup);
+}
+
+/* =========================
+   PORTAL
+========================= */
+
+#portal .hero{
+    min-height:430px;
+}
+
+#portal .hero h1{
+    font-size:29px;
+}
+
+.portal-stat{
+    background:#fff;
+
+    color:#333;
+
+    border-radius:10px;
+
+    padding:20px;
+
+    text-align:center;
+
+    box-shadow:
+        0 4px 12px rgba(0,0,0,.15);
+}
+
+.portal-stat span{
+    display:block;
+    color:#666;
+}
+
+.portal-stat strong{
+    display:block;
+
+    font-size:20px;
+
+    margin:8px 0;
+
+    color:var(--pup);
+}
+
+/* =========================
+   FOOTER
+========================= */
+
+footer{
+    background:#202124;
+
+    color:#c9c9c9;
+
+    padding:28px 24px;
+}
+
+.foot{
+    max-width:1280px;
+
+    margin:auto;
+
+    font-size:12px;
+
+    line-height:1.6;
+}
+
+/* =========================
+   RESPONSIVE
+========================= */
+
+@media(max-width:1100px){
+
+    .nav{
+        flex-wrap:wrap;
+    }
+
+    nav{
+        width:100%;
+
+        overflow-x:auto;
+
+        white-space:nowrap;
+
+        padding-bottom:3px;
+    }
+
+    .brand{
+        min-width:0;
+    }
+
+    .grid{
+        grid-template-columns:repeat(2,1fr);
+    }
+
+    .cards3{
+        grid-template-columns:repeat(2,1fr);
+    }
+}
+
+@media(max-width:900px){
+
+    .hero{
+        grid-template-columns:1fr;
+
+        padding:32px;
+    }
+
+    .hero h1{
+        font-size:30px;
+    }
+
+    .cards3{
+        grid-template-columns:1fr;
+    }
+}
+
+@media(max-width:700px){
+
+    main{
+        padding:20px 14px 50px;
+    }
+
+    .nav{
+        padding:12px 14px;
+    }
+
+    .brand b{
+        font-size:13px;
+    }
+
+    .brand span{
+        display:none;
+    }
+
+    .seal{
+        width:50px;
+        height:50px;
+    }
+
+    nav button{
+        padding:9px 10px;
+        font-size:13px;
+    }
+
+    .hero{
+        padding:26px 22px;
+        border-radius:14px;
+    }
+
+    .hero h1{
+        font-size:27px;
+    }
+
+    .grid{
+        grid-template-columns:1fr 1fr;
+    }
+
+    #gazette{
+        padding:22px 16px;
+    }
+
+    #gazette h1{
+        font-size:32px;
+    }
+
+    #documents{
+        padding:24px 16px;
+    }
+
+    .admission-table-wrap{
+        width:95%;
+
+        overflow-x:auto;
+    }
+
+    .admission-table{
+        min-width:760px;
+    }
+
+    .admission-table thead th{
+        font-size:15px;
+
+        padding:11px 14px;
+    }
+
+    .admission-table tbody td{
+        font-size:14px;
+
+        padding:14px;
+    }
+}
+
+@media(max-width:500px){
+
+    .grid{
+        grid-template-columns:1fr;
+    }
+
+    .brand{
+        width:100%;
+    }
+
+    nav{
+        width:100%;
+    }
+
+    .hero-logo{
+        width:70px;
+        height:70px;
+    }
+
+}
+
+</style>
+</head>
+
+<body>
+
+<div class="top"></div>
+
+<!-- =========================
+     HEADER
+========================= -->
+
+<header>
+
+<div class="nav">
+
+    <div class="brand">
+
+        <div class="seal">
+            <img src="images/pup-logo.png" alt="PUP Logo">
+        </div>
+
+        <div>
+            <b>
+                POLYTECHNIC UNIVERSITY OF THE PHILIPPINES
+            </b>
+
+            <span>
+                OFFICE OF THE UNIVERSITY/BOARD SECRETARY (OUBS)
+            </span>
+        </div>
+
+    </div>
+
+    <nav>
+
+        <button onclick="show('home')">
+            <strong>Home</strong>
+        </button>
+
+        <button onclick="show('about')">
+            <strong>About OUBS</strong>
+        </button>
+
+        <button onclick="show('board')">
+            <strong>The Board of Regents</strong>
+        </button>
+
+        <button onclick="show('gazette')">
+            <strong>The OUBS Gazette</strong>
+        </button>
+
+        <button onclick="show('calendar')">
+            <strong>Calendar</strong>
+        </button>
+
+        <button onclick="show('documents')">
+            <strong>Manual of Operations</strong>
+        </button>
+
+        <button class="login" onclick="show('portal')">
+            DMS Portal
+        </button>
+
+    </nav>
+
+</div>
+
+</header>
+
+<main>
+
+<!-- =====================================================
+     HOME
+===================================================== -->
+
+<section id="home" class="page active">
+
+<div class="hero">
+
+    <div>
+
+        <div class="hero-logo">
+            <img src="images/pup-logo.png" alt="PUP Logo">
+        </div>
+
+        <h1>
+            The Board of Regents
+        </h1>
+
+        <p>
+            Under Republic Act No. 8292 (Higher Education Modernization Act of 1997), the governing body of a chartered state university is vested in the Board of Regents. As the governing body of the Polytechnic University of the Philippines, the Board exercises general powers of administration and the specific powers and duties provided under the law.
+        </p>
+
+        <p>
+            The Board of Regents promulgates and implements policies in accordance with the declared State policies on education, the Philippine Constitution, and the policies, standards, and thrusts of the Commission on Higher Education (CHED). It also exercises the powers and performs the duties necessary to carry out the purposes and functions of the University, as provided under Republic Act No. 8292 and other applicable laws.
+        </p>
+
+    </div>
+
+    <div class="hero-card">
+
+        <small>
+            UPCOMING MEETING
+        </small>
+
+        <h2>
+            BOR-FINCOM Meeting
+        </h2>
+
+        <p>
+            September 24, 2026 (Thursday), 1:30 PM via Zoom Video Conference
+        </p>
+
+        <hr style="border-color:#ffffff25">
+
+        <small>
+            DEADLINE OF AGENDA SUBMISSION
+        </small>
+
+        <h2>
+            September 17, 2026 (Thursday)
+        </h2>
+
+        <p>
+            Please submit your sector’s agenda documents with complete staff work for uploading to the OUBS DMS.
+        </p>
+
+    </div>
+
+</div>
+
+
+<div class="section-title">
+
+    <h2>
+        Quick Access
+    </h2>
+
+</div>
+
+
+<div class="cards3">
+
+    <div class="card">
+
+        <h3>
+            The Board of Regents
+        </h3>
+
+        <p>
+            View current and former members and the composition of the Board.
+        </p>
+
+        <span class="link"
+              onclick="show('board')">
+            View Board →
+        </span>
+
+    </div>
+
+
+    <div class="card">
+
+        <h3>
+            Board Calendar
+        </h3>
+
+        <p>
+            View meeting schedules.
+        </p>
+
+        <span class="link"
+              onclick="show('calendar')">
+            Open Calendar →
+        </span>
+
+    </div>
+
+
+    <div class="card">
+
+        <h3>
+            The OUBS GAZETTE
+        </h3>
+
+        <p>
+            Search public issuances.
+        </p>
+
+        <span class="link"
+              onclick="show('gazette')">
+            Browse Documents →
+        </span>
+
+    </div>
+
+</div>
+
+</section>
+
+
+<!-- =====================================================
+     BOARD OF REGENTS
+===================================================== -->
+
+<section id="board" class="page">
+
+<div class="section-title">
+
+    <h2>
+        Current Board of Regents Composition
+    </h2>
+
+</div>
+
+<p>
+    The Polytechnic University of the Philippines is governed by the Board of Regents, the University’s governing body. Its composition is established pursuant to Republic Act No. 8292, otherwise known as the Higher Education Modernization Act of 1997, and the laws governing the Polytechnic University of the Philippines. The Board brings together representatives from the government, the University, the faculty, the student body, the alumni, and the private sector to provide policy direction and exercise governance over the University in accordance with its mandate and applicable laws.
+</p>
+
+
+<div class="cards3">
+
+    <div class="card member">
+        <div class="avatar">CH</div>
+        <div>
+            <b>Hon. Ricmar P. Aquino</b><br>
+            <small>Chairperson</small>
+        </div>
+    </div>
+
+    <div class="card member">
+        <div class="avatar">VC</div>
+        <div>
+            <b>Hon. Manuel M. Muhi</b><br>
+            <small>Vice Chairperson</small>
+        </div>
+    </div>
+
+    <div class="card member">
+        <div class="avatar">PS</div>
+        <div>
+            <b>Hon. May P. Paez</b><br>
+            <small>Member, Private Sector Representative</small>
+        </div>
+    </div>
+
+    <div class="card member">
+        <div class="avatar">PS</div>
+        <div>
+            <b>Hon. Ronald V. Laurel</b><br>
+            <small>Member, Private Sector Representative</small>
+        </div>
+    </div>
+
+    <div class="card member">
+        <div class="avatar">DD</div>
+        <div>
+            <b>Hon. Ma. Monica P. Pagunsan</b><br>
+            <small>Member, DEPDEV Representative</small>
+        </div>
+    </div>
+
+    <div class="card member">
+        <div class="avatar">DS</div>
+        <div>
+            <b>Hon. Romelen Tresvalles</b><br>
+            <small>Member, DOST-NCR Representative</small>
+        </div>
+    </div>
+
+    <div class="card member">
+        <div class="avatar">SP</div>
+        <div>
+            <b>Hon. Joel Villanueva</b><br>
+            <small>Member, Senate of the Philippines</small>
+        </div>
+    </div>
+
+    <div class="card member">
+        <div class="avatar">HR</div>
+        <div>
+            <b>Hon. Jude Acidre</b><br>
+            <small>Member, House of Representatives</small>
+        </div>
+    </div>
+
+    <div class="card member">
+        <div class="avatar">FR</div>
+        <div>
+            <b>Hon. Ramir M. Cruz</b><br>
+            <small>Member, Faculty Sector Representative</small>
+        </div>
+    </div>
+
+    <div class="card member">
+        <div class="avatar">AR</div>
+        <div>
+            <b>Hon. Jean Paul G. Martirez</b><br>
+            <small>Member, Alumni Sector Representative</small>
+        </div>
+    </div>
+
+    <div class="card member">
+        <div class="avatar">SR</div>
+        <div>
+            <b>Hon. John Paul Y. Azusano</b><br>
+            <small>Member, Student Sector Representative</small>
+        </div>
+    </div>
+
+</div>
+
+
+<div class="section-title">
+
+    <h2>
+        Former Board Members
+    </h2>
+
+</div>
+
+<div class="card">
+
+    <p>
+        PDF file to be attached here.
+    </p>
+
+</div>
+
+</section>
+
+
+<!-- =====================================================
+     ABOUT OUBS
+===================================================== -->
+
+<section id="about" class="page">
+
+<div class="section-title">
+
+    <h2>
+        Office of the University/Board Secretary
+    </h2>
+
+</div>
+
+<p>
+    The Office of the University/Board Secretary serves as the official secretariat of the Polytechnic University of the Philippines Board of Regents. Pursuant to Republic Act No. 8292, the Board appoints a Secretary who serves as Secretary of both the Board and the University. The Board Secretary is responsible for keeping the records and proceedings of the Board and for communicating notices of Board meetings to its members. Through these functions, the Office supports the proper documentation and orderly conduct of the Board’s official proceedings.
+</p>
+
+
+<div class="cards3">
+
+    <div class="card member">
+        <div class="avatar">UBS</div>
+        <div>
+            <b>Assoc. Prof. Rolando M. Covero Jr.</b><br>
+            <small>University/Board Secretary</small>
+        </div>
+    </div>
+
+    <div class="card member">
+        <div class="avatar">BS</div>
+        <div>
+            <b>Ms. Jeanette C. Dordas</b><br>
+            <small>Board Secretary IV</small>
+        </div>
+    </div>
+
+    <div class="card member">
+        <div class="avatar">BS</div>
+        <div>
+            <b>Ms. Portia Margarita R. Reyes</b><br>
+            <small>Board Secretary II</small>
+        </div>
+    </div>
+
+    <div class="card member">
+        <div class="avatar">FA</div>
+        <div>
+            <b>Dr. Lizyl R. Rebusquillo</b><br>
+            <small>Faculty Assistant</small>
+        </div>
+    </div>
+
+    <div class="card member">
+        <div class="avatar">AA</div>
+        <div>
+            <b>Mr. Tirso Johm A. Ferrer</b><br>
+            <small>Administrative Aide VI</small>
+        </div>
+    </div>
+
+    <div class="card member">
+        <div class="avatar">AA</div>
+        <div>
+            <b>Mr. John Paul M. Ocampo</b><br>
+            <small>Administrative Aide III</small>
+        </div>
+    </div>
+
+</div>
+
+
+<div class="about-contact">
+
+    <p>
+        <strong>Office Address:</strong><br><br>
+
+        Room S-206,<br>
+        2nd Floor, South Wing, Main Building<br>
+        PUP A. Mabini Campus<br>
+        Anonas Street, Sta. Mesa<br>
+        Manila, Philippines 1016
+    </p>
+
+    <p>
+        <strong>Telephone Number:</strong><br><br>
+        Local 265
+    </p>
+
+    <p>
+        <strong>Email Address:</strong><br><br>
+        <u>boardsec@pup.edu.ph</u>
+    </p>
+
+    <p>
+        For inquiries, requests, and other matters concerning the Board of Regents, please contact the Office of the University/Board Secretary.
+    </p>
+
+</div>
+
+</section>
+
+
+<!-- =====================================================
+     CALENDAR
+===================================================== -->
+
+<section id="calendar" class="page admission-page">
+
+<div class="section-title">
+
+    <h2>
+        Board Meeting Schedule
+    </h2>
+
+</div>
+
+
+<div class="admission-table-wrap">
+
+<table class="admission-table">
+
+<thead>
+
+<tr>
+
+    <th>MEETING</th>
+
+    <th>DATE</th>
+
+    <th>VENUE</th>
+
+</tr>
+
+</thead>
+
+
+<tbody>
+
+<tr>
+
+    <td>
+        193rd BOR Regular Meeting
+    </td>
+
+    <td>
+        12 August 2026
+    </td>
+
+    <td>
+        Mateo Conference Room, PUP, Sta. Mesa, Manila
+    </td>
+
+</tr>
+
+
+<tr>
+
+    <td>
+        BOR Special Meeting
+    </td>
+
+    <td>
+        13 July 2026
+    </td>
+
+    <td>
+        Via Zoom Video Conferencing
+    </td>
+
+</tr>
+
+
+<tr>
+
+    <td>
+        BOR Special Meeting
+    </td>
+
+    <td>
+        28 May 2026
+    </td>
+
+    <td>
+        Via Hybrid Setup
+    </td>
+
+</tr>
+
+
+<tr>
+
+    <td>
+        192nd BOR Regular Meeting
+    </td>
+
+    <td>
+        31 March 2026
+    </td>
+
+    <td>
+        CHED Central Office, 4F HEDC Building, C. P. Garcia Avenue, Diliman, Quezon City
+    </td>
+
+</tr>
+
+
+<tr>
+
+    <td>
+        BOR-FINCOM Special Meeting
+    </td>
+
+    <td>
+        20 January 2026
+    </td>
+
+    <td>
+        Via Zoom Video Conferencing
+    </td>
+
+</tr>
+
+</tbody>
+
+</table>
+
+</div>
+
+</section>
+
+
+<!-- =====================================================
+     MANUAL OF OPERATIONS
+===================================================== -->
+
+<section id="documents" class="page">
+
+<div class="section-title">
+
+    <div>
+
+        <h1>
+            Office of the University/Board Secretary (OUBS) Manual of Operations
+        </h1>
+
+        <p>
+            The Manual of Operations provides the procedures, processes, and guidelines governing the operations and document-related services of the Office.
+        </p>
+
+    </div>
+
+</div>
+
+
+<div class="manual-card">
+
+    <h2 style="color:var(--pup);">
+        OUBS Manual of Operations
+    </h2>
+
+    <p>
+        PDF file to be attached here.
+    </p>
+
+</div>
+
+</section>
+
+
+<!-- =====================================================
+     THE OUBS GAZETTE
+===================================================== -->
+
+<section id="gazette" class="page">
+
+<div class="section-title">
+
+    <h1>
+        The OUBS GAZETTE
+    </h1>
+
+    <p>
+        The OUBS Gazette is the official online publication of the Polytechnic University of the Philippines Board of Regents, providing access to its official issuances, resolutions, significant actions, and other matters relevant to University governance. It serves as a platform for transparency, accessibility, and public information on the decisions and activities of the Board.
+    </p>
+
+</div>
+
+
+<div class="toolbar">
+
+    <input
+        class="search"
+        placeholder="Search gazette, resolution, year..."
+    >
+
+    <button
+        class="btn"
+        style="background:var(--pup);color:#fff"
+    >
+        Search
+    </button>
+
+</div>
+
+
+<table class="table">
+
+<tr>
+
+    <th>Issuance</th>
+    <th>Meeting</th>
+    <th>Date</th>
+    <th>Action</th>
+
+</tr>
+
+
+<tr>
+
+    <td>
+        BOR Resolution No. 100-150
+    </td>
+
+    <td>
+        193rd BOR Regular Meeting
+    </td>
+
+    <td>
+        12 August 2026
+    </td>
+
+    <td class="link">
+        View
+    </td>
+
+</tr>
+
+
+<tr>
+
+    <td>
+        BOR Resolution No. 50-99
+    </td>
+
+    <td>
+        192nd BOR Regular Meeting
+    </td>
+
+    <td>
+        31 May 2026
+    </td>
+
+    <td class="link">
+        View
+    </td>
+
+</tr>
+
+</table>
+
+</section>
+
+
+<!-- =====================================================
+     DMS PORTAL
+===================================================== -->
+
+<section id="portal" class="page">
+
+<div class="section-title">
+
+    <h2>
+        Authorized BOR Portal
+    </h2>
+
+</div>
+
+
+<div class="hero">
+
+<div>
+
+    <h1 style="font-size:28px">
+
+        Welcome to the OUBS-DOCUMENT MANAGEMENT SYSTEM (DMS)
+
+    </h1>
+
+
+    <p>
+        Quick View
+    </p>
+
+
+    <div
+        class="grid"
+        style="
+            grid-template-columns:1fr;
+            max-width:650px;
+            margin-top:25px;
+            gap:15px;
+        "
+    >
+
+        <div class="portal-stat">
+
+            <span>
+                Upcoming Meeting
+            </span>
+
+            <strong>
+                BOR-FINCOM Meeting
+            </strong>
+
+            <span>
+                September 24, 2026 (Thursday), 1:30 PM via Zoom Video Conference
+            </span>
+
+        </div>
+
+    </div>
+
+</div>
+
+
+<a
+    href="https://dms.pup.edu.ph/"
+    target="_blank"
+    class="hero-card"
+    style="
+        text-decoration:none;
+        color:inherit;
+        display:block;
+        cursor:pointer;
+    "
+>
+
+    <h2>
+        OUBS DMS PORTAL
+    </h2>
+
+    <p style="margin-top:8px;">
+        Click to access the dashboard →
+    </p>
+
+</a>
+
+
+</div>
+
+</section>
+
+</main>
+
+
+<!-- =====================================================
+     FOOTER
+===================================================== -->
+
+<footer>
+
+<div class="foot">
+
+    <b>
+        POLYTECHNIC UNIVERSITY OF THE PHILIPPINES
+    </b>
+
+    <br>
+
+    Office of the University/Board Secretary
+
+    <br><br>
+
+    This is a prototype interface for the proposed
+    PUP Board of Regents Digital Portal.
+    Sample data is for demonstration only.
+
+</div>
+
+</footer>
+
+
+<!-- =====================================================
+     JAVASCRIPT
+===================================================== -->
+
+<script>
+
+function show(id){
+
+    document
+        .querySelectorAll('.page')
+        .forEach(function(page){
+
+            page.classList.remove('active');
+
+        });
+
+
+    var selectedPage = document.getElementById(id);
+
+    if(selectedPage){
+
+        selectedPage.classList.add('active');
+
+    }
+
+
+    window.scrollTo({
+        top:0,
+        behavior:'smooth'
+    });
+
+}
+
+</script>
+
+
+</body>
+</html>
