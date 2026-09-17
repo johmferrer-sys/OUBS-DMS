@@ -20,10 +20,6 @@
     --line:#dedede;
 }
 
-/* =========================
-   GLOBAL
-========================= */
-
 *{
     box-sizing:border-box;
 }
@@ -34,18 +30,14 @@ html{
 
 body{
     margin:0;
-
     font-family:"Times New Roman", Times, serif;
-
     color:var(--ink);
-
     background:
         linear-gradient(
             rgba(248,246,240,.68),
             rgba(248,246,240,.68)
         ),
         url("logo/bg-pic.jpg");
-
     background-size:cover;
     background-position:center;
     background-attachment:fixed;
@@ -57,13 +49,8 @@ input{
     font:inherit;
 }
 
-/* =========================
-   TOP BAR
-========================= */
-
 .top{
     height:5px;
-
     background:
         linear-gradient(
             90deg,
@@ -74,153 +61,94 @@ input{
         );
 }
 
-/* =========================
-   HEADER
-========================= */
-
 header{
     background:rgba(255,255,255,.98);
-
     border-bottom:3px solid var(--gold);
-
     position:sticky;
     top:0;
-
     z-index:100;
-
-    box-shadow:
-        0 2px 10px rgba(0,0,0,.06);
+    box-shadow:0 2px 10px rgba(0,0,0,.06);
 }
 
 .nav{
     max-width:1500px;
-
     margin:auto;
-
     padding:12px 28px;
-
     display:flex;
-
     align-items:center;
-
     gap:22px;
 }
 
 .brand{
     display:flex;
-
     align-items:center;
-
     gap:12px;
-
     margin-right:auto;
-
     min-width:300px;
 }
-
-/* =========================
-   LOGO
-========================= */
 
 .seal{
     width:56px;
     height:56px;
-
     border-radius:50%;
-
     background:#fff;
-
     display:grid;
-
     place-items:center;
-
     border:2px solid var(--pup);
-
     overflow:hidden;
-
     flex-shrink:0;
 }
 
 .seal img{
     width:100%;
     height:100%;
-
     object-fit:contain;
 }
 
 .brand b{
     display:block;
-
     font-size:15px;
-
     letter-spacing:.25px;
-
     color:var(--pup);
 }
 
 .brand span{
     display:block;
-
     margin-top:3px;
-
     font-size:12px;
-
     color:#666;
-
     letter-spacing:.1px;
 }
 
-/* =========================
-   NAVIGATION
-========================= */
-
 nav{
     display:flex;
-
     align-items:center;
-
     gap:2px;
 }
 
 nav button{
     border:0;
-
     background:none;
-
     color:#333;
-
     padding:9px 10px;
-
     cursor:pointer;
-
     border-radius:4px;
-
     font-size:18px;
-
     font-weight:700;
-
-    transition:
-        background .18s ease,
-        color .18s ease;
+    transition:background .18s ease,color .18s ease;
 }
 
 nav button:hover{
     background:#f5eeee;
-
     color:var(--pup);
 }
 
 .login{
     background:var(--pup)!important;
-
     color:#fff!important;
-
     border-radius:4px!important;
-
     padding:9px 15px!important;
-
     margin-left:5px;
-
     box-shadow:none;
 }
 
@@ -228,15 +156,9 @@ nav button:hover{
     background:var(--pup-dark)!important;
 }
 
-/* =========================
-   MAIN
-========================= */
-
 main{
     max-width:1450px;
-
     margin:auto;
-
     padding:32px 28px 60px;
 }
 
@@ -248,31 +170,17 @@ main{
     display:block;
 }
 
-/* =========================
-   UNIFORM PAGE TITLE
-========================= */
-
 .page-title{
     font-family:"Times New Roman", Times, serif;
-
     font-size:38px;
-
     line-height:1.15;
-
     font-weight:700;
-
     color:var(--gold);
-
     margin:0 0 18px;
 }
 
-/* =========================
-   HERO
-========================= */
-
 .hero{
     position:relative;
-
     background:
         linear-gradient(
             120deg,
@@ -280,163 +188,101 @@ main{
             rgba(123,17,19,.93)
         ),
         url("logo/pup-campus.png");
-
     background-size:cover;
-
     background-position:center;
-
     color:#fff;
-
     border-radius:10px;
-
     padding:44px;
-
     display:grid;
-
     grid-template-columns:1.7fr 1fr;
-
     gap:30px;
-
     overflow:hidden;
-
-    box-shadow:
-        0 8px 24px rgba(80,10,15,.13);
+    box-shadow:0 8px 24px rgba(80,10,15,.13);
 }
 
 .hero::after{
     content:"";
-
     position:absolute;
-
     width:430px;
     height:430px;
-
     right:-210px;
     top:-210px;
-
     border:1px solid rgba(215,180,106,.25);
-
     border-radius:50%;
-
     pointer-events:none;
 }
 
 .hero p{
     color:#f3dddd;
-
     line-height:1.72;
-
     max-width:720px;
-
     position:relative;
-
     z-index:1;
 }
-
-/* =========================
-   HERO LOGO
-========================= */
 
 .hero-logo{
     width:82px;
     height:82px;
-
     background:#fff;
-
     border-radius:50%;
-
     padding:5px;
-
     border:2px solid var(--gold);
-
     margin-bottom:22px;
-
     box-shadow:0 3px 10px rgba(0,0,0,.15);
-
     position:relative;
-
     z-index:2;
 }
 
 .hero-logo img{
     width:100%;
     height:100%;
-
     object-fit:contain;
 }
 
-/* =========================
-   BUTTONS
-========================= */
-
 .btn{
     border:0;
-
     border-radius:4px;
-
     padding:10px 16px;
-
     cursor:pointer;
-
     font-weight:600;
 }
 
 .primary{
     background:#fff;
-
     color:var(--pup);
 }
 
 .secondary{
     background:#ffffff18;
-
     color:#fff;
-
     border:1px solid #ffffff55;
-
     margin-left:8px;
 }
 
-/* =========================
-   HERO CARD
-========================= */
-
 .hero-card{
     background:rgba(255,255,255,.08);
-
     border:1px solid rgba(255,255,255,.18);
-
     border-radius:8px;
-
     padding:22px;
-
     backdrop-filter:blur(3px);
-
     position:relative;
-
     z-index:2;
-
     transition:.18s ease;
 }
 
 .hero-card:hover{
     transform:translateY(-2px);
-
-    box-shadow:
-        0 7px 18px rgba(0,0,0,.14);
+    box-shadow:0 7px 18px rgba(0,0,0,.14);
 }
 
 .hero-card small{
     color:#f0dada;
-
     letter-spacing:.7px;
 }
 
 .hero-card h2{
     margin:7px 0 10px;
-
     font-size:21px;
-
     color:#fff;
 }
 
@@ -444,36 +290,24 @@ main{
     color:#f6e7e7;
 }
 
-/* =========================
-   SECTION TITLE
-========================= */
-
 .section-title{
     display:flex;
-
     justify-content:space-between;
-
     align-items:center;
-
     margin:0 0 20px;
 }
 
 .section-title h1,
 .section-title h2{
     margin:0;
-
     color:#fff;
 }
 
 .section-title h1{
     font-family:"Times New Roman", Times, serif;
-
     font-size:38px;
-
     line-height:1.15;
-
     font-weight:700;
-
     color:var(--gold);
 }
 
@@ -483,400 +317,216 @@ main{
 
 .section-title h2::after{
     content:"";
-
     display:block;
-
     width:42px;
-
     height:2px;
-
     background:var(--gold);
-
     margin-top:7px;
 }
 
+
 /* =========================
-   CARDS
+   GOLD ACCENT CARD
 ========================= */
 
 .card{
-    background:rgba(255,255,255,.98);
-
-    border:1px solid rgba(123,17,19,.09);
-
+    background:#fff;
+    border:1px solid #e3e3e3;
     border-radius:8px;
-
     padding:20px;
-
-    box-shadow:
-        0 3px 12px rgba(0,0,0,.045);
-
+    box-shadow:0 4px 12px rgba(0,0,0,.06);
+    position:relative;
+    overflow:hidden;
     transition:.18s ease;
+}
+
+.card::before{
+    content:"";
+    position:absolute;
+    top:0;
+    left:0;
+    width:100%;
+    height:3px;
+    background:var(--gold);
 }
 
 .card:hover{
     transform:translateY(-2px);
-
-    box-shadow:
-        0 7px 18px rgba(0,0,0,.08);
-
-    border-color:
-        rgba(123,17,19,.16);
+    box-shadow:0 7px 18px rgba(0,0,0,.08);
+    border-color:#ddd;
 }
 
 .grid{
     display:grid;
-
-    grid-template-columns:
-        repeat(5,1fr);
-
+    grid-template-columns:repeat(5,1fr);
     gap:16px;
 }
 
 .cards3{
     display:grid;
-
-    grid-template-columns:
-        repeat(3,1fr);
-
+    grid-template-columns:repeat(3,1fr);
     gap:15px;
 }
 
-/* =========================
-   MEMBER BASE
-========================= */
-
 .member{
     display:flex;
-
     gap:14px;
-
     align-items:center;
 }
 
 .avatar{
     width:48px;
     height:48px;
-
     border-radius:50%;
-
-    background:
-        linear-gradient(
-            135deg,
-            #f3e5e5,
-            #ead3d3
-        );
-
+    background:linear-gradient(135deg,#f3e5e5,#ead3d3);
     display:grid;
-
     place-items:center;
-
     color:var(--pup);
-
     font-weight:800;
-
     flex-shrink:0;
-
     border:1px solid #ead0d0;
 }
 
 .member small,
 .doc small{
     color:var(--muted);
-
     line-height:1.4;
 }
 
-/* =========================
-   BOARD MEMBER DESIGN
-========================= */
-
-#board .cards3{
+#board .cards3,
+#about .cards3{
     display:grid;
-
     grid-template-columns:1fr;
-
     gap:10px;
-
     max-width:700px;
-
     margin:0 auto;
 }
 
-#board .card.member{
+#board .card.member,
+#about .card.member{
     position:relative;
-
     min-height:0;
-
     padding:16px 20px;
-
     background:#fff;
-
-    border:1px solid #e2e2e2;
-
-    border-left:4px solid var(--pup);
-
-    border-radius:4px;
-
-    box-shadow:
-        0 2px 6px rgba(0,0,0,.035);
-
+    border:1px solid #e3e3e3;
+    border-top:3px solid var(--gold);
+    border-left:1px solid #e3e3e3;
+    border-radius:8px;
+    box-shadow:0 4px 12px rgba(0,0,0,.06);
     display:flex;
-
     align-items:center;
-
     justify-content:center;
-
     text-align:center;
-
-    transition:
-        border-color .18s ease,
-        box-shadow .18s ease,
-        transform .18s ease;
+    transition:.18s ease;
 }
 
-#board .card.member:hover{
-    transform:translateY(-1px);
-
-    border-left-color:var(--pup);
-
-    box-shadow:
-        0 4px 12px rgba(0,0,0,.07);
-}
-
-#board .avatar{
+#board .card.member::before,
+#about .card.member::before{
     display:none;
 }
 
-#board .member b{
-    display:block;
-
-    color:#333;
-
-    font-size:17px;
-
-    line-height:1.3;
-
-    font-weight:700;
-
-    margin:0 0 4px;
-}
-
-#board .member small{
-    display:block;
-
-    color:#666;
-
-    font-size:14px;
-
-    line-height:1.35;
-}
-
-/* =========================
-   ABOUT OUBS MEMBER DESIGN
-========================= */
-
-#about .cards3{
-    display:grid;
-
-    grid-template-columns:1fr;
-
-    gap:10px;
-
-    max-width:700px;
-
-    margin:0 auto;
-}
-
-#about .card.member{
-    position:relative;
-
-    min-height:0;
-
-    padding:16px 20px;
-
-    background:#fff;
-
-    border:1px solid #e2e2e2;
-
-    border-left:4px solid var(--pup);
-
-    border-radius:4px;
-
-    box-shadow:
-        0 2px 6px rgba(0,0,0,.035);
-
-    display:flex;
-
-    align-items:center;
-
-    justify-content:center;
-
-    text-align:center;
-
-    transition:
-        border-color .18s ease,
-        box-shadow .18s ease,
-        transform .18s ease;
-}
-
+#board .card.member:hover,
 #about .card.member:hover{
-    transform:translateY(-1px);
-
-    border-left-color:var(--pup);
-
-    box-shadow:
-        0 4px 12px rgba(0,0,0,.07);
+    transform:translateY(-2px);
+    border-color:#ddd;
+    border-top-color:var(--gold);
+    box-shadow:0 7px 18px rgba(0,0,0,.08);
 }
 
+#board .avatar,
 #about .avatar{
     display:none;
 }
 
+#board .member b,
 #about .member b{
     display:block;
-
     color:#333;
-
     font-size:17px;
-
     line-height:1.3;
-
     font-weight:700;
-
     margin:0 0 4px;
 }
 
+#board .member small,
 #about .member small{
     display:block;
-
     color:#666;
-
     font-size:14px;
-
     line-height:1.35;
 }
 
-/* =========================
-   GENERAL
-========================= */
-
 .list{
     display:grid;
-
     gap:10px;
 }
 
 .row{
     background:#fff;
-
     border:1px solid var(--line);
-
     border-radius:6px;
-
     padding:14px;
-
     display:flex;
-
     justify-content:space-between;
-
     align-items:center;
 }
 
 .tag{
     font-size:11px;
-
     border-radius:999px;
-
     padding:5px 9px;
-
     background:#f3e5e5;
-
     color:var(--pup);
-
     font-weight:700;
 }
 
-/* =========================
-   SEARCH TOOLBAR
-========================= */
-
 .toolbar{
     display:flex;
-
     justify-content:flex-end;
-
     align-items:center;
-
     gap:8px;
-
     margin:0 0 18px;
 }
 
 .search{
     width:300px;
-
     flex:none;
-
     padding:10px 13px;
-
     border:1px solid #d7d7d7;
-
     border-radius:4px;
-
     background:#fff;
-
     outline:none;
 }
 
 .search:focus{
     border-color:var(--pup);
-
-    box-shadow:
-        0 0 0 2px rgba(123,17,19,.07);
+    box-shadow:0 0 0 2px rgba(123,17,19,.07);
 }
-
-/* =========================
-   GENERAL TABLE
-========================= */
 
 .table{
     width:100%;
-
     border-collapse:collapse;
-
     background:#fff;
-
     border:1px solid var(--line);
-
     border-radius:8px;
-
     overflow:hidden;
-
-    box-shadow:
-        0 5px 18px rgba(0,0,0,.05);
+    box-shadow:0 5px 18px rgba(0,0,0,.05);
 }
 
 .table th,
 .table td{
     text-align:left;
-
     padding:14px;
-
     border-bottom:1px solid var(--line);
-
     font-size:13px;
+    color:#222;
 }
 
 .table th{
     background:#f7f4ed;
-
     color:var(--pup);
-
     font-size:12px;
-
     text-transform:uppercase;
-
     letter-spacing:.4px;
 }
 
@@ -884,125 +534,122 @@ main{
     background:#fffaf3;
 }
 
-/* =========================
-   LINKS
-========================= */
+.table tr:last-child td{
+    border-bottom:none;
+}
+
+.link{
+    color:var(--gold);
+    cursor:pointer;
+    font-weight:700;
+    text-decoration:none;
+}
+
+.link:hover{
+    text-decoration:underline;
+}
 
 .hero .link{
     color:var(--gold);
-
     cursor:pointer;
 }
+
+
+/* =========================
+   SMALL FORMER BOARD TABLE
+========================= */
+
+#board .former-board-table{
+    width:100%;
+    max-width:700px;
+    margin:25px auto 0;
+}
+
+#board .former-board-table th,
+#board .former-board-table td{
+    padding:11px 14px;
+    color:#222;
+}
+
+#board .former-board-table th:first-child,
+#board .former-board-table td:first-child{
+    width:50%;
+}
+
+#board .former-board-table th:last-child,
+#board .former-board-table td:last-child{
+    width:50%;
+}
+
 
 /* =========================
    BOARD
 ========================= */
 
 #board{
-    background:
-        linear-gradient(
-            135deg,
-            var(--pup-dark),
-            var(--pup)
-        );
-
+    background:linear-gradient(135deg,var(--pup-dark),var(--pup));
     color:#fff;
-
     border-radius:10px;
-
     padding:34px;
-
-    box-shadow:
-        0 8px 25px rgba(80,10,15,.13);
+    box-shadow:0 8px 25px rgba(80,10,15,.13);
 }
 
 #board > p{
     background:rgba(255,255,255,.07);
-
     border-left:3px solid var(--gold);
-
     padding:17px 19px;
-
     border-radius:0 6px 6px 0;
-
     line-height:1.7;
-
     color:#f8eeee;
-
     margin-bottom:25px;
 }
 
 #board .card{
     background:rgba(255,255,255,.98);
-
     color:var(--ink);
 }
+
 
 /* =========================
    ABOUT
 ========================= */
 
 #about{
-    background:
-        linear-gradient(
-            135deg,
-            var(--pup-dark),
-            var(--pup-light)
-        );
-
+    background:linear-gradient(135deg,var(--pup-dark),var(--pup-light));
     color:#fff;
-
     border-radius:10px;
-
     padding:34px;
-
-    box-shadow:
-        0 8px 25px rgba(80,10,15,.13);
+    box-shadow:0 8px 25px rgba(80,10,15,.13);
 }
 
 #about > p{
     background:rgba(255,255,255,.07);
-
     border-left:3px solid var(--gold);
-
     padding:18px 20px;
-
     border-radius:0 6px 6px 0;
-
     line-height:1.75;
-
     color:#f8eeee;
-
     margin-bottom:25px;
 }
 
 #about .card{
     background:#fff;
-
     color:var(--ink);
 }
 
 #about .about-contact{
     margin-top:28px;
-
     background:rgba(255,255,255,.07);
-
     border-radius:8px;
-
     padding:23px;
-
     box-shadow:none;
-
     border:1px solid rgba(255,255,255,.14);
-
     border-top:3px solid var(--gold);
-
     color:#fff;
 }
 
 #about .about-contact p{
     line-height:1.55;
-
     color:#f8eeee;
 }
 
@@ -1010,119 +657,71 @@ main{
     color:#fff;
 }
 
+
 /* =========================
    CALENDAR
 ========================= */
 
 .admission-page{
     min-height:620px;
-
     border-radius:10px;
-
     padding:34px;
-
-    background:
-        linear-gradient(
-            135deg,
-            var(--pup-dark),
-            var(--pup)
-        );
-
+    background:linear-gradient(135deg,var(--pup-dark),var(--pup));
     color:#fff;
-
-    box-shadow:
-        0 8px 25px rgba(80,10,15,.13);
+    box-shadow:0 8px 25px rgba(80,10,15,.13);
 }
 
 .admission-table-wrap{
-    width:94%;
-
-    max-width:1100px;
-
+    width:100%;
     margin:25px auto 0;
-
-    box-shadow:
-        0 5px 18px rgba(0,0,0,.08);
-
     border-radius:8px;
-
     overflow:hidden;
+    box-shadow:0 5px 18px rgba(0,0,0,.05);
 }
 
 .admission-table{
     width:100%;
-
     border-collapse:collapse;
-
-    table-layout:fixed;
-
     background:#fff;
+    border:1px solid var(--line);
+    table-layout:fixed;
 }
 
-.admission-table thead th{
-    background:#f7f4ed;
-
-    color:var(--pup);
-
-    padding:14px;
-
-    font-size:12px;
-
-    font-weight:700;
-
+.admission-table th,
+.admission-table td{
     text-align:left;
-
+    vertical-align:middle;
+    padding:14px;
     border-bottom:1px solid var(--line);
+    font-size:13px;
+}
 
-    letter-spacing:.4px;
-
+.admission-table th{
+    background:#f7f4ed;
+    color:var(--pup);
+    font-size:12px;
     text-transform:uppercase;
+    letter-spacing:.4px;
 }
 
 .admission-table th:nth-child(1),
 .admission-table td:nth-child(1){
-    width:34%;
+    width:30%;
 }
 
 .admission-table th:nth-child(2),
 .admission-table td:nth-child(2){
-    width:28%;
+    width:20%;
 }
 
 .admission-table th:nth-child(3),
 .admission-table td:nth-child(3){
-    width:38%;
-}
-
-.admission-table tbody{
-    background:#fff;
+    width:50%;
 }
 
 .admission-table tbody td{
-    color:#333;
-
-    padding:14px;
-
-    font-size:13px;
-
+    color:#222;
     line-height:1.5;
-
-    border-bottom:1px solid var(--line);
-
-    vertical-align:middle;
-}
-
-.admission-table tbody td:first-child{
-    text-align:left;
-
-    font-weight:700;
-
-    color:var(--pup);
-}
-
-.admission-table tbody td:nth-child(2),
-.admission-table tbody td:nth-child(3){
-    text-align:left;
 }
 
 .admission-table tbody tr:hover td{
@@ -1133,51 +732,35 @@ main{
     border-bottom:none;
 }
 
+
 /* =========================
    GAZETTE
 ========================= */
 
 #gazette{
-    background:
-        linear-gradient(
-            135deg,
-            var(--pup-dark),
-            var(--pup-light)
-        );
-
+    background:linear-gradient(135deg,var(--pup-dark),var(--pup-light));
     color:#fff;
-
     border-radius:10px;
-
     padding:34px;
-
-    box-shadow:
-        0 8px 25px rgba(80,10,15,.13);
+    box-shadow:0 8px 25px rgba(80,10,15,.13);
 }
 
 #gazette .section-title{
     display:block;
-
     margin-top:0;
 }
 
 #gazette .section-title p{
     max-width:900px;
-
     color:#f8eeee;
-
     line-height:1.75;
-
     font-size:15px;
 }
 
 #gazette .toolbar{
     background:rgba(255,255,255,.06);
-
     padding:13px;
-
     border-radius:7px;
-
     border:1px solid rgba(255,255,255,.12);
 }
 
@@ -1187,7 +770,6 @@ main{
 
 #gazette .table th{
     background:#f7f4ed;
-
     color:var(--pup);
 }
 
@@ -1195,28 +777,18 @@ main{
     color:#222;
 }
 
+
 /* =========================
    MANUAL
 ========================= */
 
 #documents{
-    background:
-        linear-gradient(
-            135deg,
-            var(--pup-dark),
-            var(--pup)
-        );
-
+    background:linear-gradient(135deg,var(--pup-dark),var(--pup));
     color:#fff;
-
     border-radius:10px;
-
     padding:34px;
-
     min-height:500px;
-
-    box-shadow:
-        0 8px 25px rgba(80,10,15,.13);
+    box-shadow:0 8px 25px rgba(80,10,15,.13);
 }
 
 #documents .section-title{
@@ -1225,36 +797,26 @@ main{
 
 #documents .section-title p{
     color:#f8eeee;
-
     line-height:1.75;
-
     max-width:900px;
 }
 
 .manual-card{
     max-width:850px;
-
     margin:30px auto;
-
     background:#fff;
-
     border-radius:8px;
-
     padding:34px;
-
     text-align:center;
-
-    box-shadow:
-        0 6px 20px rgba(0,0,0,.15);
-
+    box-shadow:0 6px 20px rgba(0,0,0,.15);
     border-top:4px solid var(--gold);
-
     color:#222;
 }
 
 .manual-card h2{
     color:var(--pup);
 }
+
 
 /* =========================
    PORTAL
@@ -1274,70 +836,47 @@ main{
 
 #portal .hero h1{
     font-family:"Times New Roman", Times, serif;
-
     font-size:38px;
-
     line-height:1.15;
-
     font-weight:700;
-
     color:var(--gold);
-
     margin:0 0 18px;
 }
 
 .portal-stat{
     background:#fff;
-
     color:#333;
-
     border-radius:7px;
-
     padding:19px;
-
     text-align:center;
-
-    box-shadow:
-        0 4px 12px rgba(0,0,0,.12);
+    box-shadow:0 4px 12px rgba(0,0,0,.12);
 }
 
 .portal-stat span{
     display:block;
-
     color:#666;
 }
 
 .portal-stat strong{
     display:block;
-
     font-size:19px;
-
     margin:8px 0;
-
     color:var(--pup);
 }
 
-/* =========================
-   FOOTER
-========================= */
-
 footer{
     background:#202124;
-
     color:#c9c9c9;
-
     padding:28px 24px;
 }
 
 .foot{
     max-width:1280px;
-
     margin:auto;
-
     font-size:12px;
-
     line-height:1.6;
 }
+
 
 /* =========================
    RESPONSIVE
@@ -1351,11 +890,8 @@ footer{
 
     nav{
         width:100%;
-
         overflow-x:auto;
-
         white-space:nowrap;
-
         padding-bottom:3px;
     }
 
@@ -1381,7 +917,6 @@ footer{
 
     .hero{
         grid-template-columns:1fr;
-
         padding:32px;
     }
 
@@ -1396,7 +931,6 @@ footer{
     #board .cards3,
     #about .cards3{
         grid-template-columns:1fr;
-
         max-width:700px;
     }
 
@@ -1434,13 +968,11 @@ footer{
 
     nav button{
         padding:9px 10px;
-
         font-size:13px;
     }
 
     .hero{
         padding:26px 22px;
-
         border-radius:8px;
     }
 
@@ -1461,7 +993,6 @@ footer{
     #board .cards3,
     #about .cards3{
         width:100%;
-
         max-width:700px;
     }
 
@@ -1486,7 +1017,6 @@ footer{
     #gazette,
     .admission-page{
         padding:24px 16px;
-
         border-radius:8px;
     }
 
@@ -1499,24 +1029,21 @@ footer{
     }
 
     .admission-table-wrap{
-        width:95%;
-
+        width:100%;
         overflow-x:auto;
     }
 
     .admission-table{
-        min-width:760px;
+        min-width:700px;
     }
 
-    .admission-table thead th{
+    .admission-table th{
         font-size:12px;
-
         padding:11px 14px;
     }
 
-    .admission-table tbody td{
+    .admission-table td{
         font-size:13px;
-
         padding:14px;
     }
 
@@ -1526,6 +1053,19 @@ footer{
 
     .search{
         width:260px;
+    }
+
+    .table{
+        min-width:650px;
+    }
+
+    #board{
+        overflow-x:auto;
+    }
+
+    #board .former-board-table{
+        min-width:0;
+        width:100%;
     }
 }
 
@@ -1569,12 +1109,17 @@ footer{
 
     .toolbar{
         flex-direction:column;
-
         align-items:stretch;
     }
 
     .search{
         width:100%;
+    }
+
+    #board .former-board-table th,
+    #board .former-board-table td{
+        padding:10px 11px;
+        font-size:12px;
     }
 }
 
@@ -1592,28 +1137,15 @@ footer{
     <div class="brand">
 
         <div class="seal">
-
-            <img
-                src="logo/pup-logo.png"
-                alt="PUP Logo"
-            >
-
+            <img src="logo/pup-logo.png" alt="PUP Logo">
         </div>
 
         <div>
-
-            <b>
-                POLYTECHNIC UNIVERSITY OF THE PHILIPPINES
-            </b>
-
-            <span>
-                OFFICE OF THE UNIVERSITY/BOARD SECRETARY (OUBS)
-            </span>
-
+            <b>POLYTECHNIC UNIVERSITY OF THE PHILIPPINES</b>
+            <span>OFFICE OF THE UNIVERSITY/BOARD SECRETARY (OUBS)</span>
         </div>
 
     </div>
-
 
     <nav>
 
@@ -1641,10 +1173,7 @@ footer{
             <strong>Manual of Operations</strong>
         </button>
 
-        <button
-            class="login"
-            onclick="show('portal')"
-        >
+        <button class="login" onclick="show('portal')">
             DMS Portal
         </button>
 
@@ -1674,76 +1203,67 @@ footer{
 </div>
 
 
-<!-- =========================
-     HOME
-========================= -->
+<!-- HOME -->
 
 <section id="home" class="page active">
 
 <div class="hero">
 
-    <div>
+<div>
 
-        <h1 class="page-title">
-            The Board of Regents
-        </h1>
+    <h1 class="page-title">
+        The Board of Regents
+    </h1>
 
-        <p>
-            Under Republic Act No. 8292 (Higher Education Modernization Act of 1997), the governing body of a chartered state university is vested in the Board of Regents. As the governing body of the Polytechnic University of the Philippines, the Board exercises general powers of administration and the specific powers and duties provided under the law.
-        </p>
+    <p>
+        Under Republic Act No. 8292 (Higher Education Modernization Act of 1997), the governing body of a chartered state university is vested in the Board of Regents. As the governing body of the Polytechnic University of the Philippines, the Board exercises general powers of administration and the specific powers and duties provided under the law.
+    </p>
 
-        <p>
-            The Board of Regents promulgates and implements policies in accordance with the declared State policies on education, the Philippine Constitution, and the policies, standards, and thrusts of the Commission on Higher Education (CHED). It also exercises the powers and performs the duties necessary to carry out the purposes and functions of the University, as provided under Republic Act No. 8292 and other applicable laws.
-        </p>
+    <p>
+        The Board of Regents promulgates and implements policies in accordance with the declared State policies on education, the Philippine Constitution, and the policies, standards, and thrusts of the Commission on Higher Education (CHED). It also exercises the powers and performs the duties necessary to carry out the purposes and functions of the University, as provided under Republic Act No. 8292 and other applicable laws.
+    </p>
 
-        <span
-            class="link"
-            onclick="show('board')"
-        >
-            View Board →
-        </span>
+    <span class="link" onclick="show('board')">
+        View Board →
+    </span>
 
-    </div>
+</div>
 
 
-    <div class="hero-card">
+<div class="hero-card">
 
-        <small>
-            UPCOMING MEETING
-        </small>
+    <small>UPCOMING MEETING</small>
 
-        <h2>
-            BOR-FINCOM Meeting
-        </h2>
+    <h2>
+        BOR-FINCOM Meeting
+    </h2>
 
-        <p>
-            September 24, 2026 (Thursday), 1:30 PM via Zoom Video Conference
-        </p>
+    <p>
+        September 24, 2026 (Thursday), 1:30 PM via Zoom Video Conference
+    </p>
 
-        <hr style="border-color:#ffffff25">
+    <hr style="border-color:#ffffff25">
 
-        <small>
-            DEADLINE OF AGENDA SUBMISSION
-        </small>
+    <small>
+        DEADLINE OF AGENDA SUBMISSION
+    </small>
 
-        <h2>
-            September 17, 2026 (Thursday)
-        </h2>
+    <h2>
+        September 17, 2026 (Thursday)
+    </h2>
 
-        <p>
-            Please submit your sector’s agenda documents with complete staff work for uploading to the OUBS DMS.
-        </p>
+    <p>
+        Please submit your sector’s agenda documents with complete staff work for uploading to the OUBS DMS.
+    </p>
 
-    </div>
+</div>
 
 </div>
 
 </section>
 
 
-<!-- =========================
-     BOARD
-========================= -->
+<!-- BOARD -->
 
 <section id="board" class="page">
 
@@ -1763,286 +1283,159 @@ footer{
 
 <div class="cards3">
 
-
     <div class="card member">
-
-        <div class="avatar">
-            CH
-        </div>
-
+        <div class="avatar">CH</div>
         <div>
-
-            <b>
-                Hon. Ricmar P. Aquino
-            </b>
-
+            <b>Hon. Ricmar P. Aquino</b>
             <br>
-
-            <small>
-                Chairperson
-            </small>
-
+            <small>Chairperson</small>
         </div>
-
     </div>
 
 
     <div class="card member">
-
-        <div class="avatar">
-            VC
-        </div>
-
+        <div class="avatar">VC</div>
         <div>
-
-            <b>
-                Hon. Manuel M. Muhi
-            </b>
-
+            <b>Hon. Manuel M. Muhi</b>
             <br>
-
-            <small>
-                Vice Chairperson
-            </small>
-
+            <small>Vice Chairperson</small>
         </div>
-
     </div>
 
 
     <div class="card member">
-
-        <div class="avatar">
-            PS
-        </div>
-
+        <div class="avatar">PS</div>
         <div>
-
-            <b>
-                Hon. May P. Paez
-            </b>
-
+            <b>Hon. May P. Paez</b>
             <br>
-
-            <small>
-                Member, Private Sector Representative
-            </small>
-
+            <small>Member, Private Sector Representative</small>
         </div>
-
     </div>
 
 
     <div class="card member">
-
-        <div class="avatar">
-            PS
-        </div>
-
+        <div class="avatar">PS</div>
         <div>
-
-            <b>
-                Hon. Ronald V. Laurel
-            </b>
-
+            <b>Hon. Ronald V. Laurel</b>
             <br>
-
-            <small>
-                Member, Private Sector Representative
-            </small>
-
+            <small>Member, Private Sector Representative</small>
         </div>
-
     </div>
 
 
     <div class="card member">
-
-        <div class="avatar">
-            DD
-        </div>
-
+        <div class="avatar">DD</div>
         <div>
-
-            <b>
-                Hon. Ma. Monica P. Pagunsan
-            </b>
-
+            <b>Hon. Ma. Monica P. Pagunsan</b>
             <br>
-
-            <small>
-                Member, DEPDEV Representative
-            </small>
-
+            <small>Member, DEPDEV Representative</small>
         </div>
-
     </div>
 
 
     <div class="card member">
-
-        <div class="avatar">
-            DS
-        </div>
-
+        <div class="avatar">DS</div>
         <div>
-
-            <b>
-                Hon. Romelen Tresvalles
-            </b>
-
+            <b>Hon. Romelen Tresvalles</b>
             <br>
-
-            <small>
-                Member, DOST-NCR Representative
-            </small>
-
+            <small>Member, DOST-NCR Representative</small>
         </div>
-
     </div>
 
 
     <div class="card member">
-
-        <div class="avatar">
-            SP
-        </div>
-
+        <div class="avatar">SP</div>
         <div>
-
-            <b>
-                Hon. Joel Villanueva
-            </b>
-
+            <b>Hon. Joel Villanueva</b>
             <br>
-
-            <small>
-                Member, Senate of the Philippines
-            </small>
-
+            <small>Member, Senate of the Philippines</small>
         </div>
-
     </div>
 
 
     <div class="card member">
-
-        <div class="avatar">
-            HR
-        </div>
-
+        <div class="avatar">HR</div>
         <div>
-
-            <b>
-                Hon. Jude Acidre
-            </b>
-
+            <b>Hon. Jude Acidre</b>
             <br>
-
-            <small>
-                Member, House of Representatives
-            </small>
-
+            <small>Member, House of Representatives</small>
         </div>
-
     </div>
 
 
     <div class="card member">
-
-        <div class="avatar">
-            FR
-        </div>
-
+        <div class="avatar">FR</div>
         <div>
-
-            <b>
-                Hon. Ramir M. Cruz
-            </b>
-
+            <b>Hon. Ramir M. Cruz</b>
             <br>
-
-            <small>
-                Member, Faculty Sector Representative
-            </small>
-
+            <small>Member, Faculty Sector Representative</small>
         </div>
-
     </div>
 
 
     <div class="card member">
-
-        <div class="avatar">
-            AR
-        </div>
-
+        <div class="avatar">AR</div>
         <div>
-
-            <b>
-                Hon. Jean Paul G. Martirez
-            </b>
-
+            <b>Hon. Jean Paul G. Martirez</b>
             <br>
-
-            <small>
-                Member, Alumni Sector Representative
-            </small>
-
+            <small>Member, Alumni Sector Representative</small>
         </div>
-
     </div>
 
 
     <div class="card member">
-
-        <div class="avatar">
-            SR
-        </div>
-
+        <div class="avatar">SR</div>
         <div>
-
-            <b>
-                Hon. John Paul Y. Azusano
-            </b>
-
+            <b>Hon. John Paul Y. Azusano</b>
             <br>
-
-            <small>
-                Member, Student Sector Representative
-            </small>
-
+            <small>Member, Student Sector Representative</small>
         </div>
-
     </div>
-
 
 </div>
 
+
+<!-- FORMER BOARD MEMBERS -->
 
 <div class="section-title">
 
-    <h2>
-        Former Board Members
-    </h2>
-
+    <br>
 </div>
 
+<table class="table former-board-table">
 
-<div class="card">
+<thead>
+<tr>
+    <th>Fiscal Year</th>
+    <th>Document</th>
+</tr>
+</thead>
 
-    <p>
-        PDF file to be attached here.
-    </p>
+<tbody>
 
-</div>
+<tr>
+    <td>FY 2025</td>
+    <td>List of Past Board Members</td>
+</tr>
+
+<tr>
+    <td>FY 2024</td>
+    <td>List of Past Board Members</td>
+</tr>
+
+<tr>
+    <td>FY 2023</td>
+    <td>List of Past Board Members</td>
+</tr>
+
+</tbody>
+
+</table>
 
 </section>
 
 
-<!-- =========================
-     ABOUT OUBS
-========================= -->
+<!-- ABOUT -->
 
 <section id="about" class="page">
 
@@ -2062,142 +1455,63 @@ footer{
 
 <div class="cards3">
 
-
     <div class="card member">
-
-        <div class="avatar">
-            UBS
-        </div>
-
+        <div class="avatar">UBS</div>
         <div>
-
-            <b>
-                Assoc. Prof. Rolando M. Covero Jr.
-            </b>
-
+            <b>Assoc. Prof. Rolando M. Covero Jr.</b>
             <br>
-
-            <small>
-                University/Board Secretary
-            </small>
-
+            <small>University/Board Secretary</small>
         </div>
-
     </div>
 
 
     <div class="card member">
-
-        <div class="avatar">
-            BS
-        </div>
-
+        <div class="avatar">BS</div>
         <div>
-
-            <b>
-                Ms. Jeanette C. Dordas
-            </b>
-
+            <b>Ms. Jeanette C. Dordas</b>
             <br>
-
-            <small>
-                Board Secretary IV
-            </small>
-
+            <small>Board Secretary IV</small>
         </div>
-
     </div>
 
 
     <div class="card member">
-
-        <div class="avatar">
-            BS
-        </div>
-
+        <div class="avatar">BS</div>
         <div>
-
-            <b>
-                Ms. Portia Margarita R. Reyes
-            </b>
-
+            <b>Ms. Portia Margarita R. Reyes</b>
             <br>
-
-            <small>
-                Board Secretary II
-            </small>
-
+            <small>Board Secretary II</small>
         </div>
-
     </div>
 
 
     <div class="card member">
-
-        <div class="avatar">
-            FA
-        </div>
-
+        <div class="avatar">FA</div>
         <div>
-
-            <b>
-                Dr. Lizyl R. Rebusquillo
-            </b>
-
+            <b>Dr. Lizyl R. Rebusquillo</b>
             <br>
-
-            <small>
-                Faculty Assistant
-            </small>
-
+            <small>Faculty Assistant</small>
         </div>
-
     </div>
 
 
     <div class="card member">
-
-        <div class="avatar">
-            AA
-        </div>
-
+        <div class="avatar">AA</div>
         <div>
-
-            <b>
-                Mr. Tirso Johm A. Ferrer
-            </b>
-
+            <b>Mr. Tirso Johm A. Ferrer</b>
             <br>
-
-            <small>
-                Administrative Aide VI
-            </small>
-
+            <small>Administrative Aide VI</small>
         </div>
-
     </div>
 
 
     <div class="card member">
-
-        <div class="avatar">
-            AA
-        </div>
-
+        <div class="avatar">AA</div>
         <div>
-
-            <b>
-                Mr. John Paul M. Ocampo
-            </b>
-
+            <b>Mr. John Paul M. Ocampo</b>
             <br>
-
-            <small>
-                Administrative Aide III
-            </small>
-
+            <small>Administrative Aide III</small>
         </div>
-
     </div>
 
 </div>
@@ -2206,54 +1520,36 @@ footer{
 <div class="about-contact">
 
     <p>
-
-        <strong>
-            Office Address:
-        </strong>
-
+        <strong>Office Address:</strong>
         <br><br>
-
-        Room S-206,<br>
-        2nd Floor, South Wing, Main Building<br>
-        PUP A. Mabini Campus<br>
-        Anonas Street, Sta. Mesa<br>
+        Room S-206,
+        <br>
+        2nd Floor, South Wing, Main Building
+        <br>
+        PUP A. Mabini Campus
+        <br>
+        Anonas Street, Sta. Mesa
+        <br>
         Manila, Philippines 1016
-
     </p>
 
 
     <p>
-
-        <strong>
-            Telephone Number:
-        </strong>
-
+        <strong>Telephone Number:</strong>
         <br><br>
-
         Local 265
-
     </p>
 
 
     <p>
-
-        <strong>
-            Email Address:
-        </strong>
-
+        <strong>Email Address:</strong>
         <br><br>
-
-        <u>
-            boardsec@pup.edu.ph
-        </u>
-
+        <u>boardsec@pup.edu.ph</u>
     </p>
 
 
     <p>
-
         For inquiries, requests, and other matters concerning the Board of Regents, please contact the Office of the University/Board Secretary.
-
     </p>
 
 </div>
@@ -2261,9 +1557,7 @@ footer{
 </section>
 
 
-<!-- =========================
-     CALENDAR
-========================= -->
+<!-- CALENDAR -->
 
 <section id="calendar" class="page admission-page">
 
@@ -2283,19 +1577,9 @@ footer{
 <thead>
 
 <tr>
-
-    <th>
-        MEETING
-    </th>
-
-    <th>
-        DATE
-    </th>
-
-    <th>
-        VENUE
-    </th>
-
+    <th>MEETING</th>
+    <th>DATE</th>
+    <th>VENUE</th>
 </tr>
 
 </thead>
@@ -2304,87 +1588,33 @@ footer{
 <tbody>
 
 <tr>
-
-    <td>
-        193rd BOR Regular Meeting
-    </td>
-
-    <td>
-        12 August 2026
-    </td>
-
-    <td>
-        Mateo Conference Room, PUP, Sta. Mesa, Manila
-    </td>
-
+    <td>193rd BOR Regular Meeting</td>
+    <td>12 August 2026</td>
+    <td>Mateo Conference Room, PUP, Sta. Mesa, Manila</td>
 </tr>
 
-
 <tr>
-
-    <td>
-        BOR Special Meeting
-    </td>
-
-    <td>
-        13 July 2026
-    </td>
-
-    <td>
-        Via Zoom Video Conferencing
-    </td>
-
+    <td>BOR Special Meeting</td>
+    <td>13 July 2026</td>
+    <td>Via Zoom Video Conferencing</td>
 </tr>
 
-
 <tr>
-
-    <td>
-        BOR Special Meeting
-    </td>
-
-    <td>
-        28 May 2026
-    </td>
-
-    <td>
-        Via Hybrid Setup
-    </td>
-
+    <td>BOR Special Meeting</td>
+    <td>28 May 2026</td>
+    <td>Via Hybrid Setup</td>
 </tr>
 
-
 <tr>
-
-    <td>
-        192nd BOR Regular Meeting
-    </td>
-
-    <td>
-        31 March 2026
-    </td>
-
-    <td>
-        CHED Central Office, 4F HEDC Building, C. P. Garcia Avenue, Diliman, Quezon City
-    </td>
-
+    <td>192nd BOR Regular Meeting</td>
+    <td>31 March 2026</td>
+    <td>CHED Central Office, 4F HEDC Building, C. P. Garcia Avenue, Diliman, Quezon City</td>
 </tr>
 
-
 <tr>
-
-    <td>
-        BOR-FINCOM Special Meeting
-    </td>
-
-    <td>
-        20 January 2026
-    </td>
-
-    <td>
-        Via Zoom Video Conferencing
-    </td>
-
+    <td>BOR-FINCOM Special Meeting</td>
+    <td>20 January 2026</td>
+    <td>Via Zoom Video Conferencing</td>
 </tr>
 
 </tbody>
@@ -2396,9 +1626,7 @@ footer{
 </section>
 
 
-<!-- =========================
-     MANUAL
-========================= -->
+<!-- MANUAL -->
 
 <section id="documents" class="page">
 
@@ -2434,9 +1662,7 @@ footer{
 </section>
 
 
-<!-- =========================
-     GAZETTE
-========================= -->
+<!-- GAZETTE -->
 
 <section id="gazette" class="page">
 
@@ -2456,65 +1682,26 @@ footer{
 <table class="table">
 
 <tr>
-
-    <th>
-        BOR Meeting
-    </th>
-
-    <th>
-        BOR Meeting Date
-    </th>
-
-    <th>
-        BOR Meeting Venue
-    </th>
-
-    <th>
-        View Gazette
-    </th>
-
+    <th>BOR Meeting</th>
+    <th>BOR Meeting Date</th>
+    <th>BOR Meeting Venue</th>
+    <th>View Gazette</th>
 </tr>
 
 
 <tr>
-
-    <td>
-        193rd BOR Regular Meeting
-    </td>
-
-    <td>
-        12 August 2026
-    </td>
-
-    <td>
-        PUP
-    </td>
-
-    <td class="link">
-        PDF file
-    </td>
-
+    <td>193rd BOR Regular Meeting</td>
+    <td>12 August 2026</td>
+    <td>PUP</td>
+    <td class="link">PDF file</td>
 </tr>
 
 
 <tr>
-
-    <td>
-        192nd BOR Regular Meeting
-    </td>
-
-    <td>
-        31 May 2026
-    </td>
-
-    <td>
-        CHED
-    </td>
-
-    <td class="link">
-        PDF file
-    </td>
-
+    <td>192nd BOR Regular Meeting</td>
+    <td>31 May 2026</td>
+    <td>CHED</td>
+    <td class="link">PDF file</td>
 </tr>
 
 </table>
@@ -2522,9 +1709,7 @@ footer{
 </section>
 
 
-<!-- =========================
-     DMS PORTAL
-========================= -->
+<!-- DMS PORTAL -->
 
 <section id="portal" class="page">
 
@@ -2536,27 +1721,18 @@ footer{
 <div>
 
 <h1 class="page-title">
-
     OUBS-DOCUMENT MANAGEMENT SYSTEM (DMS)
-
 </h1>
 
 
 <p>
-
     A centralized digital platform for the secure submission, organization, review, tracking, and retrieval of official Board of Regents documents. The DMS streamlines the processing of Board matters and provides authorized users with convenient access to essential documents and records.
-
 </p>
 
 
 <div
     class="grid"
-    style="
-        grid-template-columns:1fr;
-        max-width:350px;
-        margin-top:25px;
-        gap:15px;
-    "
+    style="grid-template-columns:1fr;max-width:350px;margin-top:25px;gap:15px;"
 >
 
 <div class="portal-stat">
@@ -2584,12 +1760,7 @@ footer{
     href="https://dms.pup.edu.ph/"
     target="_blank"
     class="hero-card"
-    style="
-        text-decoration:none;
-        color:inherit;
-        display:block;
-        cursor:pointer;
-    "
+    style="text-decoration:none;color:inherit;display:block;cursor:pointer;"
 >
 
 <h2>
@@ -2613,22 +1784,22 @@ footer{
 
 function show(id){
 
-    document
-        .querySelectorAll('.page')
-        .forEach(function(page){
+    document.querySelectorAll('.page').forEach(function(page){
 
-            page.classList.remove('active');
+        page.classList.remove('active');
 
-        });
+    });
 
-    var selectedPage =
-        document.getElementById(id);
+
+    var selectedPage = document.getElementById(id);
+
 
     if(selectedPage){
 
         selectedPage.classList.add('active');
 
     }
+
 
     window.scrollTo({
         top:0,
