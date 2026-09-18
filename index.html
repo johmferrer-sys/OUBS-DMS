@@ -556,6 +556,115 @@ main{
 
 
 /* =========================
+   HOMEPAGE SLIDESHOW
+========================= */
+
+.home-slideshow{
+    position:relative;
+    width:100%;
+    height:430px;
+    margin-bottom:25px;
+    border-radius:10px;
+    overflow:hidden;
+    background:#5e0c0f;
+    box-shadow:0 8px 24px rgba(80,10,15,.15);
+}
+
+.home-slide{
+    position:absolute;
+    inset:0;
+    opacity:0;
+    transition:opacity .8s ease;
+    pointer-events:none;
+}
+
+.home-slide.active{
+    opacity:1;
+    pointer-events:auto;
+}
+
+.home-slide img{
+    width:100%;
+    height:100%;
+    object-fit:cover;
+    display:block;
+}
+
+.home-slide::after{
+    content:"";
+    position:absolute;
+    inset:0;
+    background:
+        linear-gradient(
+            90deg,
+            rgba(91,12,15,.78),
+            rgba(91,12,15,.30),
+            rgba(91,12,15,.12)
+        );
+}
+
+.home-slide-content{
+    position:absolute;
+    z-index:2;
+    left:45px;
+    top:50%;
+    transform:translateY(-50%);
+    max-width:650px;
+    color:#fff;
+}
+
+.home-slide-content small{
+    display:block;
+    color:var(--gold);
+    font-size:13px;
+    font-weight:700;
+    letter-spacing:1.2px;
+    text-transform:uppercase;
+    margin-bottom:10px;
+}
+
+.home-slide-content h1{
+    margin:0 0 12px;
+    font-size:38px;
+    line-height:1.15;
+    color:#fff;
+}
+
+.home-slide-content p{
+    margin:0;
+    color:#f8eeee;
+    font-size:16px;
+    line-height:1.65;
+    max-width:600px;
+}
+
+.slide-dots{
+    position:absolute;
+    z-index:5;
+    bottom:18px;
+    left:45px;
+    display:flex;
+    gap:7px;
+}
+
+.slide-dot{
+    width:9px;
+    height:9px;
+    border-radius:50%;
+    border:1px solid #fff;
+    background:transparent;
+    padding:0;
+    cursor:pointer;
+    transition:.2s ease;
+}
+
+.slide-dot.active{
+    background:var(--gold);
+    border-color:var(--gold);
+}
+
+
+/* =========================
    SMALL FORMER BOARD TABLE
 ========================= */
 
@@ -1489,6 +1598,33 @@ main{
         font-size:27px;
     }
 
+
+    /* SLIDESHOW MOBILE */
+
+    .home-slideshow{
+        height:330px;
+        border-radius:8px;
+    }
+
+    .home-slide-content{
+        left:25px;
+        right:25px;
+    }
+
+    .home-slide-content h1{
+        font-size:29px;
+    }
+
+    .home-slide-content p{
+        font-size:14px;
+        line-height:1.55;
+    }
+
+    .slide-dots{
+        left:25px;
+        bottom:14px;
+    }
+
 }
 
 @media(max-width:500px){
@@ -1554,6 +1690,21 @@ main{
     .dms-options{
         flex-direction:column;
         align-items:flex-start;
+    }
+
+
+    /* SLIDESHOW SMALL MOBILE */
+
+    .home-slideshow{
+        height:300px;
+    }
+
+    .home-slide-content h1{
+        font-size:25px;
+    }
+
+    .home-slide-content p{
+        font-size:13px;
     }
 
 }
@@ -1642,6 +1793,97 @@ main{
 
 <section id="home" class="page active">
 
+
+<!-- =========================
+     HOMEPAGE SLIDESHOW
+========================= -->
+
+<div class="home-slideshow">
+
+
+    <!-- SLIDE 1 -->
+
+    <div class="home-slide active">
+
+        <img
+            src="slides/slide1.jpg"
+            alt="PUP Board of Regents Meeting"
+        >
+
+    </div>
+
+
+    <!-- SLIDE 2 -->
+
+    <div class="home-slide">
+
+        <img
+            src="slides/slide2.jpg"
+            alt="PUP Board of Regents"
+        >
+
+    </div>
+
+
+    <!-- SLIDE 3 -->
+
+    <div class="home-slide">
+
+        <img
+            src="slides/slide3.jpg"
+            alt="Office of the University Board Secretary"
+        >
+
+    </div>
+
+
+    <!-- SLIDE 4 -->
+
+    <div class="home-slide">
+
+        <img
+            src="slides/slide4.jpg"
+            alt="PUP Board Documents"
+        >
+
+    </div>
+
+
+    <!-- SLIDE DOTS -->
+
+    <div class="slide-dots">
+
+        <button
+            class="slide-dot active"
+            onclick="goToSlide(0)"
+            aria-label="Slide 1"
+        ></button>
+
+        <button
+            class="slide-dot"
+            onclick="goToSlide(1)"
+            aria-label="Slide 2"
+        ></button>
+
+        <button
+            class="slide-dot"
+            onclick="goToSlide(2)"
+            aria-label="Slide 3"
+        ></button>
+
+        <button
+            class="slide-dot"
+            onclick="goToSlide(3)"
+            aria-label="Slide 4"
+        ></button>
+
+    </div>
+
+</div>
+
+
+<!-- EXISTING HERO -->
+
 <div class="hero">
 
 <div>
@@ -1724,8 +1966,8 @@ main{
             <b>Hon. Ricmar P. Aquino</b>
             
             Chairperson<br>
-		
-	Commissioner, Commission on Higher Education (CHED)
+            
+            Commissioner, Commission on Higher Education (CHED)
 
         </div>
     </div>
@@ -1737,7 +1979,7 @@ main{
             <b>Hon. Manuel M. Muhi</b>
             
             Vice Chairperson<br>
-President, Polytechnic University of the Philippines (PUP)
+            President, Polytechnic University of the Philippines (PUP)
 
         </div>
     </div>
@@ -1749,8 +1991,8 @@ President, Polytechnic University of the Philippines (PUP)
             <b>Hon. May P. Paez</b>
             
             Member<br>
-Private Sector Representative<br>
-Head, Risk and Controls PMFTC Inc. (affiliate of Philip Morris International)
+            Private Sector Representative<br>
+            Head, Risk and Controls PMFTC Inc. (affiliate of Philip Morris International)
 
         </div>
     </div>
@@ -1762,8 +2004,8 @@ Head, Risk and Controls PMFTC Inc. (affiliate of Philip Morris International)
             <b>Hon. Ronald V. Laurel</b>
             
             Member<br>
-Private Sector Representative<br>
-President, Minds at Work, The Laurel Center for Education and Training Inc.
+            Private Sector Representative<br>
+            President, Minds at Work, The Laurel Center for Education and Training Inc.
 
         </div>
     </div>
@@ -1775,7 +2017,7 @@ President, Minds at Work, The Laurel Center for Education and Training Inc.
             <b>Hon. Ma. Monica P. Pagunsan</b>
             
             Member<br>
-Undersecretary/Director, Department of Economy, Planning and Development (DEPDev), formerly National Economic and Development (NEDA)
+            Undersecretary/Director, Department of Economy, Planning and Development (DEPDev), formerly National Economic and Development (NEDA)
 
         </div>
     </div>
@@ -1787,8 +2029,8 @@ Undersecretary/Director, Department of Economy, Planning and Development (DEPDev
             <b>Hon. Romelen Tresvalles</b>
             
             Member<br>
-Director, Department of Science and Technology-National Capital Region
-(DOST-NCR)
+            Director, Department of Science and Technology-National Capital Region
+            (DOST-NCR)
 
         </div>
     </div>
@@ -1799,8 +2041,8 @@ Director, Department of Science and Technology-National Capital Region
         <div>
             <b>Hon. Joel Villanueva</b>
             
-           Member<br>
-Senator, Chairperson, Senate Committee on Higher, Technical and Vocational Education
+            Member<br>
+            Senator, Chairperson, Senate Committee on Higher, Technical and Vocational Education
 
         </div>
     </div>
@@ -1812,8 +2054,7 @@ Senator, Chairperson, Senate Committee on Higher, Technical and Vocational Educa
             <b>Hon. Jude Acidre</b>
             
             Member, Chairperson, Committee on Higher and Technical Education (CHTE)<br>
-Congressman, Representative, Tingog Party List
-
+            Congressman, Representative, Tingog Party List
 
         </div>
     </div>
@@ -1825,9 +2066,9 @@ Congressman, Representative, Tingog Party List
             <b>Hon. Ramir M. Cruz</b>
             
             Member<br>
-Faculty Sector Representative, President
-PUP Federated Faculty Association, Inc. (PUPFFAI)
-</small>
+            Faculty Sector Representative, President
+            PUP Federated Faculty Association, Inc. (PUPFFAI)
+
         </div>
     </div>
 
@@ -1838,8 +2079,8 @@ PUP Federated Faculty Association, Inc. (PUPFFAI)
             <b>Hon. Jean Paul G. Martirez</b>
             
             Member<br>
-Alumni Sector Representative, President
-Federation of Alumni Associations in PUP, Inc. (FEDAAPI)
+            Alumni Sector Representative, President
+            Federation of Alumni Associations in PUP, Inc. (FEDAAPI)
 
         </div>
     </div>
@@ -1851,8 +2092,8 @@ Federation of Alumni Associations in PUP, Inc. (FEDAAPI)
             <b>Hon. John Paul Y. Azusano</b>
             
             Member<br>
-Student Sector Representative, President
-Alyansa ng Nagkakaisang Konseho ng PUP (ANAK-PUP)
+            Student Sector Representative, President
+            Alyansa ng Nagkakaisang Konseho ng PUP (ANAK-PUP)
 
         </div>
     </div>
@@ -2145,8 +2386,6 @@ Alyansa ng Nagkakaisang Konseho ng PUP (ANAK-PUP)
 </div>
 
 
-<!-- EXISTING GAZETTE TABLE -->
-
 <table class="table">
 
 <tr>
@@ -2174,8 +2413,6 @@ Alyansa ng Nagkakaisang Konseho ng PUP (ANAK-PUP)
 
 </table>
 
-
-<!-- BOR-APPROVED DELEGATED AUTHORITIES -->
 
 <div class="delegated-box">
 
@@ -2544,6 +2781,69 @@ function show(id){
     });
 
 }
+
+
+/* =========================
+   HOMEPAGE SLIDESHOW
+========================= */
+
+var currentSlide = 0;
+
+var slides =
+    document.querySelectorAll('.home-slide');
+
+var slideDots =
+    document.querySelectorAll('.slide-dot');
+
+
+function goToSlide(index){
+
+    if(slides.length === 0){
+        return;
+    }
+
+    slides.forEach(function(slide){
+
+        slide.classList.remove('active');
+
+    });
+
+
+    slideDots.forEach(function(dot){
+
+        dot.classList.remove('active');
+
+    });
+
+
+    currentSlide = index;
+
+    slides[currentSlide].classList.add('active');
+
+    if(slideDots[currentSlide]){
+
+        slideDots[currentSlide].classList.add('active');
+
+    }
+
+}
+
+
+function nextSlide(){
+
+    if(slides.length === 0){
+        return;
+    }
+
+    currentSlide =
+        (currentSlide + 1) % slides.length;
+
+    goToSlide(currentSlide);
+
+}
+
+
+setInterval(nextSlide, 5000);
 
 
 /* =========================
