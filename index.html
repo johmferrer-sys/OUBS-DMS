@@ -659,6 +659,54 @@ main{
 
 
 /* =========================
+   MANUAL OF OPERATIONS
+========================= */
+
+#documents{
+    background:linear-gradient(135deg,var(--pup-dark),var(--pup-light));
+    color:#fff;
+    border-radius:10px;
+    padding:34px;
+    box-shadow:0 8px 25px rgba(80,10,15,.13);
+}
+
+#documents .section-title{
+    display:block;
+    margin-top:0;
+}
+
+#documents .section-title p{
+    max-width:900px;
+    color:#f8eeee;
+    line-height:1.75;
+    font-size:15px;
+}
+
+#documents .manual-card{
+    margin-top:25px;
+    background:#fff;
+    color:var(--ink);
+    border-radius:8px;
+    padding:24px;
+    border:1px solid #e3e3e3;
+    border-top:3px solid var(--gold);
+    box-shadow:0 5px 18px rgba(0,0,0,.06);
+}
+
+#documents .manual-card h2{
+    margin:0 0 10px;
+    color:var(--pup);
+    font-size:22px;
+}
+
+#documents .manual-card p{
+    margin:0;
+    color:#666;
+    line-height:1.6;
+}
+
+
+/* =========================
    CALENDAR
 ========================= */
 
@@ -877,103 +925,311 @@ main{
 }
 
 
-/* =========================
-   MANUAL
-========================= */
-
-#documents{
-    background:linear-gradient(135deg,var(--pup-dark),var(--pup));
-    color:#fff;
-    border-radius:10px;
-    padding:34px;
-    min-height:500px;
-    box-shadow:0 8px 25px rgba(80,10,15,.13);
-}
-
-#documents .section-title{
-    margin-bottom:25px;
-}
-
-#documents .section-title p{
-    color:#f8eeee;
-    line-height:1.75;
-    max-width:900px;
-}
-
-.manual-card{
-    max-width:850px;
-    margin:30px auto;
-    background:#fff;
-    border-radius:8px;
-    padding:34px;
-    text-align:center;
-    box-shadow:0 6px 20px rgba(0,0,0,.15);
-    border-top:4px solid var(--gold);
-    color:#222;
-}
-
-.manual-card h2{
-    color:var(--pup);
-}
-
-
-/* =========================
-   PORTAL
-========================= */
+/* =========================================================
+   DMS LOGIN PAGE
+========================================================= */
 
 #portal{
     color:#fff;
 }
 
-#portal .section-title h2{
-    color:var(--pup);
+.dms-login-page{
+    min-height:620px;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    padding:20px 0;
 }
 
-#portal .hero{
-    min-height:230px;
+
+/* LOGIN CONTAINER */
+
+.dms-login-box{
+    width:100%;
+    max-width:980px;
+    display:grid;
+    grid-template-columns:1.05fr .95fr;
+    background:#fff;
+    border-radius:10px;
+    overflow:hidden;
+    box-shadow:0 12px 30px rgba(0,0,0,.18);
 }
 
-#portal .hero h1{
-    font-family:"Times New Roman", Times, serif;
-    font-size:38px;
-    line-height:1.15;
-    font-weight:700;
+
+/* LEFT BRANDING */
+
+.dms-brand-panel{
+    background:
+        linear-gradient(
+            135deg,
+            rgba(91,12,15,.97),
+            rgba(123,17,19,.94)
+        ),
+        url("logo/bg-pic.jpg");
+    background-size:cover;
+    background-position:center;
+    padding:50px;
+    display:flex;
+    align-items:center;
+    position:relative;
+    overflow:hidden;
+}
+
+.dms-brand-panel::after{
+    content:"";
+    position:absolute;
+    width:300px;
+    height:300px;
+    right:-150px;
+    bottom:-150px;
+    border:1px solid rgba(215,180,106,.3);
+    border-radius:50%;
+}
+
+.dms-brand-content{
+    position:relative;
+    z-index:2;
+}
+
+.dms-logo{
+    width:88px;
+    height:88px;
+    border-radius:50%;
+    background:#fff;
+    padding:5px;
+    border:2px solid var(--gold);
+    object-fit:contain;
+    margin-bottom:25px;
+}
+
+.dms-brand-small{
     color:var(--gold);
+    font-size:13px;
+    font-weight:700;
+    letter-spacing:1px;
+    text-transform:uppercase;
+    margin-bottom:9px;
+}
+
+.dms-brand-panel h1{
+    color:#fff;
+    font-size:34px;
+    line-height:1.15;
     margin:0 0 18px;
 }
 
-.portal-stat{
-    background:#fff;
-    color:#333;
-    border-radius:7px;
-    padding:19px;
-    text-align:center;
-    box-shadow:0 4px 12px rgba(0,0,0,.12);
+.dms-brand-line{
+    width:65px;
+    height:3px;
+    background:var(--gold);
+    margin:18px 0;
 }
 
-.portal-stat span{
+.dms-brand-description{
+    color:#f5e5e5;
+    font-size:15px;
+    line-height:1.7;
+    max-width:470px;
+    margin:0;
+}
+
+.dms-brand-footer{
+    color:#e8cccc;
+    font-size:12px;
+    line-height:1.6;
+    margin-top:25px;
+}
+
+
+/* RIGHT LOGIN */
+
+.dms-login-panel{
+    background:#fff;
+    padding:50px 45px;
+    display:flex;
+    flex-direction:column;
+    justify-content:center;
+    color:var(--ink);
+}
+
+.dms-login-kicker{
+    color:var(--gold);
+    font-size:13px;
+    text-transform:uppercase;
+    letter-spacing:.8px;
+    font-weight:700;
+}
+
+.dms-login-panel h2{
+    margin:7px 0 8px;
+    color:var(--pup);
+    font-size:30px;
+}
+
+.dms-login-subtitle{
+    color:#6b7280;
+    font-size:14px;
+    line-height:1.5;
+    margin:0 0 25px;
+}
+
+
+/* FORM */
+
+.dms-form{
+    width:100%;
+}
+
+.dms-form-group{
+    margin-bottom:18px;
+}
+
+.dms-form-group label{
     display:block;
+    margin-bottom:7px;
+    color:#333;
+    font-size:14px;
+    font-weight:700;
+}
+
+.dms-form-group input{
+    width:100%;
+    padding:12px 13px;
+    border:1px solid #d3d3d3;
+    border-radius:5px;
+    outline:none;
+    background:#fff;
+    color:#222;
+    font-size:14px;
+    transition:.18s ease;
+}
+
+.dms-form-group input:focus{
+    border-color:var(--pup);
+    box-shadow:0 0 0 3px rgba(123,17,19,.07);
+}
+
+
+/* PASSWORD */
+
+.password-wrapper{
+    position:relative;
+}
+
+.password-wrapper input{
+    padding-right:65px;
+}
+
+.show-password{
+    position:absolute;
+    right:9px;
+    top:50%;
+    transform:translateY(-50%);
+    background:none;
+    border:0;
+    color:var(--pup);
+    font-size:11px;
+    font-weight:700;
+    cursor:pointer;
+}
+
+
+/* OPTIONS */
+
+.dms-options{
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    gap:10px;
+    margin:2px 0 22px;
+    font-size:12px;
+}
+
+.remember-me{
+    display:flex;
+    align-items:center;
+    gap:6px;
     color:#666;
 }
 
-.portal-stat strong{
-    display:block;
-    font-size:19px;
-    margin:8px 0;
+.remember-me input{
+    accent-color:var(--pup);
+}
+
+.forgot-password{
+    color:var(--pup);
+    font-weight:700;
+    cursor:pointer;
+}
+
+.forgot-password:hover{
+    text-decoration:underline;
+}
+
+
+/* SIGN IN */
+
+.sign-in{
+    width:100%;
+    border:0;
+    border-radius:5px;
+    background:var(--pup);
+    color:#fff;
+    padding:12px 15px;
+    font-size:14px;
+    font-weight:700;
+    cursor:pointer;
+    transition:.18s ease;
+}
+
+.sign-in:hover{
+    background:var(--pup-dark);
+}
+
+
+/* NOTICE */
+
+.login-notice{
+    margin-top:20px;
+    background:#faf8f2;
+    border:1px solid #e6dcc7;
+    border-left:3px solid var(--gold);
+    border-radius:5px;
+    padding:12px 13px;
+    color:#666;
+    font-size:11px;
+    line-height:1.6;
+}
+
+.login-notice strong{
     color:var(--pup);
 }
 
-footer{
-    background:#202124;
-    color:#c9c9c9;
-    padding:28px 24px;
+
+/* BACK */
+
+.back-portal{
+    text-align:center;
+    margin-top:18px;
 }
 
-.foot{
-    max-width:1280px;
-    margin:auto;
+.back-portal button{
+    border:0;
+    background:none;
+    color:var(--pup);
+    cursor:pointer;
     font-size:12px;
-    line-height:1.6;
+}
+
+.back-portal button:hover{
+    text-decoration:underline;
+}
+
+.prototype-note{
+    text-align:center;
+    margin-top:12px;
+    color:#aaa;
+    font-size:10px;
 }
 
 
@@ -1011,6 +1267,10 @@ footer{
         grid-template-columns:1fr;
     }
 
+    .dms-login-box{
+        max-width:850px;
+    }
+
 }
 
 @media(max-width:900px){
@@ -1045,6 +1305,19 @@ footer{
     .delegated-header{
         align-items:flex-start;
         flex-direction:column;
+    }
+
+    .dms-login-box{
+        grid-template-columns:1fr;
+        max-width:600px;
+    }
+
+    .dms-brand-panel{
+        padding:35px;
+    }
+
+    .dms-login-panel{
+        padding:38px;
     }
 
 }
@@ -1087,8 +1360,7 @@ footer{
     }
 
     .page-title,
-    .section-title h1,
-    #portal .hero h1{
+    .section-title h1{
         font-size:32px;
     }
 
@@ -1186,6 +1458,37 @@ footer{
         min-width:650px;
     }
 
+    .dms-login-page{
+        min-height:auto;
+        padding:10px 0;
+    }
+
+    .dms-brand-panel{
+        padding:30px 24px;
+    }
+
+    .dms-logo{
+        width:72px;
+        height:72px;
+        margin-bottom:18px;
+    }
+
+    .dms-brand-panel h1{
+        font-size:29px;
+    }
+
+    .dms-brand-description{
+        font-size:14px;
+    }
+
+    .dms-login-panel{
+        padding:30px 24px;
+    }
+
+    .dms-login-panel h2{
+        font-size:27px;
+    }
+
 }
 
 @media(max-width:500px){
@@ -1208,8 +1511,7 @@ footer{
     }
 
     .page-title,
-    .section-title h1,
-    #portal .hero h1{
+    .section-title h1{
         font-size:29px;
     }
 
@@ -1247,6 +1549,11 @@ footer{
 
     .delegated-btn{
         width:100%;
+    }
+
+    .dms-options{
+        flex-direction:column;
+        align-items:flex-start;
     }
 
 }
@@ -1398,7 +1705,7 @@ footer{
 <div class="section-title">
 
     <h1 class="page-title">
-        Current Board of Regents Composition
+        The Board of Regents
     </h1>
 
 </div>
@@ -1919,7 +2226,7 @@ footer{
 
 
                 <tr>
-                   <td>
+                    <td>
                         Grant of Delegated Authority to the President to Sign MOA / Contract Involving Financial Obligation from PUP
                     </td>
 
@@ -1951,78 +2258,235 @@ footer{
 </section>
 
 
-<!-- DMS PORTAL -->
+<!-- =========================================================
+     DMS PORTAL — LOGIN PAGE
+========================================================= -->
 
 <section id="portal" class="page">
 
-<div class="section-title"></div>
+
+<div class="dms-login-page">
 
 
-<div class="hero">
-
-<div>
-
-<h1 class="page-title">
-    OUBS-DOCUMENT MANAGEMENT SYSTEM (DMS)
-</h1>
+<div class="dms-login-box">
 
 
-<p>
-    A centralized digital platform for the secure submission, organization, review, tracking, and retrieval of official Board of Regents documents. The DMS streamlines the processing of Board matters and provides authorized users with convenient access to essential documents and records.
-</p>
+<!-- LEFT SIDE -->
+
+<div class="dms-brand-panel">
+
+    <div class="dms-brand-content">
+
+        <img
+            src="logo/pup-logo.png"
+            alt="PUP Logo"
+            class="dms-logo"
+        >
 
 
-<div
-    class="grid"
-    style="grid-template-columns:1fr;max-width:350px;margin-top:25px;gap:15px;"
->
+        <div class="dms-brand-small">
+            Office of the University/Board Secretary
+        </div>
 
-<div class="portal-stat">
 
-<span>
-    Upcoming Meeting
-</span>
+        <h1>
+            Document Management System
+        </h1>
 
-<strong>
-    BOR-FINCOM Meeting
-</strong>
 
-<span>
-    September 24, 2026 (Thursday), 1:30 PM via Zoom Video Conference
-</span>
+        <div class="dms-brand-line"></div>
+
+
+        <p class="dms-brand-description">
+            A centralized digital platform for the secure submission,
+            organization, review, tracking, and retrieval of official
+            Board of Regents documents.
+        </p>
+
+
+        <p class="dms-brand-description">
+            Access to documents and system functions is based on
+            the user's assigned authority and permissions.
+        </p>
+
+
+        <div class="dms-brand-footer">
+
+            Polytechnic University of the Philippines<br>
+            Board of Regents Digital Portal
+
+        </div>
+
+    </div>
 
 </div>
 
-</div>
+
+<!-- RIGHT SIDE -->
+
+<div class="dms-login-panel">
+
+
+    <div class="dms-login-kicker">
+        PUP Board of Regents Digital Portal
+    </div>
+
+
+    <h2>
+        Sign in to DMS
+    </h2>
+
+
+    <p class="dms-login-subtitle">
+        Enter your authorized PUP account credentials to continue.
+    </p>
+
+
+    <form
+        class="dms-form"
+        onsubmit="loginPrototype(event)"
+    >
+
+
+        <div class="dms-form-group">
+
+            <label for="username">
+                PUP Email / Username
+            </label>
+
+            <input
+                type="text"
+                id="username"
+                name="username"
+                placeholder="Enter your PUP email or username"
+                autocomplete="username"
+                required
+            >
+
+        </div>
+
+
+        <div class="dms-form-group">
+
+            <label for="password">
+                Password
+            </label>
+
+
+            <div class="password-wrapper">
+
+                <input
+                    type="password"
+                    id="password"
+                    name="password"
+                    placeholder="Enter your password"
+                    autocomplete="current-password"
+                    required
+                >
+
+
+                <button
+                    type="button"
+                    class="show-password"
+                    onclick="togglePassword()"
+                >
+                    SHOW
+                </button>
+
+            </div>
+
+        </div>
+
+
+        <div class="dms-options">
+
+
+            <label class="remember-me">
+
+                <input
+                    type="checkbox"
+                    id="remember"
+                >
+
+                <span>
+                    Remember me
+                </span>
+
+            </label>
+
+
+            <span
+                class="forgot-password"
+                onclick="forgotPassword()"
+            >
+                Forgot Password?
+            </span>
+
+
+        </div>
+
+
+        <button
+            type="submit"
+            class="sign-in"
+        >
+            SIGN IN
+        </button>
+
+
+        <div class="login-notice">
+
+            <strong>Authorized Access Only</strong><br>
+
+            This system is intended for authorized University
+            officials, Board members, and designated personnel.
+            Access to documents is subject to applicable University
+            policies, procedures, and assigned permissions.
+
+        </div>
+
+
+        <div class="back-portal">
+
+            <button
+                type="button"
+                onclick="show('home')"
+            >
+                ← Back to Board Portal
+            </button>
+
+        </div>
+
+
+        <div class="prototype-note">
+
+            Prototype interface — authentication is not yet
+            connected to the live DMS.
+
+        </div>
+
+
+    </form>
 
 </div>
 
 
-<a
-    href="https://dms.pup.edu.ph/"
-    target="_blank"
-    class="hero-card"
-    style="text-decoration:none;color:inherit;display:block;cursor:pointer;"
->
-
-<h2>
-    OUBS DMS PORTAL
-</h2>
-
-<p style="margin-top:8px;">
-    Login
-</p>
-
-</a>
+</div>
 
 </div>
 
 </section>
 
+
 </main>
 
 
 <script>
+
+
+/* =========================
+   PAGE NAVIGATION
+========================= */
 
 function show(id){
 
@@ -2033,7 +2497,8 @@ function show(id){
     });
 
 
-    var selectedPage = document.getElementById(id);
+    var selectedPage =
+        document.getElementById(id);
 
 
     if(selectedPage){
@@ -2051,24 +2516,112 @@ function show(id){
 }
 
 
+/* =========================
+   DELEGATED AUTHORITIES
+========================= */
+
 function toggleDelegated(){
 
-    var details = document.getElementById('delegatedDetails');
-    var button = document.querySelector('.delegated-btn');
+    var details =
+        document.getElementById('delegatedDetails');
+
+    var button =
+        document.querySelector('.delegated-btn');
+
 
     if(details.classList.contains('active')){
 
         details.classList.remove('active');
 
-        button.textContent = 'View Delegated Authorities';
+        button.textContent =
+            'View Delegated Authorities';
 
     }else{
 
         details.classList.add('active');
 
-        button.textContent = 'Hide Delegated Authorities';
+        button.textContent =
+            'Hide Delegated Authorities';
 
     }
+
+}
+
+
+/* =========================
+   SHOW / HIDE PASSWORD
+========================= */
+
+function togglePassword(){
+
+    var password =
+        document.getElementById('password');
+
+    var button =
+        document.querySelector('.show-password');
+
+
+    if(password.type === 'password'){
+
+        password.type = 'text';
+
+        button.textContent = 'HIDE';
+
+    }else{
+
+        password.type = 'password';
+
+        button.textContent = 'SHOW';
+
+    }
+
+}
+
+
+/* =========================
+   PROTOTYPE LOGIN
+========================= */
+
+function loginPrototype(event){
+
+    event.preventDefault();
+
+
+    var username =
+        document.getElementById('username').value.trim();
+
+
+    if(username === ''){
+
+        alert(
+            'Please enter your PUP email or username.'
+        );
+
+        return;
+
+    }
+
+
+    alert(
+        'Prototype login successful.\n\n' +
+        'Actual authentication will be connected ' +
+        'to the OUBS DMS in the final system.'
+    );
+
+}
+
+
+/* =========================
+   FORGOT PASSWORD
+========================= */
+
+function forgotPassword(){
+
+    alert(
+        'Password recovery is not yet connected in this prototype.\n\n' +
+        'This function may later be connected to the ' +
+        'University authentication system or designated DMS administrator.'
+    );
 
 }
 
