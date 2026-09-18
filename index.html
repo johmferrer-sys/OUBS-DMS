@@ -590,17 +590,7 @@ main{
     display:block;
 }
 
-.home-slide::after{
-    content:"";
-    position:absolute;
-    inset:0;
-    background:
-        linear-gradient(
-            90deg,
-            rgba(91,12,15,.78),
-            rgba(91,12,15,.30),
-            rgba(91,12,15,.12)
-        );
+
 }
 
 .home-slide-content{
@@ -1848,6 +1838,18 @@ main{
 
     </div>
 
+  <!-- SLIDE 5 -->
+
+    <div class="home-slide">
+
+        <img
+            src="slides/slide5.jpg"
+            alt="PUP Board Documents"
+        >
+
+    </div>
+
+
 
     <!-- SLIDE DOTS -->
 
@@ -1875,6 +1877,12 @@ main{
             class="slide-dot"
             onclick="goToSlide(3)"
             aria-label="Slide 4"
+        ></button>
+
+		<button
+            class="slide-dot"
+            onclick="goToSlide(3)"
+            aria-label="Slide 5"
         ></button>
 
     </div>
