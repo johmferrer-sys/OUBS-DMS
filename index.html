@@ -663,7 +663,6 @@ main{
 ========================= */
 
 .admission-page{
-    min-height:620px;
     border-radius:10px;
     padding:34px;
     background:linear-gradient(135deg,var(--pup-dark),var(--pup));
@@ -775,6 +774,106 @@ main{
 
 #gazette .table td{
     color:#222;
+}
+
+
+/* =========================
+   DELEGATED AUTHORITIES
+========================= */
+
+.delegated-box{
+    margin-top:28px;
+    background:rgba(255,255,255,.07);
+    border:1px solid rgba(255,255,255,.14);
+    border-top:3px solid var(--gold);
+    border-radius:8px;
+    padding:22px;
+}
+
+.delegated-header{
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    gap:20px;
+}
+
+.delegated-header h2{
+    margin:0;
+    color:#fff;
+    font-size:22px;
+}
+
+.delegated-header p{
+    margin:7px 0 0;
+    color:#f8eeee;
+    line-height:1.6;
+    max-width:850px;
+    font-size:14px;
+}
+
+.delegated-btn{
+    flex-shrink:0;
+    border:1px solid var(--gold);
+    background:transparent;
+    color:var(--gold);
+    border-radius:4px;
+    padding:9px 14px;
+    cursor:pointer;
+    font-weight:700;
+    transition:.18s ease;
+}
+
+.delegated-btn:hover{
+    background:var(--gold);
+    color:var(--pup-dark);
+}
+
+.delegated-details{
+    display:none;
+    margin-top:20px;
+    background:#fff;
+    color:#222;
+    border-radius:7px;
+    overflow:hidden;
+}
+
+.delegated-details.active{
+    display:block;
+}
+
+.delegated-table{
+    width:100%;
+    border-collapse:collapse;
+}
+
+.delegated-table th,
+.delegated-table td{
+    padding:13px 14px;
+    border-bottom:1px solid var(--line);
+    text-align:left;
+    vertical-align:top;
+    font-size:13px;
+}
+
+.delegated-table th{
+    background:#f7f4ed;
+    color:var(--pup);
+    text-transform:uppercase;
+    font-size:11px;
+    letter-spacing:.4px;
+}
+
+.delegated-table tr:last-child td{
+    border-bottom:none;
+}
+
+.delegated-note{
+    padding:13px 15px;
+    background:#faf8f2;
+    border-top:1px solid var(--line);
+    color:#666;
+    font-size:12px;
+    line-height:1.6;
 }
 
 
@@ -911,6 +1010,7 @@ footer{
     #about .cards3{
         grid-template-columns:1fr;
     }
+
 }
 
 @media(max-width:900px){
@@ -941,6 +1041,12 @@ footer{
     .admission-page{
         padding:28px 24px;
     }
+
+    .delegated-header{
+        align-items:flex-start;
+        flex-direction:column;
+    }
+
 }
 
 @media(max-width:700px){
@@ -1067,6 +1173,19 @@ footer{
         min-width:0;
         width:100%;
     }
+
+    .delegated-box{
+        padding:18px;
+    }
+
+    .delegated-details{
+        overflow-x:auto;
+    }
+
+    .delegated-table{
+        min-width:650px;
+    }
+
 }
 
 @media(max-width:500px){
@@ -1121,6 +1240,15 @@ footer{
         padding:10px 11px;
         font-size:12px;
     }
+
+    .delegated-header h2{
+        font-size:20px;
+    }
+
+    .delegated-btn{
+        width:100%;
+    }
+
 }
 
 </style>
@@ -1400,6 +1528,7 @@ footer{
 <div class="section-title">
 
     <br>
+
 </div>
 
 <table class="table former-board-table">
@@ -1679,6 +1808,8 @@ footer{
 </div>
 
 
+<!-- EXISTING GAZETTE TABLE -->
+
 <table class="table">
 
 <tr>
@@ -1705,6 +1836,117 @@ footer{
 </tr>
 
 </table>
+
+
+<!-- BOR-APPROVED DELEGATED AUTHORITIES -->
+
+<div class="delegated-box">
+
+    <div class="delegated-header">
+
+        <div>
+
+            <h2>
+                BOR-Approved Delegated Authorities
+            </h2>
+
+            <p>
+                Selected authorities delegated by the Board of Regents to the University President are presented below for reference. This section provides a summary only; complete official records are maintained by the Office of the University/Board Secretary.
+            </p>
+
+        </div>
+
+
+        <button
+            type="button"
+            class="delegated-btn"
+            onclick="toggleDelegated()"
+        >
+            View Delegated Authorities
+        </button>
+
+    </div>
+
+
+    <div
+        id="delegatedDetails"
+        class="delegated-details"
+    >
+
+        <table class="delegated-table">
+
+            <thead>
+
+                <tr>
+                    <th>Authority / Matter</th>
+                    <th>BOR Resolution</th>
+                    <th>BOR Meeting</th>
+                </tr>
+
+            </thead>
+
+
+            <tbody>
+
+                <tr>
+                    <td>
+                        Grant of Delegated Authority to the President to Sign MOA / Contract Involving Financial Obligation from PUP
+                    </td>
+
+                    <td>
+                        Board Resolution No. 2669, Series of 2022
+                    </td>
+
+                    <td>
+                        176th Regular Meeting
+                    </td>
+                </tr>
+
+
+                <tr>
+                    <td>
+                        Grant of Delegated Authority to the President to Sign MOA / Contract Involving Financial Obligation from PUP
+                    </td>
+
+                    <td>
+                        Board Resolution No. 2669, Series of 2022
+                    </td>
+
+                    <td>
+                        176th Regular Meeting
+                    </td>
+                </tr>
+
+
+                <tr>
+                   <td>
+                        Grant of Delegated Authority to the President to Sign MOA / Contract Involving Financial Obligation from PUP
+                    </td>
+
+                    <td>
+                        Board Resolution No. 2669, Series of 2022
+                    </td>
+
+                    <td>
+                        176th Regular Meeting
+                    </td>
+                </tr>
+
+            </tbody>
+
+        </table>
+
+
+        <div class="delegated-note">
+
+            <strong>Note:</strong>
+            The information presented in this section is a summary for reference purposes only. For the complete and authoritative text of any delegated authority, reference shall be made to the official records maintained by the Office of the University/Board Secretary.
+
+        </div>
+
+    </div>
+
+</div>
 
 </section>
 
@@ -1805,6 +2047,28 @@ function show(id){
         top:0,
         behavior:'smooth'
     });
+
+}
+
+
+function toggleDelegated(){
+
+    var details = document.getElementById('delegatedDetails');
+    var button = document.querySelector('.delegated-btn');
+
+    if(details.classList.contains('active')){
+
+        details.classList.remove('active');
+
+        button.textContent = 'View Delegated Authorities';
+
+    }else{
+
+        details.classList.add('active');
+
+        button.textContent = 'Hide Delegated Authorities';
+
+    }
 
 }
 
