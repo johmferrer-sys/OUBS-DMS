@@ -925,6 +925,41 @@ main{
 
 
 /* =========================
+   GAZETTE BANNER
+========================= */
+
+.gazette-banner{
+    position:relative;
+    width:100%;
+    height:280px;
+    margin-bottom:28px;
+    border-radius:9px;
+    overflow:hidden;
+    background:url("logo/gazette-banner.png");
+    background-size:cover;
+    background-position:center;
+    box-shadow:0 8px 24px rgba(80,10,15,.16);
+}
+
+@media(max-width:700px){
+
+    .gazette-banner{
+        height:230px;
+        border-radius:8px;
+    }
+
+}
+
+@media(max-width:500px){
+
+    .gazette-banner{
+        height:210px;
+    }
+
+}
+
+
+/* =========================
    DELEGATED AUTHORITIES
 ========================= */
 
@@ -1860,17 +1895,7 @@ main{
 
     </div>
 
-  <!-- SLIDE 7 -->
-
-    <div class="home-slide">
-
-        <img
-            src="slides/slide7.png"
-            alt="PUP Board Documents"
-        >
-
-    </div>
-
+ 
 
 
     <!-- SLIDE DOTS -->
@@ -1913,12 +1938,7 @@ main{
             aria-label="Slide 6"
         ></button>
 
-		<button
-            class="slide-dot"
-            onclick="goToSlide(5)"
-            aria-label="Slide 6"
-        ></button>
-
+		
     </div>
 
 </div>
@@ -2414,6 +2434,11 @@ main{
 <!-- GAZETTE -->
 
 <section id="gazette" class="page">
+
+<!-- GAZETTE BANNER -->
+
+<div class="gazette-banner"></div>
+
 
 <div class="section-title">
 
