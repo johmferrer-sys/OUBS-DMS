@@ -259,35 +259,108 @@ main{
     margin-left:8px;
 }
 
+
+/* =========================
+   ANNOUNCEMENT CARD
+========================= */
+
 .hero-card{
-    background:rgba(255,255,255,.08);
-    border:1px solid rgba(255,255,255,.18);
+    background:#fff;
+    color:#222;
+    border:1px solid #e3e3e3;
     border-radius:8px;
-    padding:22px;
-    backdrop-filter:blur(3px);
+    padding:28px 26px;
     position:relative;
     z-index:2;
     transition:.18s ease;
+    box-shadow:0 6px 18px rgba(0,0,0,.12);
+    overflow:hidden;
+}
+
+.hero-card::before{
+    content:"";
+    position:absolute;
+    top:0;
+    left:0;
+    width:100%;
+    height:4px;
+    background:var(--gold);
+}
+
+.hero-card::after{
+    content:"";
+    position:absolute;
+    width:110px;
+    height:110px;
+    right:-55px;
+    bottom:-55px;
+    border:1px solid rgba(123,17,19,.10);
+    border-radius:50%;
+    pointer-events:none;
 }
 
 .hero-card:hover{
     transform:translateY(-2px);
-    box-shadow:0 7px 18px rgba(0,0,0,.14);
+    box-shadow:0 9px 22px rgba(0,0,0,.16);
+}
+
+.announcement-heading{
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    gap:12px;
+    color:#111;
+    font-size:30px;
+    line-height:1.1;
+    font-weight:700;
+    letter-spacing:1.5px;
+    text-align:center;
+    margin:0 0 22px;
+}
+
+.announcement-line{
+    flex:1;
+    height:1px;
+    background:var(--gold);
+    max-width:45px;
+}
+
+.announcement-heading span:nth-child(2){
+    position:relative;
+}
+
+.announcement-heading span:nth-child(2)::after{
+    content:"";
+    display:block;
+    width:42px;
+    height:3px;
+    background:var(--pup);
+    margin:7px auto 0;
 }
 
 .hero-card small{
-    color:#f0dada;
-    letter-spacing:.7px;
+    display:block;
+    color:var(--pup);
+    letter-spacing:.8px;
+    font-size:12px;
+    font-weight:700;
 }
 
 .hero-card h2{
     margin:7px 0 10px;
     font-size:21px;
-    color:#fff;
+    color:#222;
 }
 
 .hero-card p{
-    color:#f6e7e7;
+    color:#444;
+    line-height:1.6;
+}
+
+.hero-card hr{
+    border:0;
+    border-top:1px solid #ddd!important;
+    margin:20px 0;
 }
 
 .section-title{
@@ -588,9 +661,6 @@ main{
     height:100%;
     object-fit:cover;
     display:block;
-}
-
-
 }
 
 .home-slide-content{
@@ -1075,9 +1145,6 @@ main{
     padding:20px 0;
 }
 
-
-/* LOGIN CONTAINER */
-
 .dms-login-box{
     width:100%;
     max-width:980px;
@@ -1088,9 +1155,6 @@ main{
     overflow:hidden;
     box-shadow:0 12px 30px rgba(0,0,0,.18);
 }
-
-
-/* LEFT BRANDING */
 
 .dms-brand-panel{
     background:
@@ -1650,6 +1714,23 @@ main{
         bottom:14px;
     }
 
+
+    /* ANNOUNCEMENT MOBILE */
+
+    .hero-card{
+        padding:25px 20px;
+    }
+
+    .announcement-heading{
+        font-size:25px;
+        gap:9px;
+        letter-spacing:1px;
+    }
+
+    .announcement-line{
+        max-width:30px;
+    }
+
 }
 
 @media(max-width:500px){
@@ -1730,6 +1811,18 @@ main{
 
     .home-slide-content p{
         font-size:13px;
+    }
+
+
+    /* ANNOUNCEMENT SMALL MOBILE */
+
+    .announcement-heading{
+        font-size:23px;
+        gap:7px;
+    }
+
+    .announcement-line{
+        max-width:20px;
     }
 
 }
@@ -1873,7 +1966,8 @@ main{
 
     </div>
 
-  <!-- SLIDE 5 -->
+
+    <!-- SLIDE 5 -->
 
     <div class="home-slide">
 
@@ -1884,7 +1978,8 @@ main{
 
     </div>
 
-  <!-- SLIDE 6 -->
+
+    <!-- SLIDE 6 -->
 
     <div class="home-slide">
 
@@ -1894,8 +1989,6 @@ main{
         >
 
     </div>
-
- 
 
 
     <!-- SLIDE DOTS -->
@@ -1926,19 +2019,18 @@ main{
             aria-label="Slide 4"
         ></button>
 
-		<button
+        <button
             class="slide-dot"
             onclick="goToSlide(4)"
             aria-label="Slide 5"
         ></button>
 
-		<button
+        <button
             class="slide-dot"
             onclick="goToSlide(5)"
             aria-label="Slide 6"
         ></button>
 
-		
     </div>
 
 </div>
@@ -1971,7 +2063,20 @@ main{
 
 <div class="hero-card">
 
-    <small>UPCOMING MEETING</small>
+    <div class="announcement-heading">
+
+        <span class="announcement-line"></span>
+
+        <span>ANNOUNCEMENT</span>
+
+        <span class="announcement-line"></span>
+
+    </div>
+
+
+    <small>
+        UPCOMING MEETING
+    </small>
 
     <h2>
         BOR-FINCOM Meeting
@@ -1981,7 +2086,7 @@ main{
         September 24, 2026 (Thursday), 1:30 PM via Zoom Video Conference
     </p>
 
-    <hr style="border-color:#ffffff25">
+    <hr>
 
     <small>
         DEADLINE OF AGENDA SUBMISSION
@@ -2540,7 +2645,6 @@ main{
 
                     <td>
                         132nd BOR, March 18, 2011
-
                     </td>
                 </tr>
 
@@ -2556,7 +2660,6 @@ main{
 
                     <td>
                         150th BOR, October 6, 2015
-
                     </td>
                 </tr>
 
@@ -2572,9 +2675,9 @@ main{
 
                     <td>
                         153rd BOR, June 25, 2016
-
                     </td>
                 </tr>
+
 
                 <tr>
                     <td>
@@ -2590,6 +2693,7 @@ main{
                     </td>
                 </tr>
 
+
                 <tr>
                     <td>
                         Grant of Delegated Authority to the President to increase the signing limit of the University President
@@ -2604,6 +2708,7 @@ main{
                     </td>
                 </tr>
 
+
                 <tr>
                     <td>
                         Grant of Delegated Authority to the President to decide administrative cases and other administrative matters
@@ -2615,10 +2720,11 @@ main{
 
                     <td>
                         157th BOR, June 20, 2017
-
                     </td>
                 </tr>
 
+
+                <tr>
                     <td>
                         Grant of Delegated Authority to the President to approve Agency Procurement Request (APR) limited to Five Million Pesos (Php 5,000,000.00) and below
                     </td>
@@ -2630,7 +2736,10 @@ main{
                     <td>
                         159th BOR, December 11, 2017
                     </td>
-</tr>
+                </tr>
+
+
+                <tr>
                     <td>
                         Grant of Delegated Authority to the President to approve changes to Annual Procurement Plan
                     </td>
@@ -2642,7 +2751,10 @@ main{
                     <td>
                         159th BOR, December 11, 2017
                     </td>
-</tr>
+                </tr>
+
+
+                <tr>
                     <td>
                         The Board approved the Resolution clarifying the extent of authority granted to the PUP President to create a committee on administrative cases involving PUP officials and employees, study and approve the recommendation of said committee, and seek Board ratification if the decision carries penalties rendered to concerned party/ies.
                     </td>
@@ -2654,8 +2766,10 @@ main{
                     <td>
                         162nd BOR, September 05, 2018
                     </td>
-</tr>
+                </tr>
 
+
+                <tr>
                     <td>
                         Grant of Delegated Authority to the President to Sign/Approve Requests of Faculty and Employees to be granted limited authority to practice profession and ratifying/confirming all authority/permit to practice previously issued by the President.
                     </td>
@@ -2666,10 +2780,11 @@ main{
 
                     <td>
                         163rd BOR, December 20, 2018
-
                     </td>
-</tr>
+                </tr>
 
+
+                <tr>
                     <td>
                         Grant of Delegated Authority to the Chief Legal Counsel and Legal Officers of the University to Represent the University in Civil and Criminal Cases Involving the University Except for Cases Handled by the Office of the Solicitor General
                     </td>
@@ -2681,8 +2796,10 @@ main{
                     <td>
                         BOR Special Meeting, February 7, 2019
                     </td>
-</tr>
+                </tr>
 
+
+                <tr>
                     <td>
                         Grant of Delegated Authority to the Directors of Branches/Campuses Outside the NCR to File Criminal and Civil Cases
                     </td>
@@ -2693,10 +2810,11 @@ main{
 
                     <td>
                         171st BOR, December 10, 2020
-
                     </td>
-</tr>
+                </tr>
 
+
+                <tr>
                     <td>
                         Grant of Delegated Authority to the President to hire, appoint and promote faculty and administrative personnel w the rank of SG 18 and below
                     </td>
@@ -2708,7 +2826,10 @@ main{
                     <td>
                         172nd BOR, March 22, 2021
                     </td>
-</tr>
+                </tr>
+
+
+                <tr>
                     <td>
                         Grant of Delegated Authority to the President to approve Variation Orders in the Contract Implementation for the Procurement of Infrastructure and the Confirmation of all Variation Orders signed by the University President
                     </td>
@@ -2720,10 +2841,12 @@ main{
                     <td>
                         BOR Special Meeting, December 19, 2022
                     </td>
-</tr>
+                </tr>
 
+
+                <tr>
                     <td>
-                 Grant of Delegated Authority to the President to Sign the Documents Pertaining to the MOA on Scholarship and Training Grants from Government Partner Institutions
+                        Grant of Delegated Authority to the President to Sign the Documents Pertaining to the MOA on Scholarship and Training Grants from Government Partner Institutions
                     </td>
 
                     <td>
@@ -2732,12 +2855,13 @@ main{
 
                     <td>
                         176th BOR, March 23, 2022
-
                     </td>
-</tr>
+                </tr>
 
+
+                <tr>
                     <td>
-                 Grant of Delegated Authority to the President to Sign MOA / Contract Involving Financial Obligation from PUP
+                        Grant of Delegated Authority to the President to Sign MOA / Contract Involving Financial Obligation from PUP
                     </td>
 
                     <td>
@@ -2746,12 +2870,13 @@ main{
 
                     <td>
                         176th BOR, March 23, 2022
-
                     </td>
-</tr>
+                </tr>
 
+
+                <tr>
                     <td>
-                 Grant of Delegated Authority to the Executive Vice President to Sign Requests for Authority to Render Saturday Service (as Recommended by the Head Executive Assistant or Concerned Vice President)
+                        Grant of Delegated Authority to the Executive Vice President to Sign Requests for Authority to Render Saturday Service (as Recommended by the Head Executive Assistant or Concerned Vice President)
                     </td>
 
                     <td>
@@ -2760,12 +2885,13 @@ main{
 
                     <td>
                         176th BOR, March 23, 2022
-
                     </td>
-</tr>
+                </tr>
 
+
+                <tr>
                     <td>
-                 Grant of Delegated Authority to the President and the Vice President for Finance to Sign the Documents Pertaining to Lease Contracts / Agreements with Regard to Income Generating Projects (IGPs)
+                        Grant of Delegated Authority to the President and the Vice President for Finance to Sign the Documents Pertaining to Lease Contracts / Agreements with Regard to Income Generating Projects (IGPs)
                     </td>
 
                     <td>
@@ -2774,12 +2900,13 @@ main{
 
                     <td>
                         176th BOR, March 23, 2022
-
                     </td>
-</tr>
+                </tr>
 
+
+                <tr>
                     <td>
-                 Grant of Delegated Authority to the Vice President for Academic Affairs and Vice President for Branches and Campuses to Sign the Documents Pertaining to the MOA/MOU Involving Linkages and OJT of Students
+                        Grant of Delegated Authority to the Vice President for Academic Affairs and Vice President for Branches and Campuses to Sign the Documents Pertaining to the MOA/MOU Involving Linkages and OJT of Students
                     </td>
 
                     <td>
@@ -2788,12 +2915,13 @@ main{
 
                     <td>
                         176th BOR, March 23, 2022
-
                     </td>
-</tr>
+                </tr>
 
+
+                <tr>
                     <td>
-                 Grant of Delegated Authority to the President to enter into MOA with DPWH RO, and to Designate PUP Representatives in the SUC Infrastructure Project Regional Monitoring Team (SIPRM)
+                        Grant of Delegated Authority to the President to enter into MOA with DPWH RO, and to Designate PUP Representatives in the SUC Infrastructure Project Regional Monitoring Team (SIPRM)
                     </td>
 
                     <td>
@@ -2802,12 +2930,13 @@ main{
 
                     <td>
                         April 30, 2024
-
                     </td>
-</tr>
+                </tr>
 
+
+                <tr>
                     <td>
-                 Grant of Delegated Authority to the President, and Vice Presidents, to join the execution of specific contracts, deeds, and instruments for the proper conduct of the business of the University
+                        Grant of Delegated Authority to the President, and Vice Presidents, to join the execution of specific contracts, deeds, and instruments for the proper conduct of the business of the University
                     </td>
 
                     <td>
@@ -2816,13 +2945,13 @@ main{
 
                     <td>
                         185th BOR, July 17, 2024
-
-
                     </td>
-</tr>
+                </tr>
 
+
+                <tr>
                     <td>
-                 Grant of Delegated Authority to the President to Approve Legitimate International Travel Requests Reviewed and Deemed Legitimate by the OIA, Pursuant to Board Resolution No. 4078, Series of 2025, on the Evaluation and Issuance of Legitimacy for International Events Attended by PUP Officials, Faculty Members, and Administrative Employees.
+                        Grant of Delegated Authority to the President to Approve Legitimate International Travel Requests Reviewed and Deemed Legitimate by the OIA, Pursuant to Board Resolution No. 4078, Series of 2025, on the Evaluation and Issuance of Legitimacy for International Events Attended by PUP Officials, Faculty Members, and Administrative Employees.
                     </td>
 
                     <td>
@@ -2832,10 +2961,12 @@ main{
                     <td>
                         189th BOR, June 17, 2025
                     </td>
-</tr>
+                </tr>
 
+
+                <tr>
                     <td>
-                Increase in the President’s Approval Authority Threshold for Capital Outlay, Goods and Services, and Consultancy Services Without Requiring BOR Confirmation: Capital Outlay (Infrastructure and Equipment) = PHP 50,000,000.00; Goods & Services and Consultancy Services = PHP 30,000,000.00
+                        Increase in the President’s Approval Authority Threshold for Capital Outlay, Goods and Services, and Consultancy Services Without Requiring BOR Confirmation: Capital Outlay (Infrastructure and Equipment) = PHP 50,000,000.00; Goods & Services and Consultancy Services = PHP 30,000,000.00
                     </td>
 
                     <td>
@@ -2844,9 +2975,9 @@ main{
 
                     <td>
                         191st BOR, December 12, 2025
-
                     </td>
-</tr>
+                </tr>
+
             </tbody>
 
         </table>
