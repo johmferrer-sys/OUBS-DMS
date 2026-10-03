@@ -149,7 +149,6 @@ nav button:hover{
     border-radius:4px!important;
     padding:9px 15px!important;
     margin-left:5px;
-    box-shadow:none;
 }
 
 .login:hover{
@@ -258,11 +257,6 @@ main{
     border:1px solid #ffffff55;
     margin-left:8px;
 }
-
-
-/* =========================
-   ANNOUNCEMENT CARD
-========================= */
 
 .hero-card{
     background:#fff;
@@ -396,11 +390,6 @@ main{
     background:var(--gold);
     margin-top:7px;
 }
-
-
-/* =========================
-   GOLD ACCENT CARD
-========================= */
 
 .card{
     background:#fff;
@@ -725,33 +714,6 @@ main{
 
 
 /* =========================
-   SMALL FORMER BOARD TABLE
-========================= */
-
-#board .former-board-table{
-    width:100%;
-    max-width:700px;
-    margin:25px auto 0;
-}
-
-#board .former-board-table th,
-#board .former-board-table td{
-    padding:11px 14px;
-    color:#222;
-}
-
-#board .former-board-table th:first-child,
-#board .former-board-table td:first-child{
-    width:50%;
-}
-
-#board .former-board-table th:last-child,
-#board .former-board-table td:last-child{
-    width:50%;
-}
-
-
-/* =========================
    BOARD
 ========================= */
 
@@ -776,6 +738,18 @@ main{
 #board .card{
     background:rgba(255,255,255,.98);
     color:var(--ink);
+}
+
+#board .former-board-table{
+    width:100%;
+    max-width:700px;
+    margin:25px auto 0;
+}
+
+#board .former-board-table th,
+#board .former-board-table td{
+    padding:11px 14px;
+    color:#222;
 }
 
 
@@ -828,7 +802,7 @@ main{
 
 
 /* =========================
-   MANUAL OF OPERATIONS
+   MANUAL
 ========================= */
 
 #documents{
@@ -949,9 +923,9 @@ main{
 }
 
 
-/* =========================
+/* =========================================================
    GAZETTE
-========================= */
+========================================================= */
 
 #gazette{
     background:linear-gradient(135deg,var(--pup-dark),var(--pup-light));
@@ -973,30 +947,8 @@ main{
     font-size:15px;
 }
 
-#gazette .toolbar{
-    background:rgba(255,255,255,.06);
-    padding:13px;
-    border-radius:7px;
-    border:1px solid rgba(255,255,255,.12);
-}
 
-#gazette .table{
-    background:#fff;
-}
-
-#gazette .table th{
-    background:#f7f4ed;
-    color:var(--pup);
-}
-
-#gazette .table td{
-    color:#222;
-}
-
-
-/* =========================
-   GAZETTE BANNER
-========================= */
+/* GAZETTE BANNER */
 
 .gazette-banner{
     position:relative;
@@ -1011,87 +963,191 @@ main{
     box-shadow:0 8px 24px rgba(80,10,15,.16);
 }
 
-@media(max-width:700px){
 
-    .gazette-banner{
-        height:230px;
-        border-radius:8px;
-    }
+/* GAZETTE MENU */
 
-}
-
-@media(max-width:500px){
-
-    .gazette-banner{
-        height:210px;
-    }
-
-}
-
-
-/* =========================
-   DELEGATED AUTHORITIES
-========================= */
-
-.delegated-box{
+.gazette-menu{
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+    gap:18px;
     margin-top:28px;
-    background:rgba(255,255,255,.07);
-    border:1px solid rgba(255,255,255,.14);
-    border-top:3px solid var(--gold);
-    border-radius:8px;
-    padding:22px;
 }
 
-.delegated-header{
-    display:flex;
-    align-items:center;
-    justify-content:space-between;
-    gap:20px;
-}
-
-.delegated-header h2{
-    margin:0;
-    color:#fff;
-    font-size:22px;
-}
-
-.delegated-header p{
-    margin:7px 0 0;
-    color:#f8eeee;
-    line-height:1.6;
-    max-width:850px;
-    font-size:14px;
-}
-
-.delegated-btn{
-    flex-shrink:0;
-    border:1px solid var(--gold);
-    background:transparent;
-    color:var(--gold);
-    border-radius:4px;
-    padding:9px 14px;
-    cursor:pointer;
-    font-weight:700;
-    transition:.18s ease;
-}
-
-.delegated-btn:hover{
-    background:var(--gold);
-    color:var(--pup-dark);
-}
-
-.delegated-details{
-    display:none;
-    margin-top:20px;
+.gazette-card{
+    position:relative;
     background:#fff;
-    color:#222;
-    border-radius:7px;
+    color:var(--ink);
+    border:1px solid #e3e3e3;
+    border-radius:8px;
+    padding:28px 24px;
+    min-height:190px;
+    cursor:pointer;
+    text-align:left;
+    transition:.18s ease;
+    box-shadow:0 5px 18px rgba(0,0,0,.07);
     overflow:hidden;
 }
 
-.delegated-details.active{
+.gazette-card::before{
+    content:"";
+    position:absolute;
+    top:0;
+    left:0;
+    width:100%;
+    height:4px;
+    background:var(--gold);
+}
+
+.gazette-card:hover{
+    transform:translateY(-4px);
+    box-shadow:0 9px 24px rgba(0,0,0,.14);
+    border-color:#d8d8d8;
+}
+
+.gazette-card-number{
+    display:block;
+    color:var(--gold);
+    font-size:13px;
+    font-weight:700;
+    letter-spacing:1px;
+    margin-bottom:12px;
+}
+
+.gazette-card h2{
+    margin:0 0 10px;
+    color:var(--pup);
+    font-size:22px;
+    line-height:1.25;
+}
+
+.gazette-card p{
+    margin:0;
+    color:#666;
+    font-size:14px;
+    line-height:1.6;
+}
+
+.gazette-card-arrow{
+    position:absolute;
+    right:20px;
+    bottom:18px;
+    color:var(--pup);
+    font-size:20px;
+    font-weight:700;
+}
+
+
+/* GAZETTE CONTENT */
+
+.gazette-content{
+    display:none;
+    margin-top:25px;
+    background:#fff;
+    color:#222;
+    border-radius:8px;
+    overflow:hidden;
+    border:1px solid #e3e3e3;
+    box-shadow:0 5px 18px rgba(0,0,0,.07);
+}
+
+.gazette-content.active{
     display:block;
 }
+
+.gazette-content-header{
+    padding:20px 24px;
+    background:#f7f4ed;
+    border-bottom:1px solid var(--line);
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    gap:15px;
+}
+
+.gazette-content-header h2{
+    margin:0;
+    color:var(--pup);
+    font-size:22px;
+}
+
+.gazette-close{
+    border:1px solid var(--pup);
+    background:transparent;
+    color:var(--pup);
+    border-radius:4px;
+    padding:8px 13px;
+    cursor:pointer;
+    font-weight:700;
+}
+
+.gazette-close:hover{
+    background:var(--pup);
+    color:#fff;
+}
+
+.gazette-content-body{
+    padding:24px;
+}
+
+
+/* GAZETTE TABLE */
+
+.gazette-record-table{
+    width:100%;
+    border-collapse:collapse;
+}
+
+.gazette-record-table th,
+.gazette-record-table td{
+    padding:13px 14px;
+    border-bottom:1px solid var(--line);
+    text-align:left;
+    vertical-align:top;
+    font-size:17px;
+}
+
+.gazette-record-table th{
+    background:#f7f4ed;
+    color:var(--pup);
+    font-size:11px;
+    text-transform:uppercase;
+    letter-spacing:.4px;
+}
+
+.gazette-record-table tr:last-child td{
+    border-bottom:none;
+}
+
+.gazette-record-table tr:hover td{
+    background:#fffaf3;
+}
+
+.gazette-pdf{
+    color:var(--pup);
+    font-weight:700;
+    cursor:pointer;
+}
+
+.gazette-pdf:hover{
+    text-decoration:underline;
+}
+
+
+/* NOTICE */
+
+.gazette-notice{
+    margin-top:25px;
+    background:rgba(255,255,255,.07);
+    border-left:3px solid var(--gold);
+    border-radius:0 6px 6px 0;
+    padding:16px 18px;
+    color:#f8eeee;
+    font-size:13px;
+    line-height:1.7;
+}
+
+
+/* DELEGATED AUTHORITIES */
 
 .delegated-table{
     width:100%;
@@ -1104,7 +1160,7 @@ main{
     border-bottom:1px solid var(--line);
     text-align:left;
     vertical-align:top;
-    font-size:19px;
+    font-size:17px;
 }
 
 .delegated-table th{
@@ -1119,13 +1175,223 @@ main{
     border-bottom:none;
 }
 
+.delegated-table tr:hover td{
+    background:#fffaf3;
+}
+
 .delegated-note{
+    margin-top:18px;
     padding:13px 15px;
     background:#faf8f2;
     border-top:1px solid var(--line);
     color:#666;
     font-size:12px;
     line-height:1.6;
+}
+
+
+/* =========================================================
+   ACADEMIC PROGRAM YEAR CARDS
+========================================================= */
+
+.program-year-grid{
+    display:grid;
+    grid-template-columns:repeat(4,1fr);
+    gap:15px;
+}
+
+.program-year-card{
+    position:relative;
+    background:#fff;
+    border:1px solid #e3e3e3;
+    border-radius:7px;
+    padding:22px 20px;
+    min-height:145px;
+    cursor:pointer;
+    transition:.18s ease;
+    overflow:hidden;
+}
+
+.program-year-card::before{
+    content:"";
+    position:absolute;
+    top:0;
+    left:0;
+    width:100%;
+    height:4px;
+    background:var(--gold);
+}
+
+.program-year-card:hover{
+    transform:translateY(-3px);
+    box-shadow:0 8px 20px rgba(0,0,0,.10);
+    border-color:#d8d8d8;
+}
+
+.program-year-number{
+    display:block;
+    color:var(--gold);
+    font-size:12px;
+    font-weight:700;
+    letter-spacing:1px;
+    margin-bottom:7px;
+}
+
+.program-year-card h3{
+    margin:0 0 8px;
+    color:var(--pup);
+    font-size:27px;
+}
+
+.program-year-card p{
+    margin:0;
+    color:#666;
+    font-size:13px;
+    line-height:1.5;
+}
+
+.program-year-arrow{
+    position:absolute;
+    right:18px;
+    bottom:15px;
+    color:var(--pup);
+    font-size:19px;
+    font-weight:700;
+}
+
+
+/* YEAR RECORDS */
+
+.program-year-records{
+    display:none;
+    margin-top:22px;
+    border-top:1px solid var(--line);
+    padding-top:22px;
+}
+
+.program-year-records.active{
+    display:block;
+}
+
+.program-year-header{
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    gap:15px;
+    margin-bottom:15px;
+}
+
+.program-year-header h3{
+    margin:0;
+    color:var(--pup);
+    font-size:23px;
+}
+
+.program-year-close{
+    border:1px solid var(--pup);
+    background:transparent;
+    color:var(--pup);
+    border-radius:4px;
+    padding:7px 12px;
+    cursor:pointer;
+    font-weight:700;
+}
+
+.program-year-close:hover{
+    background:var(--pup);
+    color:#fff;
+}
+
+.program-year-empty{
+    background:#faf8f2;
+    border:1px solid #e6dcc7;
+    border-left:3px solid var(--gold);
+    border-radius:5px;
+    padding:15px 17px;
+    color:#666;
+    font-size:13px;
+    line-height:1.6;
+}
+
+
+/* GAZETTE RESPONSIVE */
+
+@media(max-width:1000px){
+
+    .program-year-grid{
+        grid-template-columns:repeat(2,1fr);
+    }
+
+}
+
+@media(max-width:900px){
+
+    .gazette-menu{
+        grid-template-columns:1fr;
+    }
+
+}
+
+@media(max-width:700px){
+
+    .gazette-banner{
+        height:230px;
+        border-radius:8px;
+    }
+
+    .gazette-card{
+        min-height:165px;
+        padding:24px 20px;
+    }
+
+    .gazette-card h2{
+        font-size:20px;
+    }
+
+    .gazette-content-header{
+        align-items:flex-start;
+        flex-direction:column;
+    }
+
+    .gazette-close{
+        width:100%;
+    }
+
+    .gazette-content-body{
+        padding:18px;
+        overflow-x:auto;
+    }
+
+    .gazette-record-table,
+    .delegated-table{
+        min-width:650px;
+    }
+
+    .program-year-grid{
+        grid-template-columns:1fr 1fr;
+    }
+
+    .program-year-header{
+        align-items:flex-start;
+        flex-direction:column;
+    }
+
+    .program-year-close{
+        width:100%;
+    }
+
+}
+
+@media(max-width:500px){
+
+    .gazette-banner{
+        height:210px;
+    }
+
+    .program-year-grid{
+        grid-template-columns:1fr;
+    }
+
 }
 
 
@@ -1238,9 +1504,6 @@ main{
     margin-top:25px;
 }
 
-
-/* RIGHT LOGIN */
-
 .dms-login-panel{
     background:#fff;
     padding:50px 45px;
@@ -1270,9 +1533,6 @@ main{
     line-height:1.5;
     margin:0 0 25px;
 }
-
-
-/* FORM */
 
 .dms-form{
     width:100%;
@@ -1307,9 +1567,6 @@ main{
     box-shadow:0 0 0 3px rgba(123,17,19,.07);
 }
 
-
-/* PASSWORD */
-
 .password-wrapper{
     position:relative;
 }
@@ -1330,9 +1587,6 @@ main{
     font-weight:700;
     cursor:pointer;
 }
-
-
-/* OPTIONS */
 
 .dms-options{
     display:flex;
@@ -1364,9 +1618,6 @@ main{
     text-decoration:underline;
 }
 
-
-/* SIGN IN */
-
 .sign-in{
     width:100%;
     border:0;
@@ -1384,9 +1635,6 @@ main{
     background:var(--pup-dark);
 }
 
-
-/* NOTICE */
-
 .login-notice{
     margin-top:20px;
     background:#faf8f2;
@@ -1402,9 +1650,6 @@ main{
 .login-notice strong{
     color:var(--pup);
 }
-
-
-/* BACK */
 
 .back-portal{
     text-align:center;
@@ -1498,11 +1743,6 @@ main{
     #gazette,
     .admission-page{
         padding:28px 24px;
-    }
-
-    .delegated-header{
-        align-items:flex-start;
-        flex-direction:column;
     }
 
     .dms-login-box{
@@ -1644,18 +1884,6 @@ main{
         width:100%;
     }
 
-    .delegated-box{
-        padding:18px;
-    }
-
-    .delegated-details{
-        overflow-x:auto;
-    }
-
-    .delegated-table{
-        min-width:650px;
-    }
-
     .dms-login-page{
         min-height:auto;
         padding:10px 0;
@@ -1687,9 +1915,6 @@ main{
         font-size:27px;
     }
 
-
-    /* SLIDESHOW MOBILE */
-
     .home-slideshow{
         height:330px;
         border-radius:8px;
@@ -1713,9 +1938,6 @@ main{
         left:25px;
         bottom:14px;
     }
-
-
-    /* ANNOUNCEMENT MOBILE */
 
     .hero-card{
         padding:25px 20px;
@@ -1785,21 +2007,10 @@ main{
         font-size:12px;
     }
 
-    .delegated-header h2{
-        font-size:20px;
-    }
-
-    .delegated-btn{
-        width:100%;
-    }
-
     .dms-options{
         flex-direction:column;
         align-items:flex-start;
     }
-
-
-    /* SLIDESHOW SMALL MOBILE */
 
     .home-slideshow{
         height:300px;
@@ -1812,9 +2023,6 @@ main{
     .home-slide-content p{
         font-size:13px;
     }
-
-
-    /* ANNOUNCEMENT SMALL MOBILE */
 
     .announcement-heading{
         font-size:23px;
@@ -1911,132 +2119,50 @@ main{
 
 <section id="home" class="page active">
 
-
-<!-- =========================
-     HOMEPAGE SLIDESHOW
-========================= -->
-
 <div class="home-slideshow">
 
-
-    <!-- SLIDE 1 -->
-
     <div class="home-slide active">
-
-        <img
-            src="slides/slide1.jpg"
-            alt="PUP Board of Regents Meeting"
-        >
-
+        <img src="slides/slide1.jpg" alt="PUP Board of Regents Meeting">
     </div>
-
-
-    <!-- SLIDE 2 -->
 
     <div class="home-slide">
-
-        <img
-            src="slides/slide2.jpg"
-            alt="PUP Board of Regents"
-        >
-
+        <img src="slides/slide2.jpg" alt="PUP Board of Regents">
     </div>
-
-
-    <!-- SLIDE 3 -->
 
     <div class="home-slide">
-
-        <img
-            src="slides/slide3.jpg"
-            alt="Office of the University Board Secretary"
-        >
-
+        <img src="slides/slide3.jpg" alt="Office of the University Board Secretary">
     </div>
-
-
-    <!-- SLIDE 4 -->
 
     <div class="home-slide">
-
-        <img
-            src="slides/slide4.jpg"
-            alt="PUP Board Documents"
-        >
-
+        <img src="slides/slide4.jpg" alt="PUP Board Documents">
     </div>
-
-
-    <!-- SLIDE 5 -->
 
     <div class="home-slide">
-
-        <img
-            src="slides/slide5.jpg"
-            alt="PUP Board Documents"
-        >
-
+        <img src="slides/slide5.jpg" alt="PUP Board Documents">
     </div>
-
-
-    <!-- SLIDE 6 -->
 
     <div class="home-slide">
-
-        <img
-            src="slides/slide6.png"
-            alt="PUP Board Documents"
-        >
-
+        <img src="slides/slide6.png" alt="PUP Board Documents">
     </div>
-
-
-    <!-- SLIDE DOTS -->
 
     <div class="slide-dots">
 
-        <button
-            class="slide-dot active"
-            onclick="goToSlide(0)"
-            aria-label="Slide 1"
-        ></button>
+        <button class="slide-dot active" onclick="goToSlide(0)" aria-label="Slide 1"></button>
 
-        <button
-            class="slide-dot"
-            onclick="goToSlide(1)"
-            aria-label="Slide 2"
-        ></button>
+        <button class="slide-dot" onclick="goToSlide(1)" aria-label="Slide 2"></button>
 
-        <button
-            class="slide-dot"
-            onclick="goToSlide(2)"
-            aria-label="Slide 3"
-        ></button>
+        <button class="slide-dot" onclick="goToSlide(2)" aria-label="Slide 3"></button>
 
-        <button
-            class="slide-dot"
-            onclick="goToSlide(3)"
-            aria-label="Slide 4"
-        ></button>
+        <button class="slide-dot" onclick="goToSlide(3)" aria-label="Slide 4"></button>
 
-        <button
-            class="slide-dot"
-            onclick="goToSlide(4)"
-            aria-label="Slide 5"
-        ></button>
+        <button class="slide-dot" onclick="goToSlide(4)" aria-label="Slide 5"></button>
 
-        <button
-            class="slide-dot"
-            onclick="goToSlide(5)"
-            aria-label="Slide 6"
-        ></button>
+        <button class="slide-dot" onclick="goToSlide(5)" aria-label="Slide 6"></button>
 
     </div>
 
 </div>
 
-
-<!-- EXISTING HERO -->
 
 <div class="hero">
 
@@ -2072,7 +2198,6 @@ main{
         <span class="announcement-line"></span>
 
     </div>
-
 
     <small>
         UPCOMING MEETING
@@ -2131,150 +2256,108 @@ main{
         <div class="avatar">CH</div>
         <div>
             <b>Hon. Ricmar P. Aquino</b>
-            
             Chairperson<br>
-            
             Commissioner, Commission on Higher Education (CHED)
-
         </div>
     </div>
-
 
     <div class="card member">
         <div class="avatar">VC</div>
         <div>
             <b>Hon. Manuel M. Muhi</b>
-            
             Vice Chairperson<br>
             President, Polytechnic University of the Philippines (PUP)
-
         </div>
     </div>
-
 
     <div class="card member">
         <div class="avatar">PS</div>
         <div>
             <b>Hon. May P. Paez</b>
-            
             Member<br>
             Private Sector Representative<br>
             Head, Risk and Controls PMFTC Inc. (affiliate of Philip Morris International)
-
         </div>
     </div>
-
 
     <div class="card member">
         <div class="avatar">PS</div>
         <div>
             <b>Hon. Ronald V. Laurel</b>
-            
             Member<br>
             Private Sector Representative<br>
             President, Minds at Work, The Laurel Center for Education and Training Inc.
-
         </div>
     </div>
-
 
     <div class="card member">
         <div class="avatar">DD</div>
         <div>
             <b>Hon. Ma. Monica P. Pagunsan</b>
-            
             Member<br>
             Undersecretary/Director, Department of Economy, Planning and Development (DEPDev), formerly National Economic and Development (NEDA)
-
         </div>
     </div>
-
 
     <div class="card member">
         <div class="avatar">DS</div>
         <div>
             <b>Hon. Romelen Tresvalles</b>
-            
             Member<br>
-            Director, Department of Science and Technology-National Capital Region
-            (DOST-NCR)
-
+            Director, Department of Science and Technology-National Capital Region (DOST-NCR)
         </div>
     </div>
-
 
     <div class="card member">
         <div class="avatar">SP</div>
         <div>
             <b>Hon. Joel Villanueva</b>
-            
             Member<br>
             Senator, Chairperson, Senate Committee on Higher, Technical and Vocational Education
-
         </div>
     </div>
-
 
     <div class="card member">
         <div class="avatar">HR</div>
         <div>
             <b>Hon. Jude Acidre</b>
-            
             Member, Chairperson, Committee on Higher and Technical Education (CHTE)<br>
             Congressman, Representative, Tingog Party List
-
         </div>
     </div>
-
 
     <div class="card member">
         <div class="avatar">FR</div>
         <div>
             <b>Hon. Ramir M. Cruz</b>
-            
             Member<br>
             Faculty Sector Representative, President
             PUP Federated Faculty Association, Inc. (PUPFFAI)
-
         </div>
     </div>
-
 
     <div class="card member">
         <div class="avatar">AR</div>
         <div>
             <b>Hon. Jean Paul G. Martirez</b>
-            
             Member<br>
             Alumni Sector Representative, President
             Federation of Alumni Associations in PUP, Inc. (FEDAAPI)
-
         </div>
     </div>
-
 
     <div class="card member">
         <div class="avatar">SR</div>
         <div>
             <b>Hon. John Paul Y. Azusano</b>
-            
             Member<br>
             Student Sector Representative, President
             Alyansa ng Nagkakaisang Konseho ng PUP (ANAK-PUP)
-
         </div>
     </div>
 
 </div>
 
-
-<!-- FORMER BOARD MEMBERS -->
-
-<div class="section-title">
-
-    <br>
-
-</div>
 
 <table class="table former-board-table">
 
@@ -2333,57 +2416,46 @@ main{
         <div class="avatar">UBS</div>
         <div>
             <b>Assoc. Prof. Rolando M. Covero Jr.</b>
-            
             University/Board Secretary
         </div>
     </div>
-
 
     <div class="card member">
         <div class="avatar">BS</div>
         <div>
             <b>Ms. Jeanette C. Dordas</b>
-           
             Board Secretary IV
         </div>
     </div>
-
 
     <div class="card member">
         <div class="avatar">BS</div>
         <div>
             <b>Ms. Portia Margarita R. Reyes</b>
-            
             Board Secretary II
         </div>
     </div>
-
 
     <div class="card member">
         <div class="avatar">FA</div>
         <div>
             <b>Dr. Lizyl R. Rebusquillo</b>
-            
             Faculty Assistant
         </div>
     </div>
-
 
     <div class="card member">
         <div class="avatar">AA</div>
         <div>
             <b>Mr. Tirso Johm A. Ferrer</b>
-            
             Administrative Aide VI
         </div>
     </div>
-
 
     <div class="card member">
         <div class="avatar">AA</div>
         <div>
             <b>Mr. John Paul M. Ocampo</b>
-            
             Administrative Aide III
         </div>
     </div>
@@ -2407,20 +2479,17 @@ main{
         Manila, Philippines 1016
     </p>
 
-
     <p>
         <strong>Telephone Number:</strong>
         <br><br>
         Local 265
     </p>
 
-
     <p>
         <strong>Email Address:</strong>
         <br><br>
         <u>boardsec@pup.edu.ph</u>
     </p>
-
 
     <p>
         For inquiries, requests, and other matters concerning the Board of Regents, please contact the Office of the University/Board Secretary.
@@ -2457,7 +2526,6 @@ main{
 </tr>
 
 </thead>
-
 
 <tbody>
 
@@ -2536,461 +2604,1051 @@ main{
 </section>
 
 
-<!-- GAZETTE -->
+<!-- =========================================================
+     GAZETTE
+========================================================= -->
 
 <section id="gazette" class="page">
-
-<!-- GAZETTE BANNER -->
 
 <div class="gazette-banner"></div>
 
 
 <div class="section-title">
 
-<h1 class="page-title">
-    The OUBS GAZETTE
-</h1>
+    <h1 class="page-title">
+        The OUBS GAZETTE
+    </h1>
 
-<p>
-    The official online publication of the Office of the University/Board Secretary.
-</p>
+    <p>
+        The official online repository of publicly releasable
+        Board of Regents records and reference materials.
+    </p>
 
 </div>
 
 
-<table class="table">
+<div class="gazette-notice">
+
+    For public reference, selected Board of Regents records
+    and materials are made available through the OUBS Gazette.
+    Records containing confidential, privileged, personal, or
+    otherwise restricted information are not included in the
+    public repository.
+
+</div>
+
+
+<!-- THREE MAIN BUTTONS -->
+
+<div class="gazette-menu">
+
+
+    <!-- MINUTES -->
+
+    <div
+        class="gazette-card"
+        onclick="openGazetteSection('gazetteMinutes')"
+    >
+
+        <span class="gazette-card-number">
+            01
+        </span>
+
+        <h2>
+            Redacted BOR Minutes of the Meeting
+        </h2>
+
+        <p>
+            Publicly releasable and redacted versions of
+            selected Board of Regents meeting minutes.
+        </p>
+
+        <span class="gazette-card-arrow">
+            →
+        </span>
+
+    </div>
+
+
+    <!-- DELEGATED AUTHORITIES -->
+
+    <div
+        class="gazette-card"
+        onclick="openGazetteSection('gazetteDelegated')"
+    >
+
+        <span class="gazette-card-number">
+            02
+        </span>
+
+        <h2>
+            BOR-Approved Delegated Authorities
+        </h2>
+
+        <p>
+            Summary of authorities delegated by the Board
+            of Regents to University officials.
+        </p>
+
+        <span class="gazette-card-arrow">
+            →
+        </span>
+
+    </div>
+
+
+    <!-- ACADEMIC PROGRAMS -->
+
+    <div
+        class="gazette-card"
+        onclick="openGazetteSection('gazettePrograms')"
+    >
+
+        <span class="gazette-card-number">
+            03
+        </span>
+
+        <h2>
+            BOR-Approved Academic Programs &amp; Curricula
+        </h2>
+
+        <p>
+            Browse Board-approved academic programs and
+            curricula by year.
+        </p>
+
+        <span class="gazette-card-arrow">
+            →
+        </span>
+
+    </div>
+
+</div>
+
+
+<!-- =========================================================
+     01 — MINUTES
+========================================================= -->
+
+<div
+    id="gazetteMinutes"
+    class="gazette-content"
+>
+
+<div class="gazette-content-header">
+
+    <h2>
+        Redacted BOR Minutes of the Meeting
+    </h2>
+
+    <button
+        type="button"
+        class="gazette-close"
+        onclick="closeGazetteSections()"
+    >
+        ← Back to Gazette
+    </button>
+
+</div>
+
+
+<div class="gazette-content-body">
+
+<table class="gazette-record-table">
+
+<thead>
 
 <tr>
     <th>BOR Meeting</th>
-    <th>BOR Meeting Date</th>
-    <th>BOR Meeting Venue</th>
-    <th>View Gazette</th>
+    <th>Date</th>
+    <th>Venue</th>
+    <th>Document</th>
+</tr>
+
+</thead>
+
+<tbody>
+
+<tr>
+
+    <td>
+        193rd BOR Regular Meeting
+    </td>
+
+    <td>
+        12 August 2026
+    </td>
+
+    <td>
+        Mateo Conference Room, PUP
+    </td>
+
+    <td>
+        <span class="gazette-pdf">
+            PDF File
+        </span>
+    </td>
+
 </tr>
 
 
 <tr>
-    <td>193rd BOR Regular Meeting</td>
-    <td>12 August 2026</td>
-    <td>PUP</td>
-    <td class="link">PDF file</td>
+
+    <td>
+        192nd BOR Regular Meeting
+    </td>
+
+    <td>
+        31 May 2026
+    </td>
+
+    <td>
+        CHED
+    </td>
+
+    <td>
+        <span class="gazette-pdf">
+            PDF File
+        </span>
+    </td>
+
 </tr>
 
-
-<tr>
-    <td>192nd BOR Regular Meeting</td>
-    <td>31 May 2026</td>
-    <td>CHED</td>
-    <td class="link">PDF file</td>
-</tr>
+</tbody>
 
 </table>
 
 
-<div class="delegated-box">
+<div class="delegated-note">
 
-    <div class="delegated-header">
+    <strong>Note:</strong>
+    The published minutes are redacted versions prepared
+    for public reference. Portions containing confidential,
+    privileged, personal, or otherwise restricted information
+    may be withheld in accordance with applicable laws,
+    policies, and University rules.
 
-        <div>
+</div>
 
-            <h2>
-                BOR-Approved Delegated Authorities
-            </h2>
+</div>
 
-            <p>
-                Selected authorities delegated by the Board of Regents to the University President are presented below for reference. This section provides a summary only; complete official records are maintained by the Office of the University/Board Secretary.
-            </p>
-
-        </div>
+</div>
 
 
-        <button
-            type="button"
-            class="delegated-btn"
-            onclick="toggleDelegated()"
-        >
-            View Delegated Authorities
-        </button>
+<!-- =========================================================
+     02 — DELEGATED AUTHORITIES
+========================================================= -->
 
-    </div>
+<div
+    id="gazetteDelegated"
+    class="gazette-content"
+>
 
+<div class="gazette-content-header">
+
+    <h2>
+        BOR-Approved Delegated Authorities
+    </h2>
+
+    <button
+        type="button"
+        class="gazette-close"
+        onclick="closeGazetteSections()"
+    >
+        ← Back to Gazette
+    </button>
+
+</div>
+
+
+<div class="gazette-content-body">
+
+<table class="delegated-table">
+
+<thead>
+
+<tr>
+
+    <th>
+        Authority / Matter
+    </th>
+
+    <th>
+        BOR Resolution
+    </th>
+
+    <th>
+        BOR Meeting
+    </th>
+
+</tr>
+
+</thead>
+
+
+<tbody>
+
+
+<tr>
+<td>
+Grant to the President or a delegate or substitute which he may choose, the Authority to represent the University in suits or cases filed for or against it.
+</td>
+<td>
+Board Resolution 819, Series of 2011
+</td>
+<td>
+132nd BOR, March 18, 2011
+</td>
+</tr>
+
+
+<tr>
+<td>
+Grant of Delegated Authority to the President to approve MOA/MOU involving linkages and OJT of Students and Authority to File Criminal and Civil Cases in behalf of the University
+</td>
+<td>
+Board Resolution 1246, Series of 2015
+</td>
+<td>
+150th BOR, October 6, 2015
+</td>
+</tr>
+
+
+<tr>
+<td>
+Grant of Delegated Authority to the President to Sign MOA / Contract involving non-financial matters
+</td>
+<td>
+Board Resolution 1453, Series of 2016
+</td>
+<td>
+153rd BOR, June 25, 2016
+</td>
+</tr>
+
+
+<tr>
+<td>
+Grant of Delegated Authority to the President to enter into lease contracts/agreements with regards to IGPs
+</td>
+<td>
+Board Resolution 1452, Series of 2016
+</td>
+<td>
+153rd BOR, June 25, 2016
+</td>
+</tr>
+
+
+<tr>
+<td>
+Grant of Delegated Authority to the President to increase the signing limit of the University President
+</td>
+<td>
+Board Resolution 1451, Series of 2016
+</td>
+<td>
+153rd BOR, June 25, 2016
+</td>
+</tr>
+
+
+<tr>
+<td>
+Grant of Delegated Authority to the President to decide administrative cases and other administrative matters
+</td>
+<td>
+Board Resolution 1765, Series of 2017
+</td>
+<td>
+157th BOR, June 20, 2017
+</td>
+</tr>
+
+
+<tr>
+<td>
+Grant of Delegated Authority to the President to approve Agency Procurement Request (APR) limited to Five Million Pesos (Php 5,000,000.00) and below
+</td>
+<td>
+Referendum No. 11 / Board Resolution 1826, Series of 2017
+</td>
+<td>
+159th BOR, December 11, 2017
+</td>
+</tr>
+
+
+<tr>
+<td>
+Grant of Delegated Authority to the President to approve changes to Annual Procurement Plan
+</td>
+<td>
+Referendum No. 12 / Board Resolution 1827, Series of 2017
+</td>
+<td>
+159th BOR, December 11, 2017
+</td>
+</tr>
+
+
+<tr>
+<td>
+The Board approved the Resolution clarifying the extent of authority granted to the PUP President to create a committee on administrative cases involving PUP officials and employees, study and approve the recommendation of said committee, and seek Board ratification if the decision carries penalties rendered to concerned party/ies.
+</td>
+<td>
+Board Resolution 1986, Series of 2018
+</td>
+<td>
+162nd BOR, September 05, 2018
+</td>
+</tr>
+
+
+<tr>
+<td>
+Grant of Delegated Authority to the President to Sign/Approve Requests of Faculty and Employees to be granted limited authority to practice profession and ratifying/confirming all authority/permit to practice previously issued by the President.
+</td>
+<td>
+Board Resolution 2064, Series of 2018
+</td>
+<td>
+163rd BOR, December 20, 2018
+</td>
+</tr>
+
+
+<tr>
+<td>
+Grant of Delegated Authority to the Chief Legal Counsel and Legal Officers of the University to Represent the University in Civil and Criminal Cases Involving the University Except for Cases Handled by the Office of the Solicitor General
+</td>
+<td>
+Board Resolution 2103, Series of 2019
+</td>
+<td>
+BOR Special Meeting, February 7, 2019
+</td>
+</tr>
+
+
+<tr>
+<td>
+Grant of Delegated Authority to the Directors of Branches/Campuses Outside the NCR to File Criminal and Civil Cases
+</td>
+<td>
+Board Resolution 2421, Series of 2020
+</td>
+<td>
+171st BOR, December 10, 2020
+</td>
+</tr>
+
+
+<tr>
+<td>
+Grant of Delegated Authority to the President to hire, appoint and promote faculty and administrative personnel w the rank of SG 18 and below
+</td>
+<td>
+Board Resolution No. 2491, Series of 2021
+</td>
+<td>
+172nd BOR, March 22, 2021
+</td>
+</tr>
+
+
+<tr>
+<td>
+Grant of Delegated Authority to the President to approve Variation Orders in the Contract Implementation for the Procurement of Infrastructure and the Confirmation of all Variation Orders signed by the University President
+</td>
+<td>
+Board Resolution No. 2909, Series of 2022
+</td>
+<td>
+BOR Special Meeting, December 19, 2022
+</td>
+</tr>
+
+
+<tr>
+<td>
+Grant of Delegated Authority to the President to Sign the Documents Pertaining to the MOA on Scholarship and Training Grants from Government Partner Institutions
+</td>
+<td>
+Board Resolution No. 2668, Series of 2022
+</td>
+<td>
+176th BOR, March 23, 2022
+</td>
+</tr>
+
+
+<tr>
+<td>
+Grant of Delegated Authority to the President to Sign MOA / Contract Involving Financial Obligation from PUP
+</td>
+<td>
+Board Resolution No. 2669, Series of 2022
+</td>
+<td>
+176th BOR, March 23, 2022
+</td>
+</tr>
+
+
+<tr>
+<td>
+Grant of Delegated Authority to the Executive Vice President to Sign Requests for Authority to Render Saturday Service (as Recommended by the Head Executive Assistant or Concerned Vice President)
+</td>
+<td>
+Board Resolution No. 2670, Series of 2022
+</td>
+<td>
+176th BOR, March 23, 2022
+</td>
+</tr>
+
+
+<tr>
+<td>
+Grant of Delegated Authority to the President and the Vice President for Finance to Sign the Documents Pertaining to Lease Contracts / Agreements with Regard to Income Generating Projects (IGPs)
+</td>
+<td>
+Board Resolution No. 2671, Series of 2022
+</td>
+<td>
+176th BOR, March 23, 2022
+</td>
+</tr>
+
+
+<tr>
+<td>
+Grant of Delegated Authority to the Vice President for Academic Affairs and Vice President for Branches and Campuses to Sign the Documents Pertaining to the MOA/MOU Involving Linkages and OJT of Students
+</td>
+<td>
+Board Resolution No. 2672, Series of 2022
+</td>
+<td>
+176th BOR, March 23, 2022
+</td>
+</tr>
+
+
+<tr>
+<td>
+Grant of Delegated Authority to the President to enter into MOA with DPWH RO, and to Designate PUP Representatives in the SUC Infrastructure Project Regional Monitoring Team (SIPRM)
+</td>
+<td>
+Board Referendum No. 70, Series of 2024
+</td>
+<td>
+April 30, 2024
+</td>
+</tr>
+
+
+<tr>
+<td>
+Grant of Delegated Authority to the President, and Vice Presidents, to join the execution of specific contracts, deeds, and instruments for the proper conduct of the business of the University
+</td>
+<td>
+Board Resolution No. 3734, Series of 2024
+</td>
+<td>
+185th BOR, July 17, 2024
+</td>
+</tr>
+
+
+<tr>
+<td>
+Grant of Delegated Authority to the President to Approve Legitimate International Travel Requests Reviewed and Deemed Legitimate by the OIA, Pursuant to Board Resolution No. 4078, Series of 2025, on the Evaluation and Issuance of Legitimacy for International Events Attended by PUP Officials, Faculty Members, and Administrative Employees.
+</td>
+<td>
+Board Resolution No. 4079, Series of 2025
+</td>
+<td>
+189th BOR, June 17, 2025
+</td>
+</tr>
+
+
+<tr>
+<td>
+Increase in the President’s Approval Authority Threshold for Capital Outlay, Goods and Services, and Consultancy Services Without Requiring BOR Confirmation: Capital Outlay (Infrastructure and Equipment) = PHP 50,000,000.00; Goods &amp; Services and Consultancy Services = PHP 30,000,000.00
+</td>
+<td>
+Board Resolution No. 4306, Series of 2025
+</td>
+<td>
+191st BOR, December 12, 2025
+</td>
+</tr>
+
+
+</tbody>
+
+</table>
+
+
+<div class="delegated-note">
+
+<strong>Note:</strong>
+The information presented in this section is a summary
+for reference purposes only. For the complete and
+authoritative text of any delegated authority, reference
+shall be made to the official records maintained by the
+Office of the University/Board Secretary.
+
+</div>
+
+</div>
+
+</div>
+
+
+<!-- =========================================================
+     03 — ACADEMIC PROGRAMS & CURRICULA
+========================================================= -->
+
+<div
+    id="gazettePrograms"
+    class="gazette-content"
+>
+
+<div class="gazette-content-header">
+
+    <h2>
+        BOR-Approved Academic Programs &amp; Curricula
+    </h2>
+
+    <button
+        type="button"
+        class="gazette-close"
+        onclick="closeGazetteSections()"
+    >
+        ← Back to Gazette
+    </button>
+
+</div>
+
+
+<div class="gazette-content-body">
+
+
+<p style="color:#666; line-height:1.6; margin-top:0;">
+
+    Browse the academic programs and curricula approved by the
+    Board of Regents according to year.
+
+</p>
+
+
+<!-- YEAR CARDS -->
+
+<div class="program-year-grid">
+
+
+    <!-- 2026 -->
 
     <div
-        id="delegatedDetails"
-        class="delegated-details"
+        class="program-year-card"
+        onclick="openProgramYear('program2026')"
     >
 
-        <table class="delegated-table">
-
-            <thead>
-
-                <tr>
-                    <th>Authority / Matter</th>
-                    <th>BOR Resolution</th>
-                    <th>BOR Meeting</th>
-                </tr>
-
-            </thead>
-
-
-            <tbody>
-
-                <tr>
-                    <td>
-                        Grant to the President or a delegate or substitute which he may choose, the Authority to represent the University in suits or cases filed for or against it.
-                    </td>
-
-                    <td>
-                        Board Resolution 819, Series of 2011
-                    </td>
-
-                    <td>
-                        132nd BOR, March 18, 2011
-                    </td>
-                </tr>
-
-
-                <tr>
-                    <td>
-                        Grant of Delegated Authority to the President to approve MOA/MOU involving linkages and OJT of Students and Authority to File Criminal and Civil Cases in behalf of the University
-                    </td>
-
-                    <td>
-                        Board Resolution 1246, Series of 2015
-                    </td>
-
-                    <td>
-                        150th BOR, October 6, 2015
-                    </td>
-                </tr>
-
-
-                <tr>
-                    <td>
-                        Grant of Delegated Authority to the President to Sign MOA / Contract involving non-financial matters
-                    </td>
-
-                    <td>
-                        Board Resolution 1453, Series of 2016
-                    </td>
-
-                    <td>
-                        153rd BOR, June 25, 2016
-                    </td>
-                </tr>
-
-
-                <tr>
-                    <td>
-                        Grant of Delegated Authority to the President to enter into lease contracts/agreements with regards to IGPs
-                    </td>
-
-                    <td>
-                        Board Resolution 1452, Series of 2016
-                    </td>
-
-                    <td>
-                        153rd BOR, June 25, 2016
-                    </td>
-                </tr>
-
-
-                <tr>
-                    <td>
-                        Grant of Delegated Authority to the President to increase the signing limit of the University President
-                    </td>
-
-                    <td>
-                        Board Resolution 1451, Series of 2016
-                    </td>
-
-                    <td>
-                        153rd BOR, June 25, 2016
-                    </td>
-                </tr>
-
-
-                <tr>
-                    <td>
-                        Grant of Delegated Authority to the President to decide administrative cases and other administrative matters
-                    </td>
-
-                    <td>
-                        Board Resolution 1765, Series of 2017
-                    </td>
-
-                    <td>
-                        157th BOR, June 20, 2017
-                    </td>
-                </tr>
-
-
-                <tr>
-                    <td>
-                        Grant of Delegated Authority to the President to approve Agency Procurement Request (APR) limited to Five Million Pesos (Php 5,000,000.00) and below
-                    </td>
-
-                    <td>
-                        Referendum No. 11 / Board Resolution 1826, Series of 2017
-                    </td>
-
-                    <td>
-                        159th BOR, December 11, 2017
-                    </td>
-                </tr>
-
-
-                <tr>
-                    <td>
-                        Grant of Delegated Authority to the President to approve changes to Annual Procurement Plan
-                    </td>
-
-                    <td>
-                        Referendum No. 12 / Board Resolution 1827, Series of 2017
-                    </td>
-
-                    <td>
-                        159th BOR, December 11, 2017
-                    </td>
-                </tr>
-
-
-                <tr>
-                    <td>
-                        The Board approved the Resolution clarifying the extent of authority granted to the PUP President to create a committee on administrative cases involving PUP officials and employees, study and approve the recommendation of said committee, and seek Board ratification if the decision carries penalties rendered to concerned party/ies.
-                    </td>
-
-                    <td>
-                        Board Resolution 1986, Series of 2018
-                    </td>
-
-                    <td>
-                        162nd BOR, September 05, 2018
-                    </td>
-                </tr>
-
-
-                <tr>
-                    <td>
-                        Grant of Delegated Authority to the President to Sign/Approve Requests of Faculty and Employees to be granted limited authority to practice profession and ratifying/confirming all authority/permit to practice previously issued by the President.
-                    </td>
-
-                    <td>
-                        Board Resolution 2064, Series of 2018
-                    </td>
-
-                    <td>
-                        163rd BOR, December 20, 2018
-                    </td>
-                </tr>
-
-
-                <tr>
-                    <td>
-                        Grant of Delegated Authority to the Chief Legal Counsel and Legal Officers of the University to Represent the University in Civil and Criminal Cases Involving the University Except for Cases Handled by the Office of the Solicitor General
-                    </td>
-
-                    <td>
-                        Board Resolution 2103, Series of 2019
-                    </td>
-
-                    <td>
-                        BOR Special Meeting, February 7, 2019
-                    </td>
-                </tr>
-
-
-                <tr>
-                    <td>
-                        Grant of Delegated Authority to the Directors of Branches/Campuses Outside the NCR to File Criminal and Civil Cases
-                    </td>
-
-                    <td>
-                        Board Resolution 2421, Series of 2020
-                    </td>
-
-                    <td>
-                        171st BOR, December 10, 2020
-                    </td>
-                </tr>
-
-
-                <tr>
-                    <td>
-                        Grant of Delegated Authority to the President to hire, appoint and promote faculty and administrative personnel w the rank of SG 18 and below
-                    </td>
-
-                    <td>
-                        Board Resolution No. 2491, Series of 2021
-                    </td>
-
-                    <td>
-                        172nd BOR, March 22, 2021
-                    </td>
-                </tr>
-
-
-                <tr>
-                    <td>
-                        Grant of Delegated Authority to the President to approve Variation Orders in the Contract Implementation for the Procurement of Infrastructure and the Confirmation of all Variation Orders signed by the University President
-                    </td>
-
-                    <td>
-                        Board Resolution No. 2909, Series of 2022
-                    </td>
-
-                    <td>
-                        BOR Special Meeting, December 19, 2022
-                    </td>
-                </tr>
-
-
-                <tr>
-                    <td>
-                        Grant of Delegated Authority to the President to Sign the Documents Pertaining to the MOA on Scholarship and Training Grants from Government Partner Institutions
-                    </td>
-
-                    <td>
-                        Board Resolution No. 2668, Series of 2022
-                    </td>
-
-                    <td>
-                        176th BOR, March 23, 2022
-                    </td>
-                </tr>
-
-
-                <tr>
-                    <td>
-                        Grant of Delegated Authority to the President to Sign MOA / Contract Involving Financial Obligation from PUP
-                    </td>
-
-                    <td>
-                        Board Resolution No. 2669, Series of 2022
-                    </td>
-
-                    <td>
-                        176th BOR, March 23, 2022
-                    </td>
-                </tr>
-
-
-                <tr>
-                    <td>
-                        Grant of Delegated Authority to the Executive Vice President to Sign Requests for Authority to Render Saturday Service (as Recommended by the Head Executive Assistant or Concerned Vice President)
-                    </td>
-
-                    <td>
-                        Board Resolution No. 2670, Series of 2022
-                    </td>
-
-                    <td>
-                        176th BOR, March 23, 2022
-                    </td>
-                </tr>
-
-
-                <tr>
-                    <td>
-                        Grant of Delegated Authority to the President and the Vice President for Finance to Sign the Documents Pertaining to Lease Contracts / Agreements with Regard to Income Generating Projects (IGPs)
-                    </td>
-
-                    <td>
-                        Board Resolution No. 2671, Series of 2022
-                    </td>
-
-                    <td>
-                        176th BOR, March 23, 2022
-                    </td>
-                </tr>
-
-
-                <tr>
-                    <td>
-                        Grant of Delegated Authority to the Vice President for Academic Affairs and Vice President for Branches and Campuses to Sign the Documents Pertaining to the MOA/MOU Involving Linkages and OJT of Students
-                    </td>
-
-                    <td>
-                        Board Resolution No. 2672, Series of 2022
-                    </td>
-
-                    <td>
-                        176th BOR, March 23, 2022
-                    </td>
-                </tr>
-
-
-                <tr>
-                    <td>
-                        Grant of Delegated Authority to the President to enter into MOA with DPWH RO, and to Designate PUP Representatives in the SUC Infrastructure Project Regional Monitoring Team (SIPRM)
-                    </td>
-
-                    <td>
-                        Board Referendum No. 70, Series of 2024
-                    </td>
-
-                    <td>
-                        April 30, 2024
-                    </td>
-                </tr>
-
-
-                <tr>
-                    <td>
-                        Grant of Delegated Authority to the President, and Vice Presidents, to join the execution of specific contracts, deeds, and instruments for the proper conduct of the business of the University
-                    </td>
-
-                    <td>
-                        Board Resolution No. 3734, Series of 2024
-                    </td>
-
-                    <td>
-                        185th BOR, July 17, 2024
-                    </td>
-                </tr>
-
-
-                <tr>
-                    <td>
-                        Grant of Delegated Authority to the President to Approve Legitimate International Travel Requests Reviewed and Deemed Legitimate by the OIA, Pursuant to Board Resolution No. 4078, Series of 2025, on the Evaluation and Issuance of Legitimacy for International Events Attended by PUP Officials, Faculty Members, and Administrative Employees.
-                    </td>
-
-                    <td>
-                        Board Resolution No. 4079, Series of 2025
-                    </td>
-
-                    <td>
-                        189th BOR, June 17, 2025
-                    </td>
-                </tr>
-
-
-                <tr>
-                    <td>
-                        Increase in the President’s Approval Authority Threshold for Capital Outlay, Goods and Services, and Consultancy Services Without Requiring BOR Confirmation: Capital Outlay (Infrastructure and Equipment) = PHP 50,000,000.00; Goods & Services and Consultancy Services = PHP 30,000,000.00
-                    </td>
-
-                    <td>
-                        Board Resolution No. 4306, Series of 2025
-                    </td>
-
-                    <td>
-                        191st BOR, December 12, 2025
-                    </td>
-                </tr>
-
-            </tbody>
-
-        </table>
-
-
-        <div class="delegated-note">
-
-            <strong>Note:</strong>
-            The information presented in this section is a summary for reference purposes only. For the complete and authoritative text of any delegated authority, reference shall be made to the official records maintained by the Office of the University/Board Secretary.
-
-        </div>
+        <span class="program-year-number">
+            ACADEMIC YEAR
+        </span>
+
+        <h3>
+            2026
+        </h3>
+
+        <p>
+            BOR-approved academic programs and curricula for 2026.
+        </p>
+
+        <span class="program-year-arrow">
+            →
+        </span>
 
     </div>
+
+
+    <!-- 2025 -->
+
+    <div
+        class="program-year-card"
+        onclick="openProgramYear('program2025')"
+    >
+
+        <span class="program-year-number">
+            ACADEMIC YEAR
+        </span>
+
+        <h3>
+            2025
+        </h3>
+
+        <p>
+            BOR-approved academic programs and curricula for 2025.
+        </p>
+
+        <span class="program-year-arrow">
+            →
+        </span>
+
+    </div>
+
+
+    <!-- 2024 -->
+
+    <div
+        class="program-year-card"
+        onclick="openProgramYear('program2024')"
+    >
+
+        <span class="program-year-number">
+            ACADEMIC YEAR
+        </span>
+
+        <h3>
+            2024
+        </h3>
+
+        <p>
+            BOR-approved academic programs and curricula for 2024.
+        </p>
+
+        <span class="program-year-arrow">
+            →
+        </span>
+
+    </div>
+
+
+    <!-- 2023 -->
+
+    <div
+        class="program-year-card"
+        onclick="openProgramYear('program2023')"
+    >
+
+        <span class="program-year-number">
+            ACADEMIC YEAR
+        </span>
+
+        <h3>
+            2023
+        </h3>
+
+        <p>
+            BOR-approved academic programs and curricula for 2023.
+        </p>
+
+        <span class="program-year-arrow">
+            →
+        </span>
+
+    </div>
+
+
+</div>
+
+
+<!-- =========================================
+     2026 RECORDS
+========================================= -->
+
+<div
+    id="program2026"
+    class="program-year-records"
+>
+
+<div class="program-year-header">
+
+    <h3>
+        2026 Academic Programs &amp; Curricula
+    </h3>
+
+    <button
+        type="button"
+        class="program-year-close"
+        onclick="closeProgramYear('program2026')"
+    >
+        Close
+    </button>
+
+</div>
+
+
+<table class="gazette-record-table">
+
+<thead>
+
+<tr>
+    <th>Academic Program</th>
+    <th>Campus / College</th>
+    <th>BOR Approval</th>
+    <th>Document</th>
+</tr>
+
+</thead>
+
+<tbody>
+
+<tr>
+
+    <td>
+        Sample Academic Program
+    </td>
+
+    <td>
+        PUP Main Campus
+    </td>
+
+    <td>
+        Board Resolution No. ______, Series of 2026
+    </td>
+
+    <td>
+        <span class="gazette-pdf">
+            PDF File
+        </span>
+    </td>
+
+</tr>
+
+</tbody>
+
+</table>
+
+</div>
+
+
+<!-- =========================================
+     2025 RECORDS
+========================================= -->
+
+<div
+    id="program2025"
+    class="program-year-records"
+>
+
+<div class="program-year-header">
+
+    <h3>
+        2025 Academic Programs &amp; Curricula
+    </h3>
+
+    <button
+        type="button"
+        class="program-year-close"
+        onclick="closeProgramYear('program2025')"
+    >
+        Close
+    </button>
+
+</div>
+
+
+<table class="gazette-record-table">
+
+<thead>
+
+<tr>
+    <th>Academic Program</th>
+    <th>Campus / College</th>
+    <th>BOR Approval</th>
+    <th>Document</th>
+</tr>
+
+</thead>
+
+<tbody>
+
+<tr>
+
+    <td>
+        Sample Academic Program
+    </td>
+
+    <td>
+        PUP Main Campus
+    </td>
+
+    <td>
+        Board Resolution No. ______, Series of 2025
+    </td>
+
+    <td>
+        <span class="gazette-pdf">
+            PDF File
+        </span>
+    </td>
+
+</tr>
+
+</tbody>
+
+</table>
+
+</div>
+
+
+<!-- =========================================
+     2024 RECORDS
+========================================= -->
+
+<div
+    id="program2024"
+    class="program-year-records"
+>
+
+<div class="program-year-header">
+
+    <h3>
+        2024 Academic Programs &amp; Curricula
+    </h3>
+
+    <button
+        type="button"
+        class="program-year-close"
+        onclick="closeProgramYear('program2024')"
+    >
+        Close
+    </button>
+
+</div>
+
+
+<table class="gazette-record-table">
+
+<thead>
+
+<tr>
+    <th>Academic Program</th>
+    <th>Campus / College</th>
+    <th>BOR Approval</th>
+    <th>Document</th>
+</tr>
+
+</thead>
+
+<tbody>
+
+<tr>
+
+    <td>
+        Sample Academic Program
+    </td>
+
+    <td>
+        PUP Main Campus
+    </td>
+
+    <td>
+        Board Resolution No. ______, Series of 2024
+    </td>
+
+    <td>
+        <span class="gazette-pdf">
+            PDF File
+        </span>
+    </td>
+
+</tr>
+
+</tbody>
+
+</table>
+
+</div>
+
+
+<!-- =========================================
+     2023 RECORDS
+========================================= -->
+
+<div
+    id="program2023"
+    class="program-year-records"
+>
+
+<div class="program-year-header">
+
+    <h3>
+        2023 Academic Programs &amp; Curricula
+    </h3>
+
+    <button
+        type="button"
+        class="program-year-close"
+        onclick="closeProgramYear('program2023')"
+    >
+        Close
+    </button>
+
+</div>
+
+
+<table class="gazette-record-table">
+
+<thead>
+
+<tr>
+    <th>Academic Program</th>
+    <th>Campus / College</th>
+    <th>BOR Approval</th>
+    <th>Document</th>
+</tr>
+
+</thead>
+
+<tbody>
+
+<tr>
+
+    <td>
+        Sample Academic Program
+    </td>
+
+    <td>
+        PUP Main Campus
+    </td>
+
+    <td>
+        Board Resolution No. ______, Series of 2023
+    </td>
+
+    <td>
+        <span class="gazette-pdf">
+            PDF File
+        </span>
+    </td>
+
+</tr>
+
+</tbody>
+
+</table>
+
+</div>
+
+
+<div class="delegated-note">
+
+    <strong>Note:</strong>
+    This section contains publicly releasable academic programs
+    and curricula approved by the Board of Regents. The records
+    are organized by year for easier reference.
+
+</div>
+
+
+</div>
 
 </div>
 
@@ -2998,83 +3656,68 @@ main{
 
 
 <!-- =========================================================
-     DMS PORTAL — LOGIN PAGE
+     DMS PORTAL
 ========================================================= -->
 
 <section id="portal" class="page">
 
-
 <div class="dms-login-page">
-
 
 <div class="dms-login-box">
 
 
-<!-- LEFT SIDE -->
-
 <div class="dms-brand-panel">
 
-    <div class="dms-brand-content">
+<div class="dms-brand-content">
 
-        <img
-            src="logo/pup-logo.png"
-            alt="PUP Logo"
-            class="dms-logo"
-        >
+    <img
+        src="logo/pup-logo.png"
+        alt="PUP Logo"
+        class="dms-logo"
+    >
 
+    <div class="dms-brand-small">
+        Office of the University/Board Secretary
+    </div>
 
-        <div class="dms-brand-small">
-            Office of the University/Board Secretary
-        </div>
+    <h1>
+        Document Management System
+    </h1>
 
+    <div class="dms-brand-line"></div>
 
-        <h1>
-            Document Management System
-        </h1>
+    <p class="dms-brand-description">
+        A centralized digital platform for the secure submission,
+        organization, review, tracking, and retrieval of official
+        Board of Regents documents.
+    </p>
 
+    <p class="dms-brand-description">
+        Access to documents and system functions is based on
+        the user's assigned authority and permissions.
+    </p>
 
-        <div class="dms-brand-line"></div>
+    <div class="dms-brand-footer">
 
-
-        <p class="dms-brand-description">
-            A centralized digital platform for the secure submission,
-            organization, review, tracking, and retrieval of official
-            Board of Regents documents.
-        </p>
-
-
-        <p class="dms-brand-description">
-            Access to documents and system functions is based on
-            the user's assigned authority and permissions.
-        </p>
-
-
-        <div class="dms-brand-footer">
-
-            Polytechnic University of the Philippines<br>
-            Board of Regents Digital Portal
-
-        </div>
+        Polytechnic University of the Philippines<br>
+        Board of Regents Digital Portal
 
     </div>
 
 </div>
 
+</div>
 
-<!-- RIGHT SIDE -->
 
 <div class="dms-login-panel">
-
 
     <div class="dms-login-kicker">
         PUP Board of Regents Digital Portal
     </div>
 
-
     <h2>
         Sign in to DMS
     </h2>
-
 
     <p class="dms-login-subtitle">
         Enter your authorized PUP account credentials to continue.
@@ -3085,7 +3728,6 @@ main{
         class="dms-form"
         onsubmit="loginPrototype(event)"
     >
-
 
         <div class="dms-form-group">
 
@@ -3111,7 +3753,6 @@ main{
                 Password
             </label>
 
-
             <div class="password-wrapper">
 
                 <input
@@ -3122,7 +3763,6 @@ main{
                     autocomplete="current-password"
                     required
                 >
-
 
                 <button
                     type="button"
@@ -3138,7 +3778,6 @@ main{
 
 
         <div class="dms-options">
-
 
             <label class="remember-me">
 
@@ -3160,7 +3799,6 @@ main{
             >
                 Forgot Password?
             </span>
-
 
         </div>
 
@@ -3204,11 +3842,9 @@ main{
 
         </div>
 
-
     </form>
 
 </div>
-
 
 </div>
 
@@ -3319,31 +3955,101 @@ setInterval(nextSlide, 5000);
 
 
 /* =========================
-   DELEGATED AUTHORITIES
+   GAZETTE SECTIONS
 ========================= */
 
-function toggleDelegated(){
+function openGazetteSection(id){
 
-    var details =
-        document.getElementById('delegatedDetails');
+    document.querySelectorAll('.gazette-content').forEach(function(section){
 
-    var button =
-        document.querySelector('.delegated-btn');
+        section.classList.remove('active');
+
+    });
 
 
-    if(details.classList.contains('active')){
+    var selected =
+        document.getElementById(id);
 
-        details.classList.remove('active');
 
-        button.textContent =
-            'View Delegated Authorities';
+    if(selected){
 
-    }else{
+        selected.classList.add('active');
 
-        details.classList.add('active');
+        setTimeout(function(){
 
-        button.textContent =
-            'Hide Delegated Authorities';
+            selected.scrollIntoView({
+                behavior:'smooth',
+                block:'start'
+            });
+
+        },100);
+
+    }
+
+}
+
+
+function closeGazetteSections(){
+
+    document.querySelectorAll('.gazette-content').forEach(function(section){
+
+        section.classList.remove('active');
+
+    });
+
+
+    document.getElementById('gazette').scrollIntoView({
+        behavior:'smooth',
+        block:'start'
+    });
+
+}
+
+
+/* =========================
+   ACADEMIC PROGRAM YEAR
+========================= */
+
+function openProgramYear(id){
+
+    document.querySelectorAll('.program-year-records').forEach(function(section){
+
+        section.classList.remove('active');
+
+    });
+
+
+    var selected =
+        document.getElementById(id);
+
+
+    if(selected){
+
+        selected.classList.add('active');
+
+        setTimeout(function(){
+
+            selected.scrollIntoView({
+                behavior:'smooth',
+                block:'start'
+            });
+
+        },100);
+
+    }
+
+}
+
+
+function closeProgramYear(id){
+
+    var selected =
+        document.getElementById(id);
+
+
+    if(selected){
+
+        selected.classList.remove('active');
 
     }
 
