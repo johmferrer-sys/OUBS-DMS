@@ -1006,66 +1006,35 @@ main{
 
 
 .avatar{
-    width:48px;
-    height:48px;
+    width:110px;
+    height:135px;
 
-    border-radius:50%;
+    border-radius:6px;
 
-    background:
-        linear-gradient(
-            135deg,
-            #f3e5e5,
-            #ead3d3
-        );
-
-    display:grid;
-
-    place-items:center;
-
-    color:var(--pup);
-
-    font-weight:800;
+    overflow:hidden;
 
     flex-shrink:0;
 
-    border:
-        1px solid
-        #ead0d0;
+    border:1px solid #ead0d0;
+
+    background:#f5f3ec;
 }
 
+.avatar img{
+    width:100%;
+    height:100%;
 
-.member small,
-.doc small{
-    color:var(--muted);
+    object-fit:cover;
 
-    line-height:1.4;
+    display:block;
 }
-
-
 /* =========================================================
    BOARD / ABOUT MEMBER LIST
 ========================================================= */
 
-#board .cards3,
-#about .cards3{
-    display:grid;
-
-    grid-template-columns:1fr;
-
-    gap:10px;
-
-    max-width:700px;
-
-    margin:
-        0
-        auto;
-}
-
-
 #board .card.member,
 #about .card.member{
     position:relative;
-
     min-height:0;
 
     padding:
@@ -1095,9 +1064,11 @@ main{
 
     align-items:center;
 
-    justify-content:center;
+    justify-content:flex-start;
 
-    text-align:center;
+    text-align:left;
+
+    gap:14px;
 
     transition:.18s ease;
 }
@@ -1124,40 +1095,8 @@ main{
 
 #board .avatar,
 #about .avatar{
-    display:none;
-}
-
-
-#board .member b,
-#about .member b{
     display:block;
-
-    color:#333;
-
-    font-size:17px;
-
-    line-height:1.3;
-
-    font-weight:700;
-
-    margin:
-        0
-        0
-        4px;
 }
-
-
-#board .member small,
-#about .member small{
-    display:block;
-
-    color:#666;
-
-    font-size:14px;
-
-    line-height:1.35;
-}
-
 
 /* =========================================================
    LIST / ROW
@@ -1507,7 +1446,7 @@ main{
 
 #board{
  background:rgba(123, 17, 19, .80) !important;
-}
+
 
     border-radius:10px;
 
@@ -4725,39 +4664,34 @@ main{
 
 .member{
     display:flex;
-
     gap:14px;
-
     align-items:center;
 }
 
 
 .avatar{
-    width:48px;
-    height:48px;
+    width:150px;
+    height:180px;
 
-    border-radius:50%;
+    border-radius:6px;
 
-    background:
-        linear-gradient(
-            135deg,
-            #f3e5e5,
-            #ead3d3
-        );
-
-    display:grid;
-
-    place-items:center;
-
-    color:var(--pup);
-
-    font-weight:800;
+    overflow:hidden;
 
     flex-shrink:0;
 
-    border:
-        1px solid
-        #ead0d0;
+    border:1px solid #ead0d0;
+
+    background:#f5f3ec;
+}
+
+
+.avatar img{
+    width:100%;
+    height:100%;
+
+    object-fit:cover;
+
+    display:block;
 }
 
 
@@ -4767,8 +4701,6 @@ main{
 
     line-height:1.4;
 }
-
-
 /* =========================================================
    BOARD / ABOUT MEMBER LIST
 ========================================================= */
@@ -4822,9 +4754,11 @@ main{
 
     align-items:center;
 
-    justify-content:center;
+    justify-content:flex-start;
 
-    text-align:center;
+    text-align:left;
+
+    gap:14px;
 
     transition:.18s ease;
 }
@@ -4851,9 +4785,8 @@ main{
 
 #board .avatar,
 #about .avatar{
-    display:none;
+    display:block;
 }
-
 
 #board .member b,
 #about .member b{
@@ -8159,7 +8092,7 @@ main{
     <div class="card member">
 
         <div class="avatar">
-            CH
+            <img src="logo/aquino.png" alt="Hon. Ricmar P. Aquino">
         </div>
 
         <div>
@@ -8179,7 +8112,7 @@ main{
     <div class="card member">
 
         <div class="avatar">
-            VC
+            <img src="logo/muhi.jpg" alt="Hon. Ricmar P. Aquino">
         </div>
 
         <div>
@@ -8199,7 +8132,7 @@ main{
     <div class="card member">
 
         <div class="avatar">
-            PS
+            <img src="logo/paez.jpeg" alt="Hon. Ricmar P. Aquino">
         </div>
 
         <div>
@@ -8220,7 +8153,7 @@ main{
     <div class="card member">
 
         <div class="avatar">
-            PS
+            <img src="logo/laurel.jpg" alt="Hon. Ricmar P. Aquino">
         </div>
 
         <div>
@@ -8242,8 +8175,9 @@ main{
     <div class="card member">
 
         <div class="avatar">
-            DD
+            <img src="logo/pagunsan.jfif" alt="Hon. Ricmar P. Aquino">
         </div>
+
 
         <div>
 
@@ -8263,7 +8197,7 @@ main{
     <div class="card member">
 
         <div class="avatar">
-            DS
+            <img src="logo/tresvalles.jpg" alt="Hon. Ricmar P. Aquino">
         </div>
 
         <div>
@@ -8284,7 +8218,7 @@ main{
     <div class="card member">
 
         <div class="avatar">
-            SP
+            <img src="logo/villanueva.jfif" alt="Hon. Ricmar P. Aquino">
         </div>
 
         <div>
@@ -8304,7 +8238,7 @@ main{
     <div class="card member">
 
         <div class="avatar">
-            HR
+            <img src="logo/acidre.jpg" alt="Hon. Ricmar P. Aquino">
         </div>
 
         <div>
@@ -8325,7 +8259,7 @@ Chairperson, Committee on Higher and Technical Education (CHTE)<br>
     <div class="card member">
 
         <div class="avatar">
-            FR
+            <img src="logo/cruz.jpg" alt="Hon. Ricmar P. Aquino">
         </div>
 
         <div>
@@ -8347,7 +8281,7 @@ Chairperson, Committee on Higher and Technical Education (CHTE)<br>
     <div class="card member">
 
         <div class="avatar">
-            AR
+            <img src="logo/martirez.jpg" alt="Hon. Ricmar P. Aquino">
         </div>
 
         <div>
@@ -8369,7 +8303,7 @@ Chairperson, Committee on Higher and Technical Education (CHTE)<br>
     <div class="card member">
 
         <div class="avatar">
-            SR
+            <img src="logo/azusano.jfif" alt="Hon. Ricmar P. Aquino">
         </div>
 
         <div>
