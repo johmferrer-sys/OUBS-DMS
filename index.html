@@ -2561,6 +2561,551 @@ main{
 
 }
 
+/* =========================================================
+   REQUEST DOCUMENT
+========================================================= */
+
+#request{
+ background:rgba(123, 17, 19, .80) !important;
+}
+
+    border-radius:10px;
+
+    padding:34px;
+
+    box-shadow:
+        0 8px 25px rgba(80,10,15,.13);
+}
+
+
+#request .section-title{
+    display:block;
+
+    margin-top:0;
+}
+
+
+#request .section-title p{
+    max-width:900px;
+
+    color:#f8eeee;
+
+    line-height:1.75;
+
+    font-size:15px;
+}
+
+
+/* =========================================================
+   REQUEST DOCUMENT MENU
+========================================================= */
+
+.request-menu{
+    display:grid;
+
+    grid-template-columns:
+        repeat(3,1fr);
+
+    gap:18px;
+
+    margin-top:28px;
+}
+
+
+.request-card{
+    position:relative;
+
+    background:#fff;
+
+    color:var(--ink);
+
+    border:
+        1px solid
+        #e3e3e3;
+
+    border-radius:8px;
+
+    padding:
+        28px
+        24px;
+
+    min-height:190px;
+
+    cursor:pointer;
+
+    text-align:left;
+
+    transition:.18s ease;
+
+    box-shadow:
+        0 5px 18px rgba(0,0,0,.07);
+
+    overflow:hidden;
+}
+
+
+.request-card::before{
+    content:"";
+
+    position:absolute;
+
+    top:0;
+    left:0;
+
+    width:100%;
+    height:4px;
+
+    background:var(--gold);
+}
+
+
+.request-card:hover{
+    transform:
+        translateY(-4px);
+
+    box-shadow:
+        0 9px 24px rgba(0,0,0,.14);
+
+    border-color:#d8d8d8;
+}
+
+
+.request-card-number{
+    display:block;
+
+    color:var(--gold);
+
+    font-size:13px;
+
+    font-weight:700;
+
+    letter-spacing:1px;
+
+    margin-bottom:12px;
+}
+
+
+.request-card h2{
+    margin:
+        0
+        0
+        10px;
+
+    color:var(--pup);
+
+    font-size:22px;
+
+    line-height:1.25;
+}
+
+
+.request-card p{
+    margin:0;
+
+    color:#666;
+
+    font-size:14px;
+
+    line-height:1.6;
+}
+
+
+request-card-arrow{
+    position:absolute;
+
+    right:20px;
+
+    bottom:18px;
+
+    color:var(--pup);
+
+    font-size:20px;
+
+    font-weight:700;
+}
+
+
+/* =========================================================
+   REQUEST DOCUMENT CONTENT
+========================================================= */
+
+.request-content{
+    display:none;
+
+    margin-top:25px;
+
+    background:#fff;
+
+    color:#222;
+
+    border-radius:8px;
+
+    overflow:hidden;
+
+    border:
+        1px solid
+        #e3e3e3;
+
+    box-shadow:
+        0 5px 18px rgba(0,0,0,.07);
+}
+
+
+.gazette-content.active{
+    display:block;
+}
+
+
+.gazette-content-header{
+    padding:
+        20px
+        24px;
+
+    background:#f7f4ed;
+
+    border-bottom:
+        1px solid
+        var(--line);
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:space-between;
+
+    gap:15px;
+}
+
+
+.gazette-content-header h2{
+    margin:0;
+
+    color:var(--pup);
+
+    font-size:22px;
+}
+
+
+.gazette-close{
+    border:
+        1px solid
+        var(--pup);
+
+    background:transparent;
+
+    color:var(--pup);
+
+    border-radius:4px;
+
+    padding:
+        8px
+        13px;
+
+    cursor:pointer;
+
+    font-weight:700;
+}
+
+
+.gazette-close:hover{
+    background:var(--pup);
+
+    color:#fff;
+}
+
+
+.gazette-content-body{
+    padding:24px;
+}
+
+
+/* =========================================================
+   REQUEST DOCUMENT TABLE
+========================================================= */
+
+.gazette-record-table{
+    width:100%;
+
+    border-collapse:collapse;
+}
+
+
+.gazette-record-table th,
+.gazette-record-table td{
+    padding:
+        13px
+        14px;
+
+    border-bottom:
+        1px solid
+        var(--line);
+
+    text-align:left;
+
+    vertical-align:top;
+
+    font-size:17px;
+}
+
+
+.gazette-record-table th{
+    background:#f7f4ed;
+
+    color:var(--pup);
+
+    font-size:11px;
+
+    text-transform:uppercase;
+
+    letter-spacing:.4px;
+}
+
+
+.gazette-record-table tr:last-child td{
+    border-bottom:none;
+}
+
+
+.gazette-record-table tr:hover td{
+    background:#fffaf3;
+}
+
+
+.gazette-pdf{
+    color:var(--pup);
+
+    font-weight:700;
+
+    cursor:pointer;
+}
+
+
+.gazette-pdf:hover{
+    text-decoration:underline;
+}
+
+
+/* =========================================================
+   REQUEST DOCUMENT NOTICE
+========================================================= */
+
+.gazette-notice{
+    margin-top:25px;
+
+    background:
+        rgba(255,255,255,.07);
+
+    border-left:
+        3px solid
+        var(--gold);
+
+    border-radius:
+        0
+        6px
+        6px
+        0;
+
+    padding:
+        16px
+        18px;
+
+    color:#f8eeee;
+
+    font-size:13px;
+
+    line-height:1.7;
+}
+
+
+/* =========================================================
+   BOR CERTIFICATION
+========================================================= */
+
+.delegated-table{
+    width:100%;
+
+    border-collapse:collapse;
+}
+
+
+.delegated-table th,
+.delegated-table td{
+    padding:
+        13px
+        14px;
+
+    border-bottom:
+        1px solid
+        var(--line);
+
+    text-align:left;
+
+    vertical-align:top;
+
+    font-size:17px;
+}
+
+
+.delegated-table th{
+    background:#f7f4ed;
+
+    color:var(--pup);
+
+    text-transform:uppercase;
+
+    font-size:11px;
+
+    letter-spacing:.4px;
+}
+
+
+.delegated-table tr:last-child td{
+    border-bottom:none;
+}
+
+
+.delegated-table tr:hover td{
+    background:#fffaf3;
+}
+
+
+.delegated-note{
+    margin-top:18px;
+
+    padding:
+        13px
+        15px;
+
+    background:#faf8f2;
+
+    border-top:
+        1px solid
+        var(--line);
+
+    color:#666;
+
+    font-size:12px;
+
+    line-height:1.6;
+}
+
+
+/* =========================================================
+   BOR MINUTES/EXCERPT
+========================================================= */
+
+.program-year-grid{
+    display:grid;
+
+    grid-template-columns:
+        repeat(4,1fr);
+
+    gap:15px;
+}
+
+
+.program-year-card{
+    position:relative;
+
+    background:#fff;
+
+    border:
+        1px solid
+        #e3e3e3;
+
+    border-radius:7px;
+
+    padding:
+        22px
+        20px;
+
+    min-height:145px;
+
+    cursor:pointer;
+
+    transition:.18s ease;
+
+    overflow:hidden;
+}
+
+
+.program-year-card::before{
+    content:"";
+
+    position:absolute;
+
+    top:0;
+    left:0;
+
+    width:100%;
+    height:4px;
+
+    background:var(--gold);
+}
+
+
+.program-year-card:hover{
+    transform:
+        translateY(-3px);
+
+    box-shadow:
+        0 8px 20px rgba(0,0,0,.10);
+
+    border-color:#d8d8d8;
+}
+
+
+.program-year-number{
+    display:block;
+
+    color:var(--gold);
+
+    font-size:12px;
+
+    font-weight:700;
+
+    letter-spacing:1px;
+
+    margin-bottom:7px;
+}
+
+
+.program-year-card h3{
+    margin:
+        0
+        0
+        8px;
+
+    color:var(--pup);
+
+    font-size:27px;
+}
+
+
+.program-year-card p{
+    margin:0;
+
+    color:#666;
+
+    font-size:13px;
+
+    line-height:1.5;
+}
+
+
+.program-year-arrow{
+    position:absolute;
+
+    right:18px;
+
+    bottom:15px;
+
+    color:var(--pup);
+
+    font-size:19px;
+
+    font-weight:700;
+}
 
 /* =========================================================
    DMS LOGIN PAGE
@@ -7804,6 +8349,10 @@ main{
                 Manual of Operations
             </button>
 
+            <button onclick="show('request')">
+                Request Document
+            </button>
+
 
             <button
                 class="login"
@@ -11110,6 +11659,139 @@ Bachelor of Science in Entrepreneurship
 
 </section>
 
+<!-- =========================================================
+     REQUEST
+========================================================= -->
+
+<section id="request" class="page">
+
+
+<div class="section-title">
+
+
+    <h1 class="page-title">
+        REQUEST DOCUMENT
+    </h1>
+
+
+</div>
+
+
+<div class="gazette-notice">
+
+    For public reference, selected Board of Regents records
+    and materials are made available through the OUBS Gazette.
+    Records containing confidential, privileged, personal, or
+    otherwise restricted information are not included in the
+    public repository.
+
+</div>
+
+
+<!-- THREE MAIN BUTTONS -->
+
+<div class="gazette-menu">
+
+
+    <!-- BOR CERTIFICATIONS -->
+
+    <div
+        class="gazette-card"
+        onclick="openGazetteSection('gazetteMinutes')"
+    >
+
+        <span class="gazette-card-number">
+            01
+        </span>
+
+
+        <h2>
+            BOR Certifications
+        </h2>
+
+
+        <p>
+Download the standard request form and submit the accomplished form through the official OUBS email: boardsec@pup.edu.ph
+        </p><br>
+
+        <p>
+Download the standard request form here.
+        </p><br>
+        </span>
+
+    </div>
+
+
+    <!-- BOR MINUTES/EXCERPT -->
+
+    <div
+        class="gazette-card"
+        onclick="openGazetteSection('gazetteDelegated')"
+    >
+
+        <span class="gazette-card-number">
+            02
+        </span>
+
+
+        <h2>
+            BOR Minutes/Excerpt
+        </h2>
+
+
+        <p>
+Requests for excerpts or copies of minutes are subject to the approval of the Board.
+        </p><br>
+
+        <p>
+Requesters may submit a written request addressed to the Board through the BOR Vice Chair, stating the specific meeting, matter, or portion of the minutes being requested and the purpose of the request.
+        </p><br>
+
+        <p>
+Please send the signed request to: boardsec@pup.edu.ph
+        </p><br>
+
+
+        <span class="gazette-card-arrow">
+           →
+        </span>
+
+    </div>
+
+
+    <!-- OTHER DOCUMENTS -->
+
+    <div
+        class="gazette-card"
+        onclick="openGazetteSection('gazettePrograms')"
+    >
+
+        <span class="gazette-card-number">
+            03
+        </span>
+
+
+        <h2>
+            Other Documents
+        </h2>
+
+
+        <p>
+For other requests, please state clearly the specific document being requested and its purpose.
+        </p>
+
+
+        <span class="gazette-card-arrow">
+            →
+        </span>
+
+    </div>
+
+
+</div>
+
+
+</section>
 
 <!-- =========================================================
      DMS PORTAL
